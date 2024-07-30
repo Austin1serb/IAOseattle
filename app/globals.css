@@ -3,31 +3,91 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  /* Primary and Secondary Colors */
+  --color-primary: #33A8A5;
+  --color-primary-light: #84cccb;
+  --color-primary-dark: #1c8b85;
+
+  --color-secondary: #3371A8;
+  --color-secondary-light: #4fb1e4;
+  --color-secondary-dark: #102a71;
+
+  /* Background and Surface Colors */
+  --color-background: #FDFCFD;
+  --color-surface: #FFFFFF;
+
+  /* Error Color */
+  --color-error: #B00020;
+
+  /* Text Colors */
+  --color-on-primary: #FFFFFF;
+  --color-on-secondary: #FFFFFF;
+  --color-on-light: #000000;
+  --color-on-background: #000000;
+  --color-on-surface: #000000;
+  --color-on-error: #FFFFFF;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  transition: all 0.3s ease;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--color-background);
+  color: var(--color-on-background);
 }
+
+/* Add more global styles as needed */
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+.widget-container {
+  width: 100%;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+.stat {
+  flex: 1;
+  text-align: center;
+}
+
+.chart-container {
+  margin-top: 1rem;
+}
+
+
+/* Default text hover effect */
+a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
