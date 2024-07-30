@@ -1,5 +1,4 @@
 import Link from "next/link";
-import BridgingTheGap from "./components/BridgingTheGap";
 import IncidentWidget from "./components/IncidentWidget";
 import VideoSection from "./components/VideoSection";
 

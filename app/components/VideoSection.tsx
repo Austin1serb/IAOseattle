@@ -2,8 +2,8 @@ import React from 'react';
 
 interface VideoSectionProps {
     videoSrc: string;
-    size: string;
-    includeBrand: boolean;
+    size?: string;
+    includeBrand?: boolean;
 
 }
 
