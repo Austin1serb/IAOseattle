@@ -4,6 +4,7 @@ interface VideoSectionProps {
     videoSrc: string;
 }
 
+
 const VideoSection: React.FC<VideoSectionProps> = ({ videoSrc }) => {
     return (
         <div className="relative w-screen h-1/3">
