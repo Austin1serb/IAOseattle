@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
                             <div className="flex space-x-4">
                                 <NavLink href="/" label="Home" />
                                 <NavLink href="/about" label="About" />
-                                <NavLink href="/services" label="Media" />
+                                <NavLink href="/media" label="Media" />
                                 <NavLink href="/contact" label="Contact" />
                                 <NavLink href="/careers" label="Careers" />
                             </div>

@@ -4,7 +4,7 @@ import VideoSection from '../components/VideoSection'
 const page = () => {
   return (
     <div>
-        <VideoSection videoSrc='/seattleVidAbout.webm'/>
+        <VideoSection videoSrc='/seattleVidAbout.webm' size={'1/3'}/>
     </div>
   )
 }

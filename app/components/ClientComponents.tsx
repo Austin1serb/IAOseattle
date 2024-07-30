@@ -14,9 +14,9 @@ interface IncidentCountProps {
 export const IncidentCount: React.FC<IncidentCountProps> = ({ totalCount, todaysCount = 0, color = "text-blue-500" }) => {
     return (
         <div>
-            <CountUp end={totalCount} duration={2} className={`text-3xl font-bold ${color}`} />
+            <CountUp end={totalCount} duration={2} className={`text-xl font-bold ${color}`} />
             {todaysCount > 0 && (
-                <span className="text-red-500 ml-2 z-10">({todaysCount} today)</span>
+                <span className="text-red-500 ml-2 z-10">+{todaysCount} (today)</span>
             )}
         </div>
     );

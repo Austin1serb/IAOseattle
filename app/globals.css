@@ -64,7 +64,7 @@ body {
 }
 
 
-/* Default text hover effect */
+/*Default text hover effect
 a {
   position: relative;
   transition: color 0.3s ease;
@@ -90,4 +90,4 @@ a::after {
 a:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
-}
+}*/
