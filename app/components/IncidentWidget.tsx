@@ -4,7 +4,7 @@ import moment from 'moment-timezone';
 
 
 const IncidentWidget = async () => {
-    const baseUrl = process.env.NEXT_PUBLIC_URL || process.env.VERCEL_URL || 'http://localhost:3000';
+    const baseUrl = process.env.NEXT_PUBLIC_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000');
     const response = await fetch(`${baseUrl}/api/airtable`);
     const result = await response.json();
 
