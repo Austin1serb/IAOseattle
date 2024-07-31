@@ -1,78 +1,73 @@
+"use client"
+
+import { useEffect, useState } from 'react';
 import { BarChart, IncidentCount } from './ClientComponents';
 import moment from 'moment-timezone';
 
+const IncidentWidget = () => {
+    const [data, setData] = useState(null);
+    const [error, setError] = useState(null);
+    const [incidentTypes, setIncidentTypes] = useState({});
+    const [records, setRecords] = useState([]);
+    const [overdosesPrevented, setOverdosesPrevented] = useState(0);
+    const [todaysIncidents, setTodaysIncidents] = useState(0);
 
-async function getData() {
-    const baseUrl = process.env.NEXT_PUBLIC_URL || (process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` : 'http://localhost:3000');
-    const apiUrl = `${baseUrl}/api/airtable`;
-    console.log('Fetching data from:', apiUrl);
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const baseUrl = process.env.NEXT_PUBLIC_URL || (process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` : 'http://localhost:3000');
+                const apiUrl = `${baseUrl}/api/airtable`;
+                console.log('Fetching data from:', apiUrl);
 
-    const response = await fetch(apiUrl);
+                const response = await fetch(apiUrl);
 
-    if (!response.ok) {
-        const contentType = response.headers.get('content-type');
-        if (contentType && contentType.indexOf('application/json') !== -1) {
-            const errorData = await response.json();
-            throw new Error(`HTTP error! status: ${response.status}, message: ${errorData.message}`);
-        } else {
-            const errorText = await response.text();
-            console.error('Unexpected non-JSON response:', errorText);
-            throw new Error(`HTTP error! status: ${response.status}, response: ${errorText}`);
-        }
-    }
+                if (!response.ok) {
+                    const contentType = response.headers.get('content-type');
+                    if (contentType && contentType.indexOf('application/json') !== -1) {
+                        const errorData = await response.json();
+                        throw new Error(`HTTP error! status: ${response.status}, message: ${errorData.message}`);
+                    } else {
+                        const errorText = await response.text();
+                        console.error('Unexpected non-JSON response:', errorText);
+                        throw new Error(`HTTP error! status: ${response.status}, response: ${errorText}`);
+                    }
+                }
 
-    return response.json();
-}
+                const result = await response.json();
+                setData(result);
 
+                const currentMonth = moment().tz('America/Los_Angeles').format('YYYY-MM');
+                const today = moment().tz('America/Los_Angeles').format('YYYY-MM-DD');
 
-const IncidentWidget = async () => {
-    
-    const result = await getData();
+                const currentMonthRecords = result.filter((record: any) => record.fields["Incident Date"].startsWith(currentMonth));
 
-    const currentMonth = moment().tz('America/Los_Angeles').format('YYYY-MM'); // YYYY-MM format in PST
-    const today = moment().tz('America/Los_Angeles').format('YYYY-MM-DD'); // YYYY-MM-DD format in PST
-  
+                const typesCount: { [key: string]: number } = {};
+                let overdoses = 0;
+                let todayCount = 0;
 
-    //console.log(`Current Month: ${currentMonth}, Today: ${today}`); // Logging current month and today for verification
+                currentMonthRecords.forEach((record: any) => {
+                    const type = getShortName(record.fields["Incident Type"]);
+                    typesCount[type] = (typesCount[type] || 0) + 1;
+                    if (record.fields["Narcan Administered?"] === "YES") {
+                        overdoses += 1;
+                    }
+                    if (record.fields["Incident Date"] === today) {
+                        todayCount += 1;
+                    }
+                });
 
-    let error = null;
-    let records: any[] = [];
-    let incidentTypes: { [key: string]: number } = {};
-    let overdosesPrevented = 0;
-    let todaysIncidents = 0;
+                setRecords(currentMonthRecords);
+                setIncidentTypes(typesCount);
+                setOverdosesPrevented(overdoses);
+                setTodaysIncidents(todayCount);
+            } catch (err:any|unknown) {
+                console.error('Failed to fetch data:', err);
+                setError(err.message);
+            }
+        };
 
-
-    //console.log("Fetched data successfully:", result);
-    // Filter records for the current month
-    const currentMonthRecords = result.filter((record: any) => {
-        const incidentDate = record.fields["Incident Date"];
-        const belongsToCurrentMonth = incidentDate.startsWith(currentMonth);
-        //console.log(`Checking record date: ${incidentDate}, belongs to current month: ${belongsToCurrentMonth}`);
-        return belongsToCurrentMonth;
-    });
-
-    const typesCount: { [key: string]: number } = {};
-    let overdoses = 0;
-    let todayCount = 0;
-
-    currentMonthRecords.forEach((record: any) => {
-        const type = getShortName(record.fields["Incident Type"]);
-        typesCount[type] = (typesCount[type] || 0) + 1;
-        if (record.fields["Narcan Administered?"] === "YES") {
-            overdoses += 1;
-        }
-        const incidentDate = record.fields["Incident Date"];
-        const isToday = incidentDate === today;
-        //console.log(`Record Date: ${incidentDate}, Matches Today: ${isToday}`);
-        if (isToday) {
-            todayCount += 1;
-        }
-    });
-
-    records = currentMonthRecords;
-    incidentTypes = typesCount;
-    overdosesPrevented = overdoses;
-    todaysIncidents = todayCount;
+        fetchData();
+    }, []);
 
     const colorMapping: { [key: string]: { background: string, border: string } } = {
         "Suspicious Activity": { background: '#282F48', border: '#0F75E0' },
@@ -87,7 +82,7 @@ const IncidentWidget = async () => {
         "Assault": { background: '#0F75E0', border: '#102a71' }
     };
 
-    const data = {
+    const chartData = {
         labels: Object.keys(incidentTypes),
         datasets: [
             {
@@ -104,14 +99,14 @@ const IncidentWidget = async () => {
         scales: {
             x: {
                 ticks: {
-                    color: 'white', // Change x-axis label text color
-                    maxRotation: 45, // Rotate the labels
+                    color: 'white',
+                    maxRotation: 45,
                     minRotation: 45
                 }
             },
             y: {
                 ticks: {
-                    color: 'white' // Change y-axis label text color
+                    color: 'white'
                 },
                 beginAtZero: true
             }
@@ -119,15 +114,9 @@ const IncidentWidget = async () => {
         plugins: {
             legend: {
                 labels: {
-                    color: 'white', // Change legend text color
-
+                    color: 'white'
                 }
-            },
-            //title: {
-            //    display: true,
-            //    text: 'Monthly Incident Types',
-            //    color: 'white' // Change title text color
-            //}
+            }
         }
     };
 
@@ -136,19 +125,19 @@ const IncidentWidget = async () => {
             <div className="stats-container flex justify-around mb-4 w-full">
                 <div className="stat b-primary-light">
                     <h2 className="text-md font-bold text-white">Incidents Resolved This Month</h2>
-                    {error ? <p>Not Avaliable: {error}</p> : (
+                    {error ? <p>Not Available: {error}</p> : (
                         <IncidentCount totalCount={records.length} todaysCount={todaysIncidents} />
                     )}
                 </div>
                 <div className="stat">
                     <h2 className="text-md font-bold text-white">Overdoses Prevented</h2>
-                    {error ? <p>Not Avaliable: {error}</p> : (
+                    {error ? <p>Not Available: {error}</p> : (
                         <IncidentCount totalCount={overdosesPrevented} color="text-green-500" />
                     )}
                 </div>
             </div>
             <div className="chart-container w-full ">
-                <BarChart data={data} options={options} />
+                <BarChart data={chartData} options={options} />
             </div>
         </div>
     );
