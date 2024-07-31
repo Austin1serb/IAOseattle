@@ -5,7 +5,10 @@ import moment from 'moment-timezone';
 
 const IncidentWidget = async () => {
     const baseUrl = process.env.NEXT_PUBLIC_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000');
-    const response = await fetch(`${baseUrl}/api/airtable`);
+    const apiUrl = `${baseUrl}/api/airtable`;
+    console.log('Fetching data from:', apiUrl); // Log the URL being used
+
+    const response = await fetch(apiUrl);
     const result = await response.json();
 
     const currentMonth = moment().tz('America/Los_Angeles').format('YYYY-MM'); // YYYY-MM format in PST
@@ -21,12 +24,11 @@ const IncidentWidget = async () => {
 
     if (response.ok) {
         //console.log("Fetched data successfully:", result);
-
         // Filter records for the current month
         const currentMonthRecords = result.filter((record: any) => {
             const incidentDate = record.fields["Incident Date"];
             const belongsToCurrentMonth = incidentDate.startsWith(currentMonth);
-            console.log(`Checking record date: ${incidentDate}, belongs to current month: ${belongsToCurrentMonth}`);
+            //console.log(`Checking record date: ${incidentDate}, belongs to current month: ${belongsToCurrentMonth}`);
             return belongsToCurrentMonth;
         });
 
@@ -102,7 +104,7 @@ const IncidentWidget = async () => {
             legend: {
                 labels: {
                     color: 'white', // Change legend text color
-     
+
                 }
             },
             //title: {
