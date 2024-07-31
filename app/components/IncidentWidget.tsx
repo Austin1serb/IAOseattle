@@ -1,7 +1,6 @@
-// app/incident-widget.tsx
-
 import { BarChart, IncidentCount } from './ClientComponents';
 import moment from 'moment-timezone';
+
 
 async function getData() {
     const baseUrl = process.env.NEXT_PUBLIC_URL || (process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` : 'http://localhost:3000');
@@ -25,13 +24,32 @@ async function getData() {
     return response.json();
 }
 
-export default async function IncidentWidget() {
+
+const IncidentWidget = async () => {
+    
     const result = await getData();
 
-    const currentMonth = moment().tz('America/Los_Angeles').format('YYYY-MM');
-    const today = moment().tz('America/Los_Angeles').format('YYYY-MM-DD');
+    const currentMonth = moment().tz('America/Los_Angeles').format('YYYY-MM'); // YYYY-MM format in PST
+    const today = moment().tz('America/Los_Angeles').format('YYYY-MM-DD'); // YYYY-MM-DD format in PST
+  
 
-    const currentMonthRecords = result.filter((record: any) => record.fields["Incident Date"].startsWith(currentMonth));
+    //console.log(`Current Month: ${currentMonth}, Today: ${today}`); // Logging current month and today for verification
+
+    let error = null;
+    let records: any[] = [];
+    let incidentTypes: { [key: string]: number } = {};
+    let overdosesPrevented = 0;
+    let todaysIncidents = 0;
+
+
+    //console.log("Fetched data successfully:", result);
+    // Filter records for the current month
+    const currentMonthRecords = result.filter((record: any) => {
+        const incidentDate = record.fields["Incident Date"];
+        const belongsToCurrentMonth = incidentDate.startsWith(currentMonth);
+        //console.log(`Checking record date: ${incidentDate}, belongs to current month: ${belongsToCurrentMonth}`);
+        return belongsToCurrentMonth;
+    });
 
     const typesCount: { [key: string]: number } = {};
     let overdoses = 0;
@@ -43,10 +61,18 @@ export default async function IncidentWidget() {
         if (record.fields["Narcan Administered?"] === "YES") {
             overdoses += 1;
         }
-        if (record.fields["Incident Date"] === today) {
+        const incidentDate = record.fields["Incident Date"];
+        const isToday = incidentDate === today;
+        //console.log(`Record Date: ${incidentDate}, Matches Today: ${isToday}`);
+        if (isToday) {
             todayCount += 1;
         }
     });
+
+    records = currentMonthRecords;
+    incidentTypes = typesCount;
+    overdosesPrevented = overdoses;
+    todaysIncidents = todayCount;
 
     const colorMapping: { [key: string]: { background: string, border: string } } = {
         "Suspicious Activity": { background: '#282F48', border: '#0F75E0' },
@@ -62,13 +88,13 @@ export default async function IncidentWidget() {
     };
 
     const data = {
-        labels: Object.keys(typesCount),
+        labels: Object.keys(incidentTypes),
         datasets: [
             {
                 label: 'Monthly Incident Types',
-                data: Object.values(typesCount) as (number | null)[],
-                backgroundColor: Object.keys(typesCount).map(key => colorMapping[key]?.background || 'rgba(0, 0, 0, 0.2)'),
-                borderColor: Object.keys(typesCount).map(key => colorMapping[key]?.border || 'rgba(0, 0, 0, 1)'),
+                data: Object.values(incidentTypes) as (number | null)[],
+                backgroundColor: Object.keys(incidentTypes).map(key => colorMapping[key]?.background || 'rgba(0, 0, 0, 0.2)'),
+                borderColor: Object.keys(incidentTypes).map(key => colorMapping[key]?.border || 'rgba(0, 0, 0, 1)'),
                 borderWidth: 1
             }
         ]
@@ -78,14 +104,14 @@ export default async function IncidentWidget() {
         scales: {
             x: {
                 ticks: {
-                    color: 'white',
-                    maxRotation: 45,
+                    color: 'white', // Change x-axis label text color
+                    maxRotation: 45, // Rotate the labels
                     minRotation: 45
                 }
             },
             y: {
                 ticks: {
-                    color: 'white'
+                    color: 'white' // Change y-axis label text color
                 },
                 beginAtZero: true
             }
@@ -93,9 +119,15 @@ export default async function IncidentWidget() {
         plugins: {
             legend: {
                 labels: {
-                    color: 'white'
+                    color: 'white', // Change legend text color
+
                 }
-            }
+            },
+            //title: {
+            //    display: true,
+            //    text: 'Monthly Incident Types',
+            //    color: 'white' // Change title text color
+            //}
         }
     };
 
@@ -104,19 +136,23 @@ export default async function IncidentWidget() {
             <div className="stats-container flex justify-around mb-4 w-full">
                 <div className="stat b-primary-light">
                     <h2 className="text-md font-bold text-white">Incidents Resolved This Month</h2>
-                    <IncidentCount totalCount={currentMonthRecords.length} todaysCount={todayCount} />
+                    {error ? <p>Not Avaliable: {error}</p> : (
+                        <IncidentCount totalCount={records.length} todaysCount={todaysIncidents} />
+                    )}
                 </div>
                 <div className="stat">
                     <h2 className="text-md font-bold text-white">Overdoses Prevented</h2>
-                    <IncidentCount totalCount={overdoses} color="text-green-500" />
+                    {error ? <p>Not Avaliable: {error}</p> : (
+                        <IncidentCount totalCount={overdosesPrevented} color="text-green-500" />
+                    )}
                 </div>
             </div>
-            <div className="chart-container w-full">
+            <div className="chart-container w-full ">
                 <BarChart data={data} options={options} />
             </div>
         </div>
     );
-}
+};
 
 const getShortName = (name: string) => {
     const nameMapping: { [key: string]: string } = {
@@ -132,3 +168,5 @@ const getShortName = (name: string) => {
     };
     return nameMapping[name] || name;
 };
+
+export default IncidentWidget;
