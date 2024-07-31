@@ -1,8 +1,11 @@
 import { BarChart, IncidentCount } from './ClientComponents';
 import moment from 'moment-timezone';
 
+
+
 const IncidentWidget = async () => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/airtable`);
+    const baseUrl = process.env.NEXT_PUBLIC_URL || process.env.VERCEL_URL || 'http://localhost:3000';
+    const response = await fetch(`${baseUrl}/api/airtable`);
     const result = await response.json();
 
     const currentMonth = moment().tz('America/Los_Angeles').format('YYYY-MM'); // YYYY-MM format in PST
