@@ -1,27 +1,14 @@
+// app/incident-widget.tsx
+
 import { BarChart, IncidentCount } from './ClientComponents';
 import moment from 'moment-timezone';
 
-
-
-const IncidentWidget = async () => {
-    const baseUrl = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+async function getData() {
+    const baseUrl = process.env.NEXT_PUBLIC_URL || (process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` : 'http://localhost:3000');
     const apiUrl = `${baseUrl}/api/airtable`;
-
-    console.log('Fetching data from:', apiUrl); // Log the URL being used
+    console.log('Fetching data from:', apiUrl);
 
     const response = await fetch(apiUrl);
-    const result = await response.json();
-
-    const currentMonth = moment().tz('America/Los_Angeles').format('YYYY-MM'); // YYYY-MM format in PST
-    const today = moment().tz('America/Los_Angeles').format('YYYY-MM-DD'); // YYYY-MM-DD format in PST
-
-    //console.log(`Current Month: ${currentMonth}, Today: ${today}`); // Logging current month and today for verification
-
-    let error = null;
-    let records: any[] = [];
-    let incidentTypes: { [key: string]: number } = {};
-    let overdosesPrevented = 0;
-    let todaysIncidents = 0;
 
     if (!response.ok) {
         const contentType = response.headers.get('content-type');
@@ -30,46 +17,36 @@ const IncidentWidget = async () => {
             throw new Error(`HTTP error! status: ${response.status}, message: ${errorData.message}`);
         } else {
             const errorText = await response.text();
-            console.error('Unexpected non-JSON response:', errorText); // Log the non-JSON response
+            console.error('Unexpected non-JSON response:', errorText);
             throw new Error(`HTTP error! status: ${response.status}, response: ${errorText}`);
         }
     }
 
-    if (response.ok) {
-        //console.log("Fetched data successfully:", result);
-        // Filter records for the current month
-        const currentMonthRecords = result.filter((record: any) => {
-            const incidentDate = record.fields["Incident Date"];
-            const belongsToCurrentMonth = incidentDate.startsWith(currentMonth);
-            //console.log(`Checking record date: ${incidentDate}, belongs to current month: ${belongsToCurrentMonth}`);
-            return belongsToCurrentMonth;
-        });
+    return response.json();
+}
 
-        const typesCount: { [key: string]: number } = {};
-        let overdoses = 0;
-        let todayCount = 0;
+export default async function IncidentWidget() {
+    const result = await getData();
 
-        currentMonthRecords.forEach((record: any) => {
-            const type = getShortName(record.fields["Incident Type"]);
-            typesCount[type] = (typesCount[type] || 0) + 1;
-            if (record.fields["Narcan Administered?"] === "YES") {
-                overdoses += 1;
-            }
-            const incidentDate = record.fields["Incident Date"];
-            const isToday = incidentDate === today;
-            //console.log(`Record Date: ${incidentDate}, Matches Today: ${isToday}`);
-            if (isToday) {
-                todayCount += 1;
-            }
-        });
+    const currentMonth = moment().tz('America/Los_Angeles').format('YYYY-MM');
+    const today = moment().tz('America/Los_Angeles').format('YYYY-MM-DD');
 
-        records = currentMonthRecords;
-        incidentTypes = typesCount;
-        overdosesPrevented = overdoses;
-        todaysIncidents = todayCount;
-    } else {
-        error = result.error;
-    }
+    const currentMonthRecords = result.filter((record: any) => record.fields["Incident Date"].startsWith(currentMonth));
+
+    const typesCount: { [key: string]: number } = {};
+    let overdoses = 0;
+    let todayCount = 0;
+
+    currentMonthRecords.forEach((record: any) => {
+        const type = getShortName(record.fields["Incident Type"]);
+        typesCount[type] = (typesCount[type] || 0) + 1;
+        if (record.fields["Narcan Administered?"] === "YES") {
+            overdoses += 1;
+        }
+        if (record.fields["Incident Date"] === today) {
+            todayCount += 1;
+        }
+    });
 
     const colorMapping: { [key: string]: { background: string, border: string } } = {
         "Suspicious Activity": { background: '#282F48', border: '#0F75E0' },
@@ -85,13 +62,13 @@ const IncidentWidget = async () => {
     };
 
     const data = {
-        labels: Object.keys(incidentTypes),
+        labels: Object.keys(typesCount),
         datasets: [
             {
                 label: 'Monthly Incident Types',
-                data: Object.values(incidentTypes) as (number | null)[],
-                backgroundColor: Object.keys(incidentTypes).map(key => colorMapping[key]?.background || 'rgba(0, 0, 0, 0.2)'),
-                borderColor: Object.keys(incidentTypes).map(key => colorMapping[key]?.border || 'rgba(0, 0, 0, 1)'),
+                data: Object.values(typesCount) as (number | null)[],
+                backgroundColor: Object.keys(typesCount).map(key => colorMapping[key]?.background || 'rgba(0, 0, 0, 0.2)'),
+                borderColor: Object.keys(typesCount).map(key => colorMapping[key]?.border || 'rgba(0, 0, 0, 1)'),
                 borderWidth: 1
             }
         ]
@@ -101,14 +78,14 @@ const IncidentWidget = async () => {
         scales: {
             x: {
                 ticks: {
-                    color: 'white', // Change x-axis label text color
-                    maxRotation: 45, // Rotate the labels
+                    color: 'white',
+                    maxRotation: 45,
                     minRotation: 45
                 }
             },
             y: {
                 ticks: {
-                    color: 'white' // Change y-axis label text color
+                    color: 'white'
                 },
                 beginAtZero: true
             }
@@ -116,15 +93,9 @@ const IncidentWidget = async () => {
         plugins: {
             legend: {
                 labels: {
-                    color: 'white', // Change legend text color
-
+                    color: 'white'
                 }
-            },
-            //title: {
-            //    display: true,
-            //    text: 'Monthly Incident Types',
-            //    color: 'white' // Change title text color
-            //}
+            }
         }
     };
 
@@ -133,23 +104,19 @@ const IncidentWidget = async () => {
             <div className="stats-container flex justify-around mb-4 w-full">
                 <div className="stat b-primary-light">
                     <h2 className="text-md font-bold text-white">Incidents Resolved This Month</h2>
-                    {error ? <p>Not Avaliable: {error}</p> : (
-                        <IncidentCount totalCount={records.length} todaysCount={todaysIncidents} />
-                    )}
+                    <IncidentCount totalCount={currentMonthRecords.length} todaysCount={todayCount} />
                 </div>
                 <div className="stat">
                     <h2 className="text-md font-bold text-white">Overdoses Prevented</h2>
-                    {error ? <p>Not Avaliable: {error}</p> : (
-                        <IncidentCount totalCount={overdosesPrevented} color="text-green-500" />
-                    )}
+                    <IncidentCount totalCount={overdoses} color="text-green-500" />
                 </div>
             </div>
-            <div className="chart-container w-full ">
+            <div className="chart-container w-full">
                 <BarChart data={data} options={options} />
             </div>
         </div>
     );
-};
+}
 
 const getShortName = (name: string) => {
     const nameMapping: { [key: string]: string } = {
@@ -165,5 +132,3 @@ const getShortName = (name: string) => {
     };
     return nameMapping[name] || name;
 };
-
-export default IncidentWidget;
