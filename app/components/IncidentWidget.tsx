@@ -4,8 +4,10 @@ import moment from 'moment-timezone';
 
 
 const IncidentWidget = async () => {
-    const baseUrl = process.env.NEXT_PUBLIC_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000');
+    const baseUrl = process.env.NEXT_PUBLIC_URL || (process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` : 'http://localhost:3000');
     const apiUrl = `${baseUrl}/api/airtable`;
+  
+    console.log('Fetching data from:', apiUrl);
     console.log('Fetching data from:', apiUrl); // Log the URL being used
 
     const response = await fetch(apiUrl);
