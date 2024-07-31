@@ -4,9 +4,9 @@ import moment from 'moment-timezone';
 
 
 const IncidentWidget = async () => {
-    const baseUrl =`https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+    const baseUrl = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
     const apiUrl = `${baseUrl}/api/airtable`;
-  
+
     console.log('Fetching data from:', apiUrl); // Log the URL being used
 
     const response = await fetch(apiUrl);
@@ -22,6 +22,18 @@ const IncidentWidget = async () => {
     let incidentTypes: { [key: string]: number } = {};
     let overdosesPrevented = 0;
     let todaysIncidents = 0;
+
+    if (!response.ok) {
+        const contentType = response.headers.get('content-type');
+        if (contentType && contentType.indexOf('application/json') !== -1) {
+            const errorData = await response.json();
+            throw new Error(`HTTP error! status: ${response.status}, message: ${errorData.message}`);
+        } else {
+            const errorText = await response.text();
+            console.error('Unexpected non-JSON response:', errorText); // Log the non-JSON response
+            throw new Error(`HTTP error! status: ${response.status}, response: ${errorText}`);
+        }
+    }
 
     if (response.ok) {
         //console.log("Fetched data successfully:", result);
