@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "chart.js": "^4.4.3",
+    "cheerio": "^1.0.0-rc.12",
     "dotenv": "^16.4.5",
     "moment-timezone": "^0.5.45",
     "next": "14.2.5",

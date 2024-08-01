@@ -8,10 +8,6 @@ interface IncidentData {
   };
 }
 
-interface HomeProps {
-  incidentData: IncidentData[];
-}
-
 
 export default function Home() {
   return (
