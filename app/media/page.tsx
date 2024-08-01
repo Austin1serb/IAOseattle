@@ -1,8 +1,8 @@
-// /app/media/page.tsx
-
-import React from 'react';
+'use client'
+import React, { useState } from 'react';
 import MediaItem from '../components/MediaItem';
 import VideoSection from '../components/VideoSection';
+import Pagination from '../components/Pagination';
 
 const newsItems = [
     {
@@ -29,7 +29,7 @@ const newsItems = [
         imageUrl: "https://downtownseattle.org/app/uploads/2022/06/programs-services-mid-renewal-202206-services-iron-oak-4x3-v1.jpg",
         date: "July 30, 2024",
         description: "Iron & Oak provides over 800 hours of private security weekly and supports SPD patrols in Downtown Seattle. This partnership enhances safety for residents, workers, and visitors, with Iron & Oak officers working alongside MID ambassadors and supporting community events."
-    },    
+    },
     {
         title: 'Downtown Seattle Spends $564,000 on Private Security for 3rd Avenue',
         slug: 'downtown-seattle-spends-private-security-3rd-ave',
@@ -58,19 +58,19 @@ const newsItems = [
     {
         title: "A Call for Security: Safety Concerns Around Downtown Seattle",
         slug: "a-call-for-security-downtown-seattle",
-        url:'https://www.bizjournals.com/seattle/news/2024/03/11/seattle-businesses-spend-millions-private-security.html',
+        url: 'https://www.bizjournals.com/seattle/news/2024/03/11/seattle-businesses-spend-millions-private-security.html',
         imageUrl: "https://media.bizj.us/view/img/12703991/aleksandr-butowicz-iron-oak-06*900x506x4200-2368-0-416.jpg",
         date: "March 11, 2024",
         description: "Private security costs in downtown Seattle have surged by up to 400%, prompting concerns from building owners. Aleksandr Butowicz, founder of Iron & Oak Protective Services, discusses the impact of rising security expenses in the area.",
     },
-    
+
     {
         title: 'Backs Against the Wall: Ballard Business Owners Throw Town Hall to Combat Crime',
         slug: 'backs-against-wall-ballard-business-owners-throw-town-hall-combat-crime',
         description: 'Business owners in Ballard are organizing a town hall meeting to address rising crime rates and discuss potential solutions.',
         url: 'https://mynorthwest.com/3785043/backs-against-wall-ballard-business-owners-throw-town-hall-combat-crime/',
         imageUrl: 'https://mynorthwest.com/wp-content/uploads/2021/11/damageballard-900x506-1-900x506.jpg',
-        date: 'July 28, 2023' , 
+        date: 'July 28, 2023',
         videoUrl: ''
     },
     {
@@ -118,7 +118,7 @@ const newsItems = [
         date: 'February 1, 2022',
         videoEmbed: '<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/b206af068557454bb976a818278226d1.m3u8&autostart=false" frameborder="0" scrolling="auto" loading="lazy"></iframe>'
     },
-   
+
     {
         title: 'What Downtown Seattle Says about Downtown Seattle',
         slug: 'what-downtown-seattle-says-about-the-state-of-downtown-seattle',
@@ -136,7 +136,7 @@ const newsItems = [
         imageUrl: "https://komonews.com/resources/media2/c77dcc4c03d4a4543bdc798d44eef6057.jpg",
         date: "April 23, 2022",
         description: " Iron and Oak Protective Services is actively involved in patrolling and improving conditions, but challenges remain in ensuring long-term safety."
-    },    
+    },
     {
         title: 'SPD says officer injured, two arrested as police step into clash between private security team and Capitol Hill protesters — UPDATE',
         slug: 'spd-says-officer-injured-two-arrested-as-police-step-into-clash-between-private-security-team-and-capitol-hill-protesters-update',
@@ -145,7 +145,7 @@ const newsItems = [
         date: 'August 13, 2020',
         description: 'An officer was injured and two people arrested in a clash between protesters and private security on Capitol Hill. Tensions rose after a security vehicle nearly hit demonstrators, leading to police intervention.'
     },
-    
+
     {
         title: 'I wish I could’ve saved her: Security officer recalls fatal shooting of pregnant woman in Seattle',
         slug: 'i-wish-i-couldve-saved-her-security-officer-recalls-fatal-shooting-of-pregnant-woman-in-seattle-randy-norberg-eina-kwon-suspect-cordell-goosby-shots-fired-gunshot-wounds',
@@ -160,36 +160,73 @@ const newsItems = [
         title: "Union Security Officers Rally for Respect",
         slug: "union-security-officers-rally-for-respect",
         imageUrl: "https://southseattleemerald.com/wp-content/uploads/2022/03/SecuritySign_WestlakePark_SecurityOfficerRally_312022_AlexGarland-1024x683.jpg",
-        url:'https://southseattleemerald.com/2022/03/21/union-security-officers-rally-for-respect/',
+        url: 'https://southseattleemerald.com/2022/03/21/union-security-officers-rally-for-respect/',
         date: "March 21, 2022",
         description: "Security officers rally at Westlake Park to demand better union contracts addressing safety, training, and workplace conditions. The event highlights the challenges faced by security personnel and their calls for respect and fair treatment."
     }
-    
-    
+
 
 ];
 
+const ITEMS_PER_PAGE = 5; // Number of items per page
+
 const Media: React.FC = () => {
-    return (
-        <div className='w-[screen]'>
-            <VideoSection videoSrc={'/seattleVidMedia.webm'} size={'full'} includeBrand={true} text='Media & Articles' />
+    const [currentPage, setCurrentPage] = useState(1);
+    const [transitionDirection, setTransitionDirection] = useState('');
+
+    const totalPages = Math.ceil(newsItems.length / ITEMS_PER_PAGE);
+
+    const handlePageChange = (page: number) => {
+        if (page !== currentPage) {
+            const direction = page > currentPage ? 'forward' : 'backward';
+            setTransitionDirection(direction);
+    
+            setTimeout(() => {
+                requestAnimationFrame(() => {
+                    setCurrentPage(page);
+                    setTransitionDirection('');
+                });
+            }, 300); // Debounce duration
+        }
+    };
+
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const currentItems = newsItems.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+ return( 
+        <div className='w-[screen] '>
+            <VideoSection videoSrc={'/seattleVidMedia.webm'} size={'1/3'} includeBrand={true} text='Media & Articles' />
             <div className="container mx-auto px-4">
-        
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-                    {newsItems.map((item, index) => (
-                        <MediaItem
+                    {currentItems.map((item, index) => (
+                        <div
                             key={index}
-                            slug={item.slug}
-                            title={item.title}
-                            description={item.description}
-                            url={item.url}
-                            imageUrl={item.imageUrl}
-                            videoUrl={item.videoUrl}
-                            videoEmbed={item.videoEmbed}
-                            date={item.date}
-                        />
+                            className={`h-full ${
+                                transitionDirection === 'forward'
+                                    ? 'slide-enter'
+                                    : transitionDirection === 'backward'
+                                    ? 'reverse-slide-enter'
+                                    : ''
+                            }`}
+                        >
+                            <MediaItem
+                                slug={item.slug}
+                                title={item.title}
+                                description={item.description}
+                                url={item.url}
+                                imageUrl={item.imageUrl}
+                                videoUrl={item.videoUrl}
+                                videoEmbed={item.videoEmbed}
+                                date={item.date}
+                            />
+                        </div>
                     ))}
                 </div>
+                <Pagination 
+                    currentPage={currentPage} 
+                    totalPages={totalPages} 
+                    onPageChange={handlePageChange} 
+                />
             </div>
         </div>
     );

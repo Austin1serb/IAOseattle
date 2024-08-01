@@ -7,7 +7,7 @@ interface ClipboardButtonProps {
 }
 const ClipboardButton: React.FC<ClipboardButtonProps> = ({ url }) => {
     const copyToClipboard = () => {
-        navigator.clipboard.writeText(window.location.href);
+        navigator.clipboard.writeText(url);
         alert('Link copied to clipboard');
     };
     return (

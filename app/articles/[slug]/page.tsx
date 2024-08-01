@@ -1,6 +1,7 @@
 // app/articles/[slug]/page.tsx
 
 import ClipboardButton from '@/app/components/ClipboardButton';
+import Socials from '@/app/components/Socials';
 import VideoSection from '@/app/components/VideoSection';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -1004,7 +1005,6 @@ const articles = [
         <p class="text-sm text-gray-500 mb-4">by Marc Stiles – Senior Reporter, Puget Sound Business Journal</p>
 
         <p class="mb-4">Private security costs in downtown Seattle have surged by up to 400%, prompting concerns from building owners. Aleksandr Butowicz, founder of Iron & Oak Protective Services, discusses the impact of rising security expenses in the area.</p>
-         
         <p class="mb-4">Aleksandr Butowicz founded Iron and Oak Protective Services, LLC in 2019.</p>
 
 
@@ -1014,6 +1014,9 @@ const articles = [
 
 
 ];
+
+
+
 export default function Page({ params }: { params: { slug: string } }) {
     const { slug } = params;
 
@@ -1045,17 +1048,15 @@ export default function Page({ params }: { params: { slug: string } }) {
                     <h1 className="text-4xl font-bold">{article.title}</h1>
                     <p className="text-gray-600 mb-4">{article.date}</p>
                     {videoEmbedSrc ? (
-                        <div className="relative w-full md:w-1/2 h-[50vh] object-cover border-l-4 border-blue-500 pl-4">
-                            <div className="w-full h-full">
+                        <div className="relative w-full md:w-3/5 border-l-4 border-blue-500 pl-4">
+                            <div className="relative w-full" style={{ paddingTop: '56.25%' }}> {/* 16:9 Aspect Ratio */}
                                 <iframe
-                                    title='Media player'
+                                    title="Media player"
                                     src={videoEmbedSrc}
-                                    width="100%"
-                                    height="100%"
+                                    className="absolute top-0 left-0 w-full h-full border-none overflow-hidden"
                                     frameBorder="0"
                                     scrolling="no"
                                     loading="lazy"
-                                    className='border-none overflow-hidden'
                                 />
                             </div>
                         </div>
@@ -1086,21 +1087,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                             <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M401.4 224h-214l83-79.4c11.9-12.5 11.9-32.7 0-45.2s-31.2-12.5-43.2 0L89 233.4c-6 5.8-9 13.7-9 22.4v.4c0 8.7 3 16.6 9 22.4l138.1 134c12 12.5 31.3 12.5 43.2 0 11.9-12.5 11.9-32.7 0-45.2l-83-79.4h214c16.9 0 30.6-14.3 30.6-32 .1-18-13.6-32-30.5-32z"></path></svg>
                             Go Back to Articles
                         </Link>
-                        <div className="relative flex flex-col space-y-2">
-                            <span className="absolute -top-6 left-0 text-lg font-semibold">Share:</span>
-                            <div className="flex space-x-4">
-                                <Link href={`https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com/articles/${article.slug}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 transition-all duration-150 hover:underline hover:text-blue-800 hover:bg-blue-50 rounded-md p-3 flex items-center border cursor-pointer">
-                                    <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></svg>
-                                </Link>
-                                <Link href={`https://twitter.com/intent/tweet?url=https://yourwebsite.com/articles/${article.slug}&text=${article.title}`} target="_blank" rel="noopener noreferrer" className="text-black transition-all duration-150 hover:underline hover:text-blue-800 hover:bg-blue-50 rounded-md p-3 flex items-center border cursor-pointer">
-                                    <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg>
-                                </Link>
-                                <Link href={`https://www.linkedin.com/sharing/share-offsite/?url=https://yourwebsite.com/articles/${article.slug}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 transition-all duration-150 hover:underline hover:text-blue-800 hover:bg-blue-50 rounded-md p-3 flex items-center border cursor-pointer">
-                                    <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 448 512" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
-                                </Link>
-                                <ClipboardButton url={`https://yourwebsite.com/articles/${article.slug}`} />
-                            </div>
-                        </div>
+                        <Socials title={article.title} slug={article.slug} />
                     </div>
                 </div>
             </div>

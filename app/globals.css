@@ -30,6 +30,7 @@
 
 * {
   transition: all 0.3s ease;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -37,6 +38,10 @@ body {
   color: var(--color-on-background);
   overflow-x: hidden;
   min-width: 350px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif; 
 }
 
 /* Add more global styles as needed */
@@ -93,3 +98,58 @@ a:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }*/
+
+
+
+
+/* Add these styles to your global CSS file (e.g., globals.css) */
+/* Add these styles to your global CSS file */
+/* Add these styles to your global CSS file */
+
+.slide-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.slide-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
+}
+
+.slide-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
+}
+
+.reverse-slide-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.reverse-slide-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
+}
+
+.reverse-slide-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reverse-slide-exit-active {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
+}
+.slide-enter,
+.reverse-slide-enter {
+    will-change: transform, opacity;
+}

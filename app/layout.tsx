@@ -3,7 +3,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/NavBar";
 import Footer from "./components/Footer";
-import { ScrollProvider } from "./context/ScrollContext";
+
 
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500", "700"] });
@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <ScrollProvider>
+       
           <div className="sticky top-0 z-50">
 
             <Navbar />
@@ -29,7 +29,7 @@ export default function RootLayout({
           </div>
           {children}
           <Footer />
-        </ScrollProvider>
+       
       </body>
     </html>
   );

@@ -10,14 +10,9 @@ interface VideoSectionProps {
 
 const VideoSection: React.FC<VideoSectionProps> = ({ videoSrc, size, includeBrand, text }) => {
 
-    const sizes = {
-        'screen': 'screen',
-        'full': 'full',
-        '96': '96',
-    }
     return (
-        <div className={`w-screen min-w-96 h-${size}`}>
-            <video className={`w-full h-${size} object-cover min-h-48`} autoPlay loop muted playsInline>
+        <div className={`relative w-screen min-w-96 h-${size}`}>
+            <video className={`w-full h-${size} object-cover min-h-48`} autoPlay loop muted playsInline preload='auto'>
                 <source src={videoSrc} type="video/webm" />
                 Your browser does not support the video tag.
             </video>

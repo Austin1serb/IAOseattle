@@ -25,7 +25,7 @@ const MediaItem: React.FC<MediaItemProps> = ({ title, slug, description, url, im
     }
 
     return (
-        <Link aria-label={`Link to article ${title}`} href={`/articles/${slug}`} className="bg-white rounded-lg shadow-2xl overflow-hidden flex flex-col justify-between items-center w-full group hover:scale-[98%]">
+        <Link aria-label={`Link to article ${title}`} href={`/articles/${slug}`} className="bg-white rounded-lg shadow-2xl overflow-hidden flex flex-col justify-between items-center w-full h-full group hover:scale-[98%]">
             <div>
                 <div className="relative w-full pb-[56.25%]">
                     {videoUrl || videoEmbed ? (
@@ -36,8 +36,8 @@ const MediaItem: React.FC<MediaItemProps> = ({ title, slug, description, url, im
                                     src={videoEmbedSrc}
                                     width="100%"
                                     height="100%"
-                                    
                                     className='border-none overflow-hidden'
+                                    loading='lazy'
                                 />
                             </div>
                         ) : (
