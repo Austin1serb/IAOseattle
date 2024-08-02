@@ -636,7 +636,7 @@ const articles = [
 `
     },
     {
-        title: 'SPD says officer injured, two arrested as police step into clash between private security team and Capitol Hill protesters — UPDATE',
+        title: 'SPD officer injured, two arrested as police step into clash between private security & protesters',
         slug: 'spd-says-officer-injured-two-arrested-as-police-step-into-clash-between-private-security-team-and-capitol-hill-protesters-update',
         url: 'https://www.capitolhillseattle.com/2020/08/spd-says-officer-injured-two-arrested-as-police-step-into-clash-between-private-security-team-and-capitol-hill-protesters/',
         imageUrl: 'https://i0.wp.com/www.capitolhillseattle.com/wp-content/uploads/2020/08/Mitgang_200812_0132-scaled.jpg?w=1168&ssl=1',
@@ -1037,9 +1037,9 @@ export default function Page({ params }: { params: { slug: string } }) {
     }
 
     return (
-        <div className=''>
+        <div className='min-w-[350px] w-screen'>
             <VideoSection videoSrc={'/seattleVidAbout.webm'} size={'96'} includeBrand={true} />
-            <div className="container mx-auto px-4 h-auto w-screen">
+            <div className="container mx-auto px-4 h-auto w-full min-w-[350px]">
                 <div className='transform md:-translate-y-40 -translate-y-20'>
                     <h1 className="text-white text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold uppercase text-center">Media & Articles</h1>
                 </div>
@@ -1078,12 +1078,12 @@ export default function Page({ params }: { params: { slug: string } }) {
                         href={article.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-500 transition-all duration-150 underline hover:text-blue-800 cursor-pointer"
+                        className="text-blue-600 transition-all duration-150 underline hover:text-blue-800 cursor-pointer"
                     >
                         Read the full article on the news outlet
                     </Link>
-                    <div className="mt-8 flex flex-row justify-between items-center space-y-4">
-                        <Link href="/media" className='text-blue-500 transition-all duration-150 hover:underline hover:text-blue-800 hover:bg-blue-50 rounded-md px-1 -mx-1 py-3 flex -mb-4 items-center border cursor-pointer'>
+                    <div className="mt-8 flex sm:flex-row flex-col justify-between items-start sm:items-center sm:space-y-4 space-y-16 ">
+                        <Link href="/media" className='text-blue-600 transition-all duration-150 hover:underline hover:text-blue-800 hover:bg-blue-50 rounded-md px-1 -mx-1 py-3 flex sm:-mb-6 items-center border cursor-pointer'>
                             <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M401.4 224h-214l83-79.4c11.9-12.5 11.9-32.7 0-45.2s-31.2-12.5-43.2 0L89 233.4c-6 5.8-9 13.7-9 22.4v.4c0 8.7 3 16.6 9 22.4l138.1 134c12 12.5 31.3 12.5 43.2 0 11.9-12.5 11.9-32.7 0-45.2l-83-79.4h214c16.9 0 30.6-14.3 30.6-32 .1-18-13.6-32-30.5-32z"></path></svg>
                             Go Back to Articles
                         </Link>

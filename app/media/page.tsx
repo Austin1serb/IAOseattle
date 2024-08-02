@@ -1,8 +1,15 @@
 'use client'
 import React, { useState } from 'react';
-import MediaItem from '../components/MediaItem';
 import VideoSection from '../components/VideoSection';
 import Pagination from '../components/Pagination';
+import styles from './MediaItem.module.css';
+import dynamic from 'next/dynamic';
+import MediaItemSkeleton from '../components/skeletons/MediaItemSkeleton';
+
+const MediaItem = dynamic(() => import('../components/MediaItem'), {
+    ssr: true, 
+    loading: () => <MediaItemSkeleton/>, 
+});
 
 const newsItems = [
     {
@@ -101,9 +108,9 @@ const newsItems = [
         videoEmbed: '', // No video embed provided
     },
     {
-        title: '‘My heart really broke’: Security guard describes moments helping Eina Kwon after Belltown shooting',
+        title: '‘My heart really broke’: Security guard describes moments after Belltown shooting',
         slug: 'my-heart-really-broke-security-guard-describes-moments-helping-eina-kwon-after-belltown-shooting',
-        description: 'Security guard Randy Norberg describes his harrowing experience helping Eina Kwon after a tragic shooting in Belltown. Norberg, a supervisor with Iron and Oak, was the first to respond and provided critical aid before police arrived.',
+        description: 'Security guard Randy Norberg describes his harrowing experience helping Eina Kwon after a tragic shooting in Belltown. Norberg, a supervisor with <strong>Iron and Oak</strong>, was the first to respond and provided critical aid before police arrived.',
         url: 'https://www.king5.com/article/news/local/seattle/security-guard-belltown-shooting-victim-eina-kwon/281-dc81a3cc-d791-44cc-9591-3ed5eff6d9e6',
         imageUrl: '',
         date: 'June 21, 2023',
@@ -138,7 +145,7 @@ const newsItems = [
         description: " Iron and Oak Protective Services is actively involved in patrolling and improving conditions, but challenges remain in ensuring long-term safety."
     },
     {
-        title: 'SPD says officer injured, two arrested as police step into clash between private security team and Capitol Hill protesters — UPDATE',
+        title: 'SPD officer injured, two arrested as police step into clash between private security & protesters',
         slug: 'spd-says-officer-injured-two-arrested-as-police-step-into-clash-between-private-security-team-and-capitol-hill-protesters-update',
         url: 'https://www.capitolhillseattle.com/2020/08/spd-says-officer-injured-two-arrested-as-police-step-into-clash-between-private-security-team-and-capitol-hill-protesters/',
         imageUrl: 'https://i0.wp.com/www.capitolhillseattle.com/wp-content/uploads/2020/08/Mitgang_200812_0132-scaled.jpg?w=1168&ssl=1',
@@ -147,7 +154,7 @@ const newsItems = [
     },
 
     {
-        title: 'I wish I could’ve saved her: Security officer recalls fatal shooting of pregnant woman in Seattle',
+        title: 'I wish I could’ve saved her: Security officer recalls fatal shooting of pregnant woman',
         slug: 'i-wish-i-couldve-saved-her-security-officer-recalls-fatal-shooting-of-pregnant-woman-in-seattle-randy-norberg-eina-kwon-suspect-cordell-goosby-shots-fired-gunshot-wounds',
         description: 'Security officer Randy Norberg recounts his harrowing experience helping Eina Kwon after she was shot while pregnant. The tragic incident has left a lasting impact on Norberg and highlights ongoing concerns about safety in Seattle.',
         url: 'https://cbsaustin.com/news/nation-world/i-wish-i-couldve-saved-her-security-officer-recalls-fatal-shooting-of-pregnant-woman-in-seattle-randy-norberg-eina-kwon-suspect-cordell-goosby-shots-fired-gunshot-wounds',
@@ -192,9 +199,8 @@ const Media: React.FC = () => {
 
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
     const currentItems = newsItems.slice(startIndex, startIndex + ITEMS_PER_PAGE);
-
     return (
-        <div className='w-[screen] '>
+        <div className='w-screen min-w-[350px]'>
             <VideoSection videoSrc={'/seattleVidMedia.webm'} size={'1/3'} includeBrand={true} text='Media & Articles' />
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
@@ -202,10 +208,10 @@ const Media: React.FC = () => {
                         <div
                             key={index}
                             className={`h-full ${transitionDirection === 'forward'
-                                    ? 'slide-enter'
-                                    : transitionDirection === 'backward'
-                                        ? 'reverse-slide-enter'
-                                        : ''
+                                ? styles.slideEnter
+                                : transitionDirection === 'backward'
+                                    ? styles.reverseSlideEnter
+                                    : ''
                                 }`}
                         >
                             <MediaItem

@@ -74,7 +74,7 @@ const MediaContent: React.FC<MediaContentProps> = ({ videoEmbed, videoUrl, image
                 fill
                 sizes="25vw"
                 className="object-cover group-hover:grayscale-[50%]"
-                loading="lazy"
+                priority
             
             />
         );

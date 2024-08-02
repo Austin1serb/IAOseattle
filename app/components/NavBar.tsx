@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
         return Math.min(scrollY / maxScroll, 0.8);
     };
     return (
-        <nav id="navbar" className="bg-transparent text-on-primary absolute top-0 z-50 shadow-lg backdrop-blur w-screen transition-all duration-300"
+        <nav id="navbar" className="bg-transparent text-on-primary absolute top-0 z-50 shadow-lg backdrop-blur w-full transition-all duration-300"
             style={{ backgroundColor: `rgba(0, 0, 0, ${getOpacity()})` }}
         >
             <div className="max-w-8xl mx-auto px-2 sm:px-6 lg:px-8">

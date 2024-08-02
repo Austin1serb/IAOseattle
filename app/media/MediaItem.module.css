@@ -1,0 +1,48 @@
+/* Media.module.css */
+
+  
+  .slideEnter {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+    will-change: transform, opacity;
+  }
+  
+  .slideEnterActive {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
+  }
+  
+  .slideExit {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .slideExitActive {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+    transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
+  }
+  
+  .reverseSlideEnter {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+    will-change: transform, opacity;
+  }
+  
+  .reverseSlideEnterActive {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
+  }
+  
+  .reverseSlideExit {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .reverseSlideExitActive {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+    transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
+  }

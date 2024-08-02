@@ -14,8 +14,8 @@ export default function Home() {
     <div className="relative bg-background text-on-background">
       <div className="absolute sm:top-12 md:top-20 lg:top-24 left-20 inset-0 flex flex-col items-start justify-start z-10">
         <div>
-          <h1 className="text-white text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold uppercase">Iron & Oak</h1>
-          <p className="text-white text-sm sm:text-base md:text-2xl text-center">Protective Services</p>
+          <h1 className="text-tranparent text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold uppercase">Iron & Oak</h1>
+          <p className="text-tranparent text-sm sm:text-base md:text-2xl text-center">Protective Services</p>
         </div>
         <div className="w-full -ml-2.5">
         <div className="text-white mt-16 w-1/3 bg-secondary-darktransparen backdrop-blur p-4 rounded-lg">

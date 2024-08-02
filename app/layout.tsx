@@ -21,15 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-       
-          <div className="sticky top-0 z-50">
+        <div className="sticky top-0 z-50 w-screen">
+          <Navbar />
+        </div>
+        {children}
+        <Footer />
 
-            <Navbar />
-
-          </div>
-          {children}
-          <Footer />
-       
       </body>
     </html>
   );

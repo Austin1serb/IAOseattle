@@ -1,6 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
-import MediaContent from './MediaContent';
+import dynamic from 'next/dynamic';
+
+const MediaContent = dynamic(() => import('./MediaContent'), {
+    loading: () => <div className="absolute w-full h-full bg-gray-800 animate-pulse" />,
+    ssr: true,
+});
 
 interface MediaItemProps {
     title: string;
@@ -13,14 +18,19 @@ interface MediaItemProps {
     date: string;
 }
 
-const MediaItem: React.FC<MediaItemProps> = ({ title, slug, description, imageUrl, date, videoUrl, videoEmbed }) => {
+const MediaItem: React.FC<MediaItemProps> = ({
+    title,
+    slug,
+    description,
+    imageUrl,
+    date,
+    videoUrl,
+    videoEmbed,
+}) => {
     return (
-        <div
-
-            className="bg-white rounded-lg shadow-2xl overflow-hidden flex flex-col justify-between items-center w-full h-full group hover:scale-[98%]"
-        >
+        <div className="bg-white rounded-lg shadow-2xl overflow-hidden flex flex-col justify-between items-center w-full h-[525px] group hover:scale-[98%]">
             <div>
-                <div className="relative w-full pb-[56.25%] ">
+                <div className="relative w-full pb-[56.25%]">
                     <MediaContent
                         videoEmbed={videoEmbed}
                         videoUrl={videoUrl}
@@ -29,20 +39,24 @@ const MediaItem: React.FC<MediaItemProps> = ({ title, slug, description, imageUr
                     />
                 </div>
                 <div className="p-4">
-                <Link
-                    aria-label={`Link to article ${title}`}
-                    href={`/articles/${slug}`}
-                    >
-
-                    <h2 className="text-xl font-bold mb-2">{title}</h2>
-                    <p className="text-gray-600 mb-4">{description}</p>
-                </Link>
+                    <Link aria-label={`Link to article ${title}`} href={`/articles/${slug}`}>
+                        <div className="overflow-hidden relative">
+                            <div className="line-clamp-combined line-clamp-6 h-40">
+                                <h2 className="text-xl font-bold mb-2">{title}</h2>
+                                <p className="text-gray-600">
+                                    {description}
+                                </p>
+                            </div>
+                            <div className="absolute bottom-0 left-0 w-full h-6 bg-gradient-to-l from-white"></div>
+                        </div>
+                    </Link>
                 </div>
             </div>
             <Link
                 aria-label={`Link to article ${title}`}
                 href={`/articles/${slug}`}
-                className="flex w-full flex-col justify-between">
+                className="flex w-full flex-col justify-between"
+            >
                 <div className="mb-4">
                     <span
                         aria-label={`Read more about ${title}`}
