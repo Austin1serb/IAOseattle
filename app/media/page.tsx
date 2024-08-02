@@ -20,7 +20,7 @@ const newsItems = [
         url: 'https://komonews.com/news/local/downtown-seattle-association-hires-private-security-guards-amid-police-staffing-issues',
         imageUrl: 'https://komonews.com/resources/media/eb09d7de-4c5b-4f2d-9b1d-4f12db7a7798-large16x9_Security.jpg',
         date: 'July 28, 2023',
-        videoEmbed: '<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/b206af068557454bb976a818278226d1.m3u8&autostart=false"  frameborder="0" scrolling="auto" loading="lazy"></iframe>'
+        videoEmbed: '<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/b206af068557454bb976a818278226d1.m3u8&autostart=true"  frameborder="0" scrolling="auto" loading="lazy"></iframe>'
     },
     {
         title: "Private Security & SPD Patrols",
@@ -42,7 +42,7 @@ const newsItems = [
         title: 'Person sought in connection to shooting that killed 2, injured 1 in Capitol Hill',
         slug: 'person-sought-in-connection-to-shooting-that-killed-2-injured-1-in-capitol-hill',
         url: 'https://komonews.com/news/local/seattle-gun-violence-fatal-shooting-capitol-hill-seattle-police-department-adrian-diaz-king-county-iron-oak-security-guards#',
-        videoEmbed: '<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/a669121946f448a5b4a3e9fd07487482.m3u8&autostart=false" frameborder="0" scrolling="auto" loading="lazy"></iframe>',
+        videoEmbed: '<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/a669121946f448a5b4a3e9fd07487482.m3u8&autostart=true" frameborder="0" scrolling="auto" loading="lazy"></iframe>',
         imageUrl: '',
         date: 'May 1, 2023',
         description: 'Seattle police are searching for a suspect connected to a shooting in Capitol Hill that resulted in two fatalities and one critical injury. The incident occurred at Cal Anderson Park, marking the second deadly shooting in the area this month.'
@@ -80,7 +80,7 @@ const newsItems = [
         url: 'https://komonews.com/news/local/private-security-companies-see-massive-demand-for-service-struggle-to-hire-more-officers',
         imageUrl: '',
         date: 'April 14, 2023',
-        videoEmbed: '<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/464b0c8253b0492d83e19c90f9be5e2a.m3u8&autostart=false" frameborder="0" scrolling="auto" loading="lazy"></iframe>'
+        videoEmbed: '<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/464b0c8253b0492d83e19c90f9be5e2a.m3u8&autostart=true" frameborder="0" scrolling="auto" loading="lazy"></iframe>'
     },
 
     {
@@ -116,7 +116,7 @@ const newsItems = [
         url: 'https://komonews.com/news/local/downtown-seattle-association-hires-private-security-guards-amid-police-staffing-issues',
         imageUrl: '',
         date: 'February 1, 2022',
-        videoEmbed: '<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/b206af068557454bb976a818278226d1.m3u8&autostart=false" frameborder="0" scrolling="auto" loading="lazy"></iframe>'
+        videoEmbed: '<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/b206af068557454bb976a818278226d1.m3u8&autostart=true" frameborder="0" scrolling="auto" loading="lazy"></iframe>'
     },
 
     {
@@ -132,7 +132,7 @@ const newsItems = [
         title: "Efforts to clean up crime in Downtown Seattle continue; business owners still see threats",
         slug: "efforts-to-clean-up-crime-in-downtown-seattle-continue-business-owners-still-see-threats",
         url: "https://komonews.com/news/local/efforts-to-clean-up-crime-in-downtown-seattle-continue-business-owners-still-see-threats#",
-        videoEmbed: "<iframe src=\"https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/77dcc4c03d4a4543bdc798d44eef6057.m3u8&autostart=false\" width=\"640\" height=\"360\" frameborder=\"0\" scrolling=\"auto\" loading=\"lazy\"></iframe>",
+        videoEmbed: "<iframe src=\"https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/77dcc4c03d4a4543bdc798d44eef6057.m3u8&autostart=true\" width=\"640\" height=\"360\" frameborder=\"0\" scrolling=\"auto\" loading=\"lazy\"></iframe>",
         imageUrl: "https://komonews.com/resources/media2/c77dcc4c03d4a4543bdc798d44eef6057.jpg",
         date: "April 23, 2022",
         description: " Iron and Oak Protective Services is actively involved in patrolling and improving conditions, but challenges remain in ensuring long-term safety."
@@ -153,7 +153,7 @@ const newsItems = [
         url: 'https://cbsaustin.com/news/nation-world/i-wish-i-couldve-saved-her-security-officer-recalls-fatal-shooting-of-pregnant-woman-in-seattle-randy-norberg-eina-kwon-suspect-cordell-goosby-shots-fired-gunshot-wounds',
         imageUrl: '',
         date: 'June 21, 2023',
-        videoEmbed: '<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/88f699c6d79c41e4af3e6cdf186b3709.m3u8&autostart=false"  frameborder="0" scrolling="auto" loading="lazy"></iframe>'
+        videoEmbed: '<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/88f699c6d79c41e4af3e6cdf186b3709.m3u8&autostart=true"  frameborder="0" scrolling="auto" loading="lazy"></iframe>'
     },
 
     {
@@ -180,7 +180,7 @@ const Media: React.FC = () => {
         if (page !== currentPage) {
             const direction = page > currentPage ? 'forward' : 'backward';
             setTransitionDirection(direction);
-    
+
             setTimeout(() => {
                 requestAnimationFrame(() => {
                     setCurrentPage(page);
@@ -193,7 +193,7 @@ const Media: React.FC = () => {
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
     const currentItems = newsItems.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
- return( 
+    return (
         <div className='w-[screen] '>
             <VideoSection videoSrc={'/seattleVidMedia.webm'} size={'1/3'} includeBrand={true} text='Media & Articles' />
             <div className="container mx-auto px-4">
@@ -201,13 +201,12 @@ const Media: React.FC = () => {
                     {currentItems.map((item, index) => (
                         <div
                             key={index}
-                            className={`h-full ${
-                                transitionDirection === 'forward'
+                            className={`h-full ${transitionDirection === 'forward'
                                     ? 'slide-enter'
                                     : transitionDirection === 'backward'
-                                    ? 'reverse-slide-enter'
-                                    : ''
-                            }`}
+                                        ? 'reverse-slide-enter'
+                                        : ''
+                                }`}
                         >
                             <MediaItem
                                 slug={item.slug}
@@ -222,10 +221,10 @@ const Media: React.FC = () => {
                         </div>
                     ))}
                 </div>
-                <Pagination 
-                    currentPage={currentPage} 
-                    totalPages={totalPages} 
-                    onPageChange={handlePageChange} 
+                <Pagination
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    onPageChange={handlePageChange}
                 />
             </div>
         </div>
