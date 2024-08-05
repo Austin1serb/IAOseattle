@@ -3,7 +3,7 @@ import React from 'react';
 const MediaItemSkeleton: React.FC = () => {
     return (
         <div
-            className="bg-white rounded-lg shadow-2xl overflow-hidden flex flex-col justify-between items-center w-full h-[525px] animate-pulse"
+            className="bg-white rounded-lg shadow-2xl overflow-hidden flex flex-col justify-between items-center w-full h-[525px] max-w-[425px] min-w-350px animate-pulse"
         >
             <div className="relative w-full pb-[56.25%] bg-gray-800" />
             <div className="p-4 w-full flex-1">

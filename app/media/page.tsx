@@ -5,10 +5,11 @@ import Pagination from '../components/Pagination';
 import styles from './MediaItem.module.css';
 import dynamic from 'next/dynamic';
 import MediaItemSkeleton from '../components/skeletons/MediaItemSkeleton';
+import ScrollOnLoad from '../components/utils/ScrollOnLoad';
 
 const MediaItem = dynamic(() => import('../components/MediaItem'), {
-    ssr: true, 
-    loading: () => <MediaItemSkeleton/>, 
+    ssr: true,
+    loading: () => <MediaItemSkeleton />,
 });
 
 const newsItems = [
@@ -199,41 +200,65 @@ const Media: React.FC = () => {
 
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
     const currentItems = newsItems.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+    const getClassName = (transitionDirection: string): string => {
+        if (transitionDirection === 'forward') {
+            return styles.slideEnter;
+        } else if (transitionDirection === 'backward') {
+            return styles.reverseSlideEnter;
+        } else {
+            return '';
+        }
+    };
     return (
-        <div className='w-screen min-w-[350px]'>
-            <VideoSection videoSrc={'/seattleVidMedia.webm'} size={'1/3'} includeBrand={true} text='Media & Articles' />
-            <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+        <main className="w-screen min-w-[350px]">
+            <ScrollOnLoad scrollPosition={150} />
+            <header aria-label="Media and Articles Header">
+                <VideoSection
+                    videoSrc={'/seattleVidMedia.webm'}
+                    size={'1/3'}
+                    includeBrand={true}
+                    text='Media & Articles'
+                />
+            </header>
+
+            <section
+                aria-label="Media and Articles Section"
+                className="container mx-auto px-4"
+            >
+                <div
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-12 mb-8 justify-center items-center"
+                >
                     {currentItems.map((item, index) => (
-                        <div
-                            key={index}
-                            className={`h-full ${transitionDirection === 'forward'
-                                ? styles.slideEnter
-                                : transitionDirection === 'backward'
-                                    ? styles.reverseSlideEnter
-                                    : ''
-                                }`}
+                        <article
+                            key={`${item.title}-media-item-${index}`}
+                            className={`h-full ${getClassName(transitionDirection)}`}
+                            aria-labelledby={`media-item-title-${item.title}`}
                         >
                             <MediaItem
                                 slug={item.slug}
                                 title={item.title}
                                 description={item.description}
-                                url={item.url}
                                 imageUrl={item.imageUrl}
                                 videoUrl={item.videoUrl}
                                 videoEmbed={item.videoEmbed}
                                 date={item.date}
+                                id={`media-item-id-${index}`}
                             />
-                        </div>
+                        </article>
                     ))}
                 </div>
-                <Pagination
-                    currentPage={currentPage}
-                    totalPages={totalPages}
-                    onPageChange={handlePageChange}
-                />
-            </div>
-        </div>
+
+
+
+                <nav aria-label="Pagination Navigation">
+                    <Pagination
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                        onPageChange={handlePageChange}
+                    />
+                </nav>
+            </section>
+        </main>
     );
 };
 

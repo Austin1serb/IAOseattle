@@ -11,11 +11,11 @@ interface MediaItemProps {
     title: string;
     slug: string;
     description: string;
-    url: string;
     imageUrl: string;
     videoUrl?: string;
     videoEmbed?: string;
     date: string;
+    id: string;
 }
 
 const MediaItem: React.FC<MediaItemProps> = ({
@@ -28,9 +28,9 @@ const MediaItem: React.FC<MediaItemProps> = ({
     videoEmbed,
 }) => {
     return (
-        <div className="bg-white rounded-lg shadow-2xl overflow-hidden flex flex-col justify-between items-center w-full h-[525px] group hover:scale-[98%]">
-            <div>
-                <div className="relative w-full pb-[56.25%]">
+        <div className="bg-white rounded-lg ddd overflow-hidden flex flex-col justify-between items-center w-full h-[525px] max-w-[425px] group hover:scale-[98%]">
+            <header aria-label='media-card-header'>
+                <div aria-label='media-card-image/video' className="relative w-full pb-[56.25%]">
                     <MediaContent
                         videoEmbed={videoEmbed}
                         videoUrl={videoUrl}
@@ -38,7 +38,7 @@ const MediaItem: React.FC<MediaItemProps> = ({
                         title={title}
                     />
                 </div>
-                <div className="p-4">
+                <div className="p-4" aria-label='media-card-body-text'>
                     <Link aria-label={`Link to article ${title}`} href={`/articles/${slug}`}>
                         <div className="overflow-hidden relative">
                             <div className="line-clamp-combined line-clamp-6 h-40">
@@ -51,7 +51,7 @@ const MediaItem: React.FC<MediaItemProps> = ({
                         </div>
                     </Link>
                 </div>
-            </div>
+            </header>
             <Link
                 aria-label={`Link to article ${title}`}
                 href={`/articles/${slug}`}

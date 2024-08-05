@@ -2,6 +2,7 @@
 
 import ClipboardButton from '@/app/components/ClipboardButton';
 import Socials from '@/app/components/Socials';
+import ScrollOnLoad from '@/app/components/utils/ScrollOnLoad';
 import VideoSection from '@/app/components/VideoSection';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -666,7 +667,7 @@ const articles = [
         <p class="mb-4">Their presence began this spring at buildings boarded during the COVID-19 restrictions as property management companies sought increased security for empty restaurants and storefronts. The guards were typically uniformed and often armed with a handgun. Some became part of the odd city nighttime scenes of COVID-era Pike/Pine as they kicked back on store furniture and watched videos on their phones in darkened showrooms.</p>
     
         <blockquote class="border-l-4 border-blue-500 pl-4 italic my-4">
-            UPDATE: The owner of another private security firm working out of the Odd Fellows Building at 10th and E Pine tells CHS that SPD’s fast and heavy response Wednesday night came after he reported threats made against his firm and a business in the building they patrol. Aleksandr Butowicz of Iron and Oak tells CHS that threats were made against his company and the business and that he notified SPD. Butowicz said he was also contacted by Homeland Security about the report. Butowicz says his personnel were not part of the security response that set off the 11th Ave conflict. “Iconic has been really aggressive with their overall handling of folks. We focus on deescalation,” Butowicz said. He reports that Iron and Oak guards aren’t armed with firearms — their weapons fire pepper spray rounds, Butowicz said. “I don’t really believe in firing guns in the most densely populated area of Seattle,” he said.
+            UPDATE: The owner of another private security firm working out of the Odd Fellows Building at 10th and E Pine tells CHS that SPD’s fast and heavy response Wednesday night came after he reported threats made against his firm and a business in the building they patrol. Aleksandr Butowicz of Iron and Oak tells CHS that threats were made against his company and the business and that he notified SPD. Butowicz said he was also contacted by Homeland Security about the report. Butowicz says his personnel were not part of the security response that set off the 11th Ave conflict. “Iconic has been really aggressive with their overall handling of folks. We focus on de-escalation,” Butowicz said. He reports that Iron and Oak guards aren’t armed with firearms — their weapons fire pepper spray rounds, Butowicz said. “I don’t really believe in firing guns in the most densely populated area of Seattle,” he said.
         </blockquote>
     
         <p class="mb-4">With CHOP, the presence of the security firms has escalated. CHS reported here on the arrival of Iconic Global along 12th Ave where the private “high threat protection” team became part of the heavy security around a collection of businesses and properties on the edge of the protest zone.</p>
@@ -1037,18 +1038,19 @@ export default function Page({ params }: { params: { slug: string } }) {
     }
 
     return (
-        <div className='min-w-[350px] w-screen'>
-            <VideoSection videoSrc={'/seattleVidAbout.webm'} size={'96'} includeBrand={true} />
-            <div className="container mx-auto px-4 h-auto w-full min-w-[350px]">
-                <div className='transform md:-translate-y-40 -translate-y-20'>
-                    <h1 className="text-white text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold uppercase text-center">Media & Articles</h1>
-                </div>
-
+        <main className='min-w-[350px] w-screen'>
+            <ScrollOnLoad scrollPosition={150} />
+            <header aria-label="Media and Articles Header">
+                <VideoSection videoSrc={'/seattleVidAbout.webm'} size={'96'} includeBrand={true} text='Media & Articles' />
+            </header>
+            <section className="container mx-auto px-4 h-auto w-full min-w-[350px]">
                 <div className="p-4 pt-0">
-                    <h1 className="text-4xl font-bold">{article.title}</h1>
-                    <p className="text-gray-600 mb-4">{article.date}</p>
+                    <header>
+                        <h1 className="text-4xl font-bold">{article.title}</h1>
+                        <p className="text-gray-600 mb-4">{article.date}</p>
+                    </header>
                     {videoEmbedSrc ? (
-                        <div className="relative w-full md:w-3/5 border-l-4 border-blue-500 pl-4">
+                        <div className="relative w-full md:w-3/5 border-l-4 border-blue-500 pl-4" aria-label='video container'>
                             <div className="relative w-full" style={{ paddingTop: '56.25%' }}> {/* 16:9 Aspect Ratio */}
                                 <iframe
                                     title="Media player"
@@ -1061,7 +1063,9 @@ export default function Page({ params }: { params: { slug: string } }) {
                             </div>
                         </div>
                     ) : (
-                        <div className="relative w-1/2 h-[43vh] object-cover border-l-4 border-blue-500 pl-4">
+                        <div className="relative w-1/2 h-[43vh] object-cover border-l-4 border-blue-500 pl-4"
+                            aria-label='image container'
+                        >
                             <Image
                                 src={article.imageUrl || defaultImageUrl}
                                 alt={article.title}
@@ -1071,7 +1075,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                             />
                         </div>
                     )}
-                    <div className="pt-4 prose prose-lg">
+                    <div aria-label='News-Text' className="pt-4 prose prose-lg">
                         <div dangerouslySetInnerHTML={{ __html: article.content }} />
                     </div>
                     <Link
@@ -1079,6 +1083,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-600 transition-all duration-150 underline hover:text-blue-800 cursor-pointer"
+                        aria-label='link-to-news-outlet'
                     >
                         Read the full article on the news outlet
                     </Link>
@@ -1090,8 +1095,8 @@ export default function Page({ params }: { params: { slug: string } }) {
                         <Socials title={article.title} slug={article.slug} />
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+        </main>
 
     );
 }

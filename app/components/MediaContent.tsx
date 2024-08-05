@@ -42,7 +42,7 @@ const MediaContent: React.FC<MediaContentProps> = ({ videoEmbed, videoUrl, image
                     aria-label='play button'
                     type='button'
                     onClick={handlePlayButtonClick}
-                    className="rounded-full p-2 flex items-center justify-center"
+                    className="rounded-full p-2 flex items-center justify-center hover:cursor-pointer"
                 >
                     <svg
                         stroke="currentColor"
