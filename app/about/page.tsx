@@ -11,7 +11,7 @@ const About: React.FC = () => {
     <div className='w-screen min-w-[350px]'>
       <ScrollOnLoad scrollPosition={150} />
       <header>
-        <VideoSection videoSrc={'/seattleVidMedia.webm'} size={'1/3'} text='About Us' />
+        <VideoSection videoSrc={'/seattleVidAbout.webm'} size={'1/3'} text='About Us' />
       </header>
       <main className='w-[85%] mx-auto'>
         <Intro />

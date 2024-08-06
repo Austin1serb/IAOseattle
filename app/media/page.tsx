@@ -216,7 +216,6 @@ const Media: React.FC = () => {
                 <VideoSection
                     videoSrc={'/seattleVidMedia.webm'}
                     size={'1/3'}
-                    includeBrand={true}
                     text='Media & Articles'
                 />
             </header>

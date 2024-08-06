@@ -12,7 +12,7 @@ interface IncidentData {
 export default function Home() {
   return (
     <div className="relative bg-background text-on-background">
-        <VideoSection videoSrc={"/seattleHome.webm"} size='screen' homePage={true} />
+        <VideoSection videoSrc={"/seattleVidAbout.webm"} size='screen' homePage={true} />
       <div className="absolute sm:top-12 md:top-20 lg:top-[90px] left-[55px] inset-0 flex flex-col items-start justify-start z-10">
         {/*<div>
           <h1 className="text-blue-900 text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold uppercase">Iron & Oak</h1>
