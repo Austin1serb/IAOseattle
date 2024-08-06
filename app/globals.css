@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 :root {
+  /* FONT */
+  --font-montserrat: 'Montserrat', sans-serif;
   /* Primary and Secondary Colors */
   --color-primary: #33A8A5;
   --color-primary-light: #84cccb;
@@ -41,7 +43,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Roboto, sans-serif;
+  font-family: var(--font-montserrat);
 }
 
 @media (max-width: 350px) {
