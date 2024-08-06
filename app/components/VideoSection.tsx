@@ -21,17 +21,17 @@ const VideoPlayer = dynamic(() => import('./VideoPlayer'), {
 interface VideoSectionProps {
     videoSrc: string;
     size?: string;
-    includeBrand?: boolean;
+    homePage?: boolean;
     text?: string;
 }
 
-const VideoSection: React.FC<VideoSectionProps> = ({ videoSrc, size = '96', includeBrand, text }) => {
+const VideoSection: React.FC<VideoSectionProps> = ({ videoSrc, size = '96', homePage, text }) => {
     return (
         <div className={`relative w-full h-${size}`}>
             <VideoPlayer size={size} videoSrc={videoSrc} />
-            <div className="hidden absolute sm:top-12 md:top-20 lg:top-20 left-12 inset-0 md:flex flex-col items-start justify-start z-10 ">
+            <div className="hidden absolute sm:top-12 md:top-20 lg:top-20 left-10 inset-0 md:flex flex-col items-start justify-start z-10 ">
                 <div>
-                    <h1 className="text-shadow text-white sm:text-4xl md:text-6xl lg:text-7xl font-bold uppercase ">Iron & Oak</h1>
+                    <h1 className=" text-shadow text-white sm:text-4xl md:text-6xl lg:text-7xl font-bold uppercase ">Iron & Oak</h1>
                     <p className="text-shadow-2 text-white text-base md:text-2xl text-center">Protective Services</p>
                 </div>
             </div>
