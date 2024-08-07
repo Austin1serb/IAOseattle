@@ -1,16 +1,18 @@
 'use client'
-import React, { useEffect, useState } from 'react';
-import TeamMemberCard from './TeamMemberCard'; // Import the TeamMemberCard component
 
-interface TeamMember {
-  id: string;
-  fields: {
-    'Preferred Name': string;
-    'Primary Team': string;
-    'Reports To': string;
-    Photo: { url: string }[];
-  };
-}
+import React, { useEffect, useState } from 'react';
+import TeamMemberCard from './TeamMemberCard';
+import { TeamMember } from './AboutTypes';
+
+// Filter function to apply various filtering criteria
+const filterTeamMembers = (members: TeamMember[]): TeamMember[] => {
+  return members.filter((member) =>
+    // Exclude members from "Training & Recruitment"
+    member.fields['Primary Team'] !== 'Training & Recruitment' &&
+    // Exclude members without a preferred name (undefined or empty)
+    member.fields['Preferred Name'] && member.fields['Preferred Name'].trim() !== ''
+  );
+};
 
 const MeetTheTeam: React.FC = () => {
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
@@ -22,9 +24,11 @@ const MeetTheTeam: React.FC = () => {
         if (!response.ok) {
           throw new Error('Failed to fetch team members');
         }
-        const data = await response.json();
-        setTeamMembers(data);
-        console.log(teamMembers)
+        const data: TeamMember[] = await response.json();
+
+        // Apply filtering
+        const filteredMembers = filterTeamMembers(data);
+        setTeamMembers(filteredMembers);
       } catch (error) {
         console.error('Error fetching team members:', error);
       }
@@ -34,7 +38,7 @@ const MeetTheTeam: React.FC = () => {
   }, []);
 
   return (
-    <section className="bg-gray-100 py-16">
+    <section className="bg-gray-300 py-16">
       <div className="max-w-5xl mx-auto px-8">
         <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 text-center mb-8">
           Meet the Team

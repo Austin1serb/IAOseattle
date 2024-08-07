@@ -1,13 +1,13 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import VideoSection from '../components/VideoSection';
-import Pagination from '../components/Pagination';
+import Pagination from './components/Pagination';
 import styles from './MediaItem.module.css';
 import dynamic from 'next/dynamic';
-import MediaItemSkeleton from '../components/skeletons/MediaItemSkeleton';
+import MediaItemSkeleton from './components/MediaItemSkeleton';
 import ScrollOnLoad from '../components/utils/ScrollOnLoad';
 
-const MediaItem = dynamic(() => import('../components/MediaItem'), {
+const MediaItem = dynamic(() => import('./components/MediaItem'), {
     ssr: true,
     loading: () => <MediaItemSkeleton />,
 });
@@ -17,7 +17,7 @@ const newsItems = [
         title: 'Private Downtown Seattle Security Stopgap',
         slug: 'private-downtown-seattle-security-stopgap',
         description: 'Iron and Oak security is providing interim security services in downtown Seattle amidst police staffing shortages.',
-        url: 'https://mynorthwest.com/3343034/private-downtown-seattle-security-stopgap/',
+        url: 'https://i.imgur.com/2Q2eaGq.jpeg',
         imageUrl: 'https://mynorthwest.com/wp-content/uploads/2022/02/private-security-rantz-900-900x506.jpg',
         date: 'February 10, 2022',
     },
@@ -176,47 +176,56 @@ const newsItems = [
 
 ];
 
-const ITEMS_PER_PAGE = 5; // Number of items per page
+const ITEMS_PER_PAGE = 5; // Total items per page (5 items per row, 3 rows)
 
 const Media: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(1);
-    const [transitionDirection, setTransitionDirection] = useState('');
+    const [transitionStage, setTransitionStage] = useState<'idle' | 'out' | 'in'>('idle');
+    const [pendingPage, setPendingPage] = useState(currentPage);
+    const [direction, setDirection] = useState<'forward' | 'backward'>('forward');
 
     const totalPages = Math.ceil(newsItems.length / ITEMS_PER_PAGE);
 
+    useEffect(() => {
+        if (transitionStage === 'out') {
+            const timer = setTimeout(() => {
+                setTransitionStage('in');
+                setCurrentPage(pendingPage);
+            }, 400); // Match this with your CSS animation duration
+            return () => clearTimeout(timer);
+        }
+    }, [transitionStage, pendingPage]);
+
     const handlePageChange = (page: number) => {
         if (page !== currentPage) {
-            const direction = page > currentPage ? 'forward' : 'backward';
-            setTransitionDirection(direction);
-
-            setTimeout(() => {
-                requestAnimationFrame(() => {
-                    setCurrentPage(page);
-                    setTransitionDirection('');
-                });
-            }, 300); // Debounce duration
+            setPendingPage(page);
+            setDirection(page > currentPage ? 'forward' : 'backward');
+            setTransitionStage('out');
         }
     };
 
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
     const currentItems = newsItems.slice(startIndex, startIndex + ITEMS_PER_PAGE);
-    const getClassName = (transitionDirection: string): string => {
-        if (transitionDirection === 'forward') {
-            return styles.slideEnter;
-        } else if (transitionDirection === 'backward') {
-            return styles.reverseSlideEnter;
+
+    const getClassName = (): string => {
+        if (transitionStage === 'out') {
+            return direction === 'forward' ? styles.pageSlideOutForward : styles.pageSlideOutBackward;
+        } else if (transitionStage === 'in') {
+            return direction === 'forward' ? styles.pageSlideInForward : styles.pageSlideInBackward;
         } else {
             return '';
         }
     };
+
     return (
         <main className="w-screen min-w-[350px]">
             <ScrollOnLoad scrollPosition={150} />
             <header aria-label="Media and Articles Header">
                 <VideoSection
                     videoSrc={'/seattleVidMedia.webm'}
-                    size={'1/3'}
-                    text='Media & Articles'
+                    size="1/3"
+                    text="Media & Articles"
+                    homePage={false}
                 />
             </header>
 
@@ -224,13 +233,11 @@ const Media: React.FC = () => {
                 aria-label="Media and Articles Section"
                 className="container mx-auto px-4"
             >
-                <div
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-12 mb-8 justify-center items-center"
-                >
+                <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-8 justify-center items-center ${getClassName()}`}>
                     {currentItems.map((item, index) => (
                         <article
                             key={`${item.title}-media-item-${index}`}
-                            className={`h-full ${getClassName(transitionDirection)}`}
+                            className="h-full"
                             aria-labelledby={`media-item-title-${item.title}`}
                         >
                             <MediaItem
@@ -246,17 +253,15 @@ const Media: React.FC = () => {
                         </article>
                     ))}
                 </div>
-
-
-
-                <nav aria-label="Pagination Navigation">
-                    <Pagination
-                        currentPage={currentPage}
-                        totalPages={totalPages}
-                        onPageChange={handlePageChange}
-                    />
-                </nav>
             </section>
+
+            <nav aria-label="Pagination Navigation" className="container mx-auto px-4 mt-4">
+                <Pagination
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    onPageChange={handlePageChange}
+                />
+            </nav>
         </main>
     );
 };

@@ -10,7 +10,7 @@
   --color-primary-light: #84cccb;
   --color-primary-dark: #1c8b85;
 
-  --color-secondary: #3371A8;
+  --color-secondary: #0F75E0;
   --color-secondary-light: #4fb1e4;
   --color-secondary-dark: #102a71;
 
@@ -108,27 +108,6 @@ a:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }*/
-
-
-.fade-out {
-  position: relative;
-  overflow: hidden;
-  max-height: 4.5em;
-  /* Adjust based on your needs */
-  line-height: 1.5em;
-  /* Adjust based on your needs */
-}
-
-.fade-out::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 1.5em;
-  /* Match line-height */
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
-}
 
 
 

@@ -18,11 +18,11 @@ const Intro: React.FC = () => {
                 </div>
                 <div className="flex items-start px-12">
                     <div className="flex-1">
-                        <div className="relative float-right h-auto ml-4 mb-8 rounded z-10">
+                        <div className="relative float-right h-auto w-auto ml-4 mb-8 rounded z-10">
                             <Image
                                 src="https://i.imgur.com/bEyoBtZ.jpeg"
                                 alt="team-member-image"
-                                className="relative z-10"
+                                className="relative z-10 h-auto w-auto"
                                 height={300}
                                 width={300}
                             />

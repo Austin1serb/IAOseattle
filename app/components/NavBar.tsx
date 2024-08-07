@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
         setTotalScrollableHeight(document.documentElement.scrollHeight - window.innerHeight);
         const handleScroll = throttle(() => {
             setScrollY(window.scrollY);
-        }, 200); // Adjust the delay for the throttle as needed (in milliseconds)
+        }, 50); // Adjust the delay for the throttle as needed (in milliseconds)
 
         window.addEventListener('scroll', handleScroll);
 
@@ -41,6 +41,7 @@ const Navbar: React.FC = () => {
         // Convert the scroll fraction to an opacity value by taking the first two digits after the decimal point
         const opacity = Math.floor(scrollFraction * 100) / 100;
         // Ensure the opacity only takes effect after scrolling down a certain amount (e.g., 330px)
+
         if (scrollY > 300) {
             return opacity+.3;
         } else {

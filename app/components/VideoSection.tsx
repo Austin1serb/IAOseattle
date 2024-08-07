@@ -29,14 +29,14 @@ const VideoSection: React.FC<VideoSectionProps> = ({ videoSrc, size = '96', home
     return (
         <div className={`relative w-full h-${size}`}>
             <VideoPlayer size={size} videoSrc={videoSrc} />
-            <div className="hidden absolute sm:top-12 md:top-20 lg:top-20 left-10 inset-0 md:flex flex-col items-start justify-start z-10 ">
+            <div className={`text-nowrap ${homePage ? 'absolute inset-0 flex items-start md:justify-start z-10 top-20 left-8 md:items-start justify-center' : "hidden absolute sm:top-12 md:top-20 lg:top-20 left-10 inset-0 md-lg:flex flex-col items-start justify-start z-10"} `}>
                 <div>
-                    <h1 className=" text-shadow text-white sm:text-4xl md:text-6xl lg:text-7xl font-bold uppercase ">Iron & Oak</h1>
-                    <p className="text-shadow-2 text-white text-base md:text-2xl text-center">Protective Services</p>
+                    <h1 className={`${homePage ? 'text-5xl sm:text-6xl md:text-8xl ' : "sm:text-4xl md:text-3xl lg:text-5xl"} text-shadow text-white font-bold uppercase text-center`}>Iron & Oak</h1>
+                    <p className={`text-shadow-2 text-white text-center ${homePage ? 'text-xl md:text-2xl' : 'text-base md:text-sm md-lg:text-lg'}`}>Protective Services</p>
                 </div>
             </div>
 
-            <div className='transform lg:-translate-y-36 md:-translate-y-32 sm:-translate-y-20 xs:-translate-y-16 -translate-y-20'>
+            <div className={`${homePage && 'hidden'} transform lg:-translate-y-36 md:-translate-y-32 sm:-translate-y-20 xs:-translate-y-16 -translate-y-20`}>
                 <h1 className="text-shadow text-white text-3xl xs:text-5xl sm:text-6xl md:text-[78px] lg:text-8xl font-bold uppercase text-center">{text}</h1>
             </div>
         </div>

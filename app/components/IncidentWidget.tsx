@@ -9,7 +9,7 @@ const IncidentWidget = () => {
     const [error, setError] = useState(null);
     const [incidentTypes, setIncidentTypes] = useState({});
     const [records, setRecords] = useState([]);
-    const [overdosesPrevented, setOverdosesPrevented] = useState(0);
+    const [overdosesPrevented, setOverdosesPrevented] = useState(1);
     const [todaysIncidents, setTodaysIncidents] = useState(0);
 
     useEffect(() => {
@@ -60,7 +60,7 @@ const IncidentWidget = () => {
                 setIncidentTypes(typesCount);
                 setOverdosesPrevented(overdoses);
                 setTodaysIncidents(todayCount);
-            } catch (err:any|unknown) {
+            } catch (err: any | unknown) {
                 console.error('Failed to fetch data:', err);
                 setError(err.message);
             }
@@ -121,7 +121,7 @@ const IncidentWidget = () => {
     };
 
     return (
-        <div className="absolute top-[30%] right-8 left- widget-container mx-auto p-2 z-20 backdrop-blur-md max-w-[500px] rounded-lg">
+        <div className="widget-container mx-auto p-4 z-20 backdrop-blur-md max-w-[500px] rounded-lg">
             <div className="stats-container flex justify-around mb-4 w-full">
                 <div className="stat b-primary-light">
                     <h2 className="text-md font-bold text-white">Incidents Resolved This Month</h2>
@@ -132,7 +132,7 @@ const IncidentWidget = () => {
                 <div className="stat">
                     <h2 className="text-md font-bold text-white">Overdoses Prevented</h2>
                     {error ? <p>Not Available: {error}</p> : (
-                        <IncidentCount totalCount={overdosesPrevented} color="text-green-500" />
+                        <IncidentCount totalCount={overdosesPrevented === 0 ? 1 : overdosesPrevented} color="text-green-500" />
                     )}
                 </div>
             </div>

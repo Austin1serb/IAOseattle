@@ -10,6 +10,7 @@ const config: Config = {
   theme: {
     screens:{
       'xs': '475px',
+      'md-lg': '900px',
       ...defaultTheme.screens,
     },
     extend: {
@@ -20,20 +21,21 @@ const config: Config = {
       },
       colors: {
         primary: {
-          DEFAULT: '#33A8A5',
-          light: '#84cccb',
-          dark: '#1c8b85',
+          DEFAULT: '#03dac6',
+          light: '#d4f6f2',
+          dark: '#00b798',
         },
         secondary: {
-          DEFAULT: '#3371A8',
+          DEFAULT: '#0F75E0',
           light: '#4fb1e4',
           dark: '#102a71',
           darktransparent:'#102a7190',
         },
+        accent:'#c503da',
         background: '#FDFCFD',
         surface: '#FFFFFF',
         error: '#B00020',
-        'on-primary': '#FFFFFF',
+        'on-primary': '#000000',
         'on-secondary': '#FFFFFF',
         'on-background': '#000000',
         'on-surface': '#000000',

@@ -5,9 +5,10 @@ interface Props {
     size?: string;
 }
 
-const VideoPlayer: React.FC<Props> = ({ videoSrc, size = '96' }) => {
+const VideoPlayer: React.FC<Props> = ({ videoSrc, size }) => {
+    
     return (
-        <div className={`relative w-full h-1/3 md:h-96 object-cover min-h-48`}>
+        <div className={`relative w-full object-cover  min-h-48 ${size ? `h-${size}` : 'h-1/3'}`}>
             <video
                 className="w-full h-full object-cover min-h-48"
                 autoPlay
