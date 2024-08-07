@@ -1041,7 +1041,7 @@ export default function Page({ params }: { params: { slug: string } }) {
         <main className='min-w-[350px] w-screen'>
             <ScrollOnLoad scrollPosition={150} />
             <header aria-label="Media and Articles Header">
-                <VideoSection videoSrc={'/seattleVidAbout.webm'} size={'96'} includeBrand={true} text='Media & Articles' />
+                <VideoSection videoSrc={'/seattleVidAbout.webm'} size={'96'} text='Media & Articles' />
             </header>
             <section className="container mx-auto px-4 h-auto w-full min-w-[350px]">
                 <div className="p-4 pt-0">

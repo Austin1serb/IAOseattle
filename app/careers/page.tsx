@@ -5,7 +5,7 @@ import ScrollOnLoad from '../components/utils/ScrollOnLoad'
 const page = () => {
   return (
     <div>
-      <VideoSection videoSrc={'/seattleVid2.webm'} size={'1/3'} includeBrand={false} />
+      <VideoSection videoSrc={'/seattleVid2.webm'} size={'1/3'}  />
       <ScrollOnLoad scrollPosition={150}/>
     </div>
   )
