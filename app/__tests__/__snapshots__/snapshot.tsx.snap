@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+<div>
+  <div
+    class="relative h-screen w-screen overflow-hidden text-white"
+  >
+    <div
+      class="relative w-full h-screen"
+    >
+      <div
+        class="relative w-full h-1/3 md:h-96 object-cover min-h-48"
+      >
+        <img
+          alt="background-img"
+          class="w-full h-full object-cover min-h-48"
+          data-nimg="fill"
+          decoding="async"
+          loading="lazy"
+          sizes="100vw"
+          src="/_next/image?url=%2Fimages%2FseattleVidMediaPic.jpg&w=3840&q=75"
+          srcset="/_next/image?url=%2Fimages%2FseattleVidMediaPic.jpg&w=640&q=75 640w, /_next/image?url=%2Fimages%2FseattleVidMediaPic.jpg&w=750&q=75 750w, /_next/image?url=%2Fimages%2FseattleVidMediaPic.jpg&w=828&q=75 828w, /_next/image?url=%2Fimages%2FseattleVidMediaPic.jpg&w=1080&q=75 1080w, /_next/image?url=%2Fimages%2FseattleVidMediaPic.jpg&w=1200&q=75 1200w, /_next/image?url=%2Fimages%2FseattleVidMediaPic.jpg&w=1920&q=75 1920w, /_next/image?url=%2Fimages%2FseattleVidMediaPic.jpg&w=2048&q=75 2048w, /_next/image?url=%2Fimages%2FseattleVidMediaPic.jpg&w=3840&q=75 3840w"
+          style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+        />
+      </div>
+      <div
+        class="text-nowrap z-10 w-fit h-fit absolute inset-0 flex items-start md:justify-start top-20 left-8 md:items-start justify-center "
+      >
+        <div>
+          <span
+            class="text-5xl sm:text-6xl md:text-8xl  text-shadow text-white font-bold uppercase text-center flex justify-center items-center"
+          >
+            Iron & Oak
+          </span>
+          <span
+            class="text-shadow-2 text-white text-center text-xl md:text-2xl"
+          >
+            Protective Services
+          </span>
+        </div>
+      </div>
+      <div
+        class="hidden transform lg:-translate-y-36 md:-translate-y-32 -translate-y-20 "
+      >
+        <span
+          class="flex justify-center items-center text-shadow text-white text-5xl sm:text-6xl md:text-[78px] lg:text-8xl font-bold uppercase text-center"
+        />
+      </div>
+    </div>
+    <div
+      class="absolute bottom-4 right-4 z-10 p-8"
+    />
+    <div
+      class="absolute top-0 p-8 flex flex-col items-center justify-center h-full z-0 bg-black bg-opacity-30"
+    >
+      <h1
+        class="text-2xl md:text-3xl text-start mb-8 max-w-2xl text-slate-200 z-10"
+      >
+        A New Approach in Security
+      </h1>
+      <p
+        class="text-lg md:text-2xl text-start mb-8 max-w-2xl text-slate-200 z-10"
+      >
+        Focusing on
+         
+        <span
+          class="underline text-shadow-2 text-white"
+        >
+          De-escalation
+        </span>
+         
+        and
+         
+        <span
+          class="text-shadow-2 text-white"
+        >
+          building bridges between the public and emergency services
+        </span>
+        . Our mission is to ensure safety while fostering community trust.
+      </p>
+      <a
+        class="inline-block px-6 py-3 font-bold text-lg bg-blue-600 opacity-90 rounded-md transition duration-300 ease-in-out transform hover:bg-blue-500 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 z-50"
+        href="/about"
+      >
+        Learn More
+      </a>
+    </div>
+  </div>
+</div>
+`;

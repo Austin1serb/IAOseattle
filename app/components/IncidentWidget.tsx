@@ -20,12 +20,14 @@ const IncidentWidget = async () => {
     const currentMonthFormatted = moment().tz('America/Los_Angeles').format('MMMM YYYY');
 
     // Date and filtering logic
+
     const currentMonth = moment().tz('America/Los_Angeles').format('YYYY-MM');
     const today = moment().tz('America/Los_Angeles').format('YYYY-MM-DD');
 
     const currentMonthRecords = result.filter((record: any) =>
-        record.fields['Incident Date'].startsWith(currentMonth)
+        record.fields['Incident Date'] && record.fields['Incident Date'].startsWith(currentMonth)
     );
+
 
     const typesCount: { [key: string]: number } = {};
     let overdoses = 0;
@@ -71,6 +73,9 @@ const IncidentWidget = async () => {
             },
         ],
     };
+
+    console.log("Mocked Data:", result);
+
 
     const options = {
         scales: {

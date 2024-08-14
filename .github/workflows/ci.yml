@@ -1,22 +1,48 @@
-name: CI
+name: CI/CD Pipeline
 
 on:
   push:
     branches: [ main ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, develop ]
 
 jobs:
-  build:
-
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
+    # Step 1: Check out the code
     - uses: actions/checkout@v3
+
+    # Step 2: Set up Node.js
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '16'
+
+    # Step 3: Install dependencies
     - run: npm install
-    - run: npm run build
-    - run: npm test
+
+    # Step 4: Run linting
+    - name: Run ESLint
+      run: npm run lint
+
+    # Step 5: Run tests
+    - name: Run tests
+      run: npm test
+
+    # Step 6: Build the project
+    - name: Build the project
+      run: npm run build
+
+  deploy:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+    - uses: actions/checkout@v3
+
+    # Step 7: Deploy to Vercel
+    - name: Deploy to Vercel
+      run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }}
