@@ -1,0 +1,27 @@
+7470a14 - Austin Serb, 2 minutes ago : fixed type error
+454920c - Austin Serb, 16 minutes ago : updated dependencies
+c697f03 - Austin Serb, 33 minutes ago : privacy police & Terms of Service complete
+c6fde14 - Austin Serb, 24 hours ago : removed large files
+293f498 - Austin Serb, 25 hours ago : Backing up before installing new dependencies
+f8cb046 - Austin Serb, 30 hours ago : media page: Intro complete
+6ac2ed5 - Austin Serb, 2 days ago : started about page
+fdcc63f - Austin Serb, 6 days ago : Media Pages complete
+94a8064 - Austin Serb, 6 days ago : Media Page optimized load time and video dynamic imports
+e143514 - Austin Serb, 6 days ago : Media Page added pagination
+bd7e2a2 - Austin Serb, 7 days ago : finished Media Page
+ce228e6 - Austin Serb, 8 days ago : testing client fetch
+ec29395 - Austin Serb, 8 days ago : error fixed 7
+a89e5e5 - Austin Serb, 8 days ago : error fixed 6
+d61520a - Austin Serb, 8 days ago : updated error response
+3336a05 - Austin Serb, 8 days ago : updated url
+34910ea - Austin Serb, 8 days ago : deleted /airtable
+d50fde6 - Austin Serb, 8 days ago : error fixed 5
+112bbf6 - Austin Serb, 8 days ago : error fixed 4
+4ef3f88 - Austin Serb, 8 days ago : error fixed 3
+cc4ce69 - Austin Serb, 8 days ago : error fixed 2
+9ef1953 - Austin Serb, 8 days ago : error fixed
+de705a1 - Austin Serb, 8 days ago : fixed errors
+62535bf - Austin Serb, 8 days ago : media page start build
+a1fa898 - Austin Serb, 8 days ago : first commit
+bf536d0 - Austin Serb, 8 days ago : IAOseattle
+efe8593 - Austin Serb, 13 days ago : Initial commit from Create Next App

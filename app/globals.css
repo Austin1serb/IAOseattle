@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* FONT */
+  --font-montserrat: 'Montserrat', sans-serif;
+  /* Primary and Secondary Colors */
+  --color-primary: #33A8A5;
+  --color-primary-light: #84cccb;
+  --color-primary-dark: #1c8b85;
+
+  --color-secondary: #0F75E0;
+  --color-secondary-light: #4fb1e4;
+  --color-secondary-dark: #102a71;
+
+  /* Background and Surface Colors */
+  --color-background: #FDFCFD;
+  --color-surface: #FFFFFF;
+
+  /* Error Color */
+  --color-error: #B00020;
+
+  /* Text Colors */
+  --color-on-primary: #FFFFFF;
+  --color-on-secondary: #FFFFFF;
+  --color-on-light: #000000;
+  --color-on-background: #000000;
+  --color-on-surface: #000000;
+  --color-on-error: #FFFFFF;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+  overflow-x: hidden;
+  min-width: 350px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-montserrat);
+}
+
+@media (max-width: 350px) {
+  body {
+    overflow-x: auto;
+  }
+}
+
+
+/* Add more global styles as needed */
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.widget-container {
+  width: 100%;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+.stat {
+  flex: 1;
+  text-align: center;
+}
+
+.chart-container {
+  margin-top: 1rem;
+}
+
+
+/*Default text hover effect
+a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}*/
+
+
+
+
+.text-shadow {
+  text-shadow:
+    6px 5px 0 rgb(0, 0, 0);
+  /* Shadow slightly to the right and below  on large txt */
+}
+
+.text-shadow-white {
+  text-shadow:
+    3px 3px 0 rgb(255, 255, 255);
+  /* Shadow slightly to the right and below  on large txt */
+}
+
+
+.text-shadow-2 {
+  text-shadow: 3px 2px 0 rgb(0, 0, 0);
+  /* Shadow slightly to the right and elow on small text */
+}
+
+.ddd {
+  box-shadow:
+    rgb(38, 57, 77) 0px -5px 10px -5px,
+
+    rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+
