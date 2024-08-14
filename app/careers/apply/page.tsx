@@ -3,10 +3,10 @@ import ApplicationPage from './Homepage'
 
 const page = () => {
     return (
-        <div> 
-              <Suspense>
-            <ApplicationPage />
-        </Suspense>
+        <div>
+            <Suspense>
+                <ApplicationPage />
+            </Suspense>
 
 
         </div>
