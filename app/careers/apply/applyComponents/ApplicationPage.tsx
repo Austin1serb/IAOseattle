@@ -2,14 +2,14 @@
 
 import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
-import Step1 from './applyComponents/Step1';
-import Step2 from './applyComponents/Step2';
-import Step3 from './applyComponents/Step3';
-import { FormProvider } from '@/context/multistep-form-context';
+import Step1 from './Step1';
+import Step2 from './Step2';
+import Step3 from './Step3';
+import { FormProvider, useFormContext } from '@/context/multistep-form-context';
 import VideoSection from '@/components/VideoSection';
 import ScrollOnLoad from '@/components/utils/ScrollOnLoad';
-import Stepper from './applyComponents/Stepper';
-import ApplicationIntroduction from '../careersComponents/ApplicationIntroduction';
+import Stepper from './Stepper';
+import ApplicationIntroduction from '../../careersComponents/ApplicationIntroduction';
 
 const ApplicationPage = () => {
     const searchParams = useSearchParams();

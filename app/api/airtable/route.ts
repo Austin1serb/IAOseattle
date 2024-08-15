@@ -4,7 +4,6 @@ async function fetchRecords(airtableApiKey: string, baseId: string, tableName: s
     const url = `https://api.airtable.com/v0/${baseId}/${tableName}?pageSize=100&sort[0][field]=Incident%20Date&sort[0][direction]=desc&offset=${offset}`;
 
     try {
-        console.log('Fetching records from Airtable:', url);
         const response = await fetch(url, {
             headers: {
                 Authorization: `Bearer ${airtableApiKey}`,

@@ -7,32 +7,22 @@ const IncidentWidget = async () => {
     // Fetch records from the API route
     const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/airtable`, {
         headers: { 'Content-Type': 'application/json' },
-        cache: 'no-store' // Use 'no-store' to fetch fresh data on each request, or 'force-cache' for caching
     });
-
     if (!response.ok) {
         throw new Error('Failed to fetch incident data');
     }
-
     const result = await response.json();
-
     // Get the current month and year
     const currentMonthFormatted = moment().tz('America/Los_Angeles').format('MMMM YYYY');
-
     // Date and filtering logic
-
     const currentMonth = moment().tz('America/Los_Angeles').format('YYYY-MM');
     const today = moment().tz('America/Los_Angeles').format('YYYY-MM-DD');
-
     const currentMonthRecords = result.filter((record: any) =>
         record.fields['Incident Date'] && record.fields['Incident Date'].startsWith(currentMonth)
     );
-
-
     const typesCount: { [key: string]: number } = {};
     let overdoses = 0;
     let todayCount = 0;
-
     currentMonthRecords.forEach((record: any) => {
         const type = getShortName(record.fields['Incident Type']);
         typesCount[type] = (typesCount[type] || 0) + 1;
@@ -43,7 +33,6 @@ const IncidentWidget = async () => {
             todayCount += 1;
         }
     });
-
     const colorMapping: { [key: string]: { background: string; border: string } } = {
         'Suspicious Activity': { background: '#282F48', border: '#0F75E0' },
         Theft: { background: '#102A72', border: '#0F75E0' },
@@ -74,7 +63,7 @@ const IncidentWidget = async () => {
         ],
     };
 
-    console.log("Mocked Data:", result);
+    console.log("Fetching Data...");
 
 
     const options = {

@@ -1,31 +1,21 @@
-import React, { useCallback, useState } from 'react';
+'use client';
+import React from 'react';
 import CustomTextField from './CustomTextField';
 import CustomDatePicker from './CustomDatePicker';
-import { ThisFormData } from '@/context/multistep-form-context';
-
+import { ThisFormData, useFormContext } from '@/context/multistep-form-context';
 
 interface ContactFormProps {
-    formData: ThisFormData
-    updateFormData: (data: Partial<ThisFormData>) => void;
-    validateFrom: any;
-    errors: { [key: string]: string };
     handleNext: () => void;
 }
 
-const ContactForm: React.FC<ContactFormProps> = ({ formData, updateFormData, errors, handleNext }) => {
+const ContactForm: React.FC<ContactFormProps> = ({ handleNext }) => {
+    const { formData, errors, updateFormData, validateField, validateForm } = useFormContext();
 
-    //const handleChange = (field: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
-    //    updateFormData({ [field]: e.target.value });
-    //};
-
-    const validateName = useCallback((value: string) => /^[A-Za-z]+$/.test(value), []);
-    const validateDate = useCallback((value: string) => !isNaN(Date.parse(value)), []);
-
-    const validateZipCode = useCallback((value: string) => /^\d{5}(-\d{4})?$/.test(value), []);
-    const validateAddress = useCallback((value: string) => value.trim() !== '', []);
-
-    const handleChange = (field: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
-        updateFormData({ ...formData, [field]: e.target.value });
+    const handleChange = (field: keyof ThisFormData) => (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { value } = e.target;
+        updateFormData({ [field]: value });
+        validateField(field, value); // Validate field on change
+        
     };
 
     return (
@@ -41,100 +31,16 @@ const ContactForm: React.FC<ContactFormProps> = ({ formData, updateFormData, err
                     value={formData.firstName}
                     onChange={handleChange('firstName')}
                     autoComplete="given-name"
-                    validate={validateName}
-                    errorMessage="Please enter a valid first name."
+                    validate={() => validateField('firstName', formData.firstName)}
+                    errorMessage={errors.firstName}
+                    required={true}
                 />
-
-                <CustomTextField
-                    label="Last Name"
-                    value={formData.lastName}
-                    onChange={handleChange('lastName')}
-                    autoComplete="family-name"
-                    validate={validateName}
-                    errorMessage="Please enter a valid last name."
-                />
-
-
-                <CustomTextField
-                    label="Preferred Name"
-                    value={formData.preferredName}
-                    onChange={handleChange('preferredName')}
-                    validate={validateName}
-                    autoComplete="nickname"
-                    errorMessage='Please enter a preferred name'
-                />
-
-                <CustomTextField
-                    label="Preferred Pronouns"
-                    value={formData.preferredPronouns}
-                    onChange={handleChange('preferredPronouns')}
-                    autoComplete="off"
-                    validate={validateName}
-                    errorMessage='Please enter preferred pronouns'
-                />
-
-                <CustomDatePicker
-                    label="Date of Birth"
-                    value={formData.dob}
-                    onChange={handleChange('dob')}
-                    autoComplete="bday"
-                    errorMessage="Please enter a valid date of birth."
-                    type="date"
-                    validate={validateDate}
-                />
+                {/* Repeat the similar pattern for other fields */}
             </div>
-
-            {/* Address Information Section */}
-            <div className="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-                <CustomTextField
-                    label="Street Address"
-                    value={formData.street}
-                    onChange={handleChange('street')}
-                    autoComplete="street-address"
-                    validate={validateAddress}
-                    errorMessage="Please enter a street address."
-                />
-
-                <CustomTextField
-                    label="Street Address 2"
-                    value={formData.street2}
-                    onChange={handleChange('street2')}
-                    autoComplete="address-line2"
-                />
-
-                <CustomTextField
-                    label="City"
-                    value={formData.city}
-                    onChange={handleChange('city')}
-                    autoComplete="address-level2"
-                    validate={validateName}
-                    errorMessage="Please enter a valid city name."
-                />
-
-                <CustomTextField
-                    label="State"
-                    value={formData.state}
-                    onChange={handleChange('state')}
-                    autoComplete="address-level1"
-                    validate={validateName}
-                    errorMessage="Please enter a valid state name."
-                />
-
-                <CustomTextField
-                    label="Zip Code"
-                    value={formData.zipCode}
-                    onChange={handleChange('zipCode')}
-                    autoComplete="postal-code"
-                    validate={validateZipCode}
-                    errorMessage="Please enter a valid zip code."
-                />
-            </div>
-
             <button
                 type="button"
                 onClick={handleNext}
                 className="w-full mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300"
-
             >
                 Next
             </button>

@@ -1,15 +1,12 @@
 import React, { Suspense } from 'react'
-import ApplicationPage from './Homepage'
+import ApplicationPage from './applyComponents/ApplicationPage'
 
 const page = () => {
     return (
-        <div>
             <Suspense>
                 <ApplicationPage />
             </Suspense>
 
-
-        </div>
     )
 }
 
