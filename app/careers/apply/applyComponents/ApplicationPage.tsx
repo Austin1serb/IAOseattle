@@ -35,18 +35,18 @@ const ApplicationPage = () => {
     };
 
     return (
-        <main className="w-full">
+        <main className="w-screen min-w-350px">
             <FormProvider>
                 <header>
-                    <VideoSection videoSrc={'/seattleHome.webm'} text='Careers' />
+                    <VideoSection videoSrc={'/seattleHome.webm'} text='Careers' size='96' homePage={false}/>
                     <ScrollOnLoad scrollPosition={150} />
                 </header>
-                <Suspense fallback={<div>Loading...</div>}>
+                <section >
                     {step > 0 && (
                         <Stepper currentStep={step} totalSteps={totalSteps} stepNames={stepNames} />
                     )}
-                    <section>{renderStep()}</section>
-                </Suspense>
+                    {renderStep()}
+                </section>
             </FormProvider>
         </main>
     );

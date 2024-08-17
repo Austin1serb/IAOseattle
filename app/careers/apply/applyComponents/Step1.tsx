@@ -17,11 +17,16 @@ const Step1 = () => {
         }
     };
 
+    const handleBack = () => {
+        console.log('handleBack called, navigating to the previous step');
+        router.back(); // Go back to the previous page or step
+    };
+
     return (
         <div className="flex justify-around items-center bg-slate-200">
-            <div className="w-3/4 p-8 min-w-[380px]">
-                <h2 className="text-2xl font-semibold mb-4">Step 1: Contact Information</h2>
-                <ContactForm handleNext={handleNext} />
+            <div className="w-3/4 p-8 min-w-[380px] mt-12">
+                <ContactForm handleNext={handleNext} handleBack={handleBack} />
+
             </div>
         </div>
     );

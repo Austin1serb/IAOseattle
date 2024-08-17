@@ -8,11 +8,10 @@ interface StepperProps {
 
 const Stepper: React.FC<StepperProps> = ({ currentStep, totalSteps, stepNames }) => {
     return (
-        <div className="flex justify-between items-center mb-6 w-full mx-auto px-12">
+        <div className="flex h-28 justify-between items-center w-full mx-auto px-12 shadow-lg z-10">
             {Array.from({ length: totalSteps }).map((_, index) => {
                 const isCompleted = index < currentStep;
                 const isActive = index === currentStep;
-
                 return (
                     <div key={index} className="flex flex-col items-center flex-1">
                         <div className="flex items-center w-full">
