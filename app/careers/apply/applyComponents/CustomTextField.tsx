@@ -54,7 +54,7 @@ const CustomTextField = ({
                         id={label}
                         value={value}
                         onChange={onChange}
-                        autoComplete={autoComplete}
+                        autoComplete={autoComplete || "off"}
                         name={label}
                         onFocus={() => setIsFocused(true)}
                         onBlur={handleBlur}
@@ -90,9 +90,9 @@ animate-pulse">
             <p className={`${errorMessage && 'opacity-90 '} opacity-0  text-error text-xs ml-2 font-light transition-opacity duration-300 -mb-4`}>
                 {errorMessage}.
             </p>
-            {!errorMessage &&
-            <span className='ml-4 text-gray-600 font-thin'>{helperText}</span>
-}
+
+            <span className={`${!errorMessage && 'opacity-90 '} opacity-0  text-gray-600 text-xs ml-2 font-light transition-opacity duration-200 -mb-4`}>{helperText}</span>
+
         </div>
     );
 };

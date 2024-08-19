@@ -3,7 +3,7 @@ import ApplicationPage from './applyComponents/ApplicationPage'
 
 const page = () => {
     return (
-            <Suspense>
+            <Suspense fallback={<>...Loading</>}>
                 <ApplicationPage />
             </Suspense>
 

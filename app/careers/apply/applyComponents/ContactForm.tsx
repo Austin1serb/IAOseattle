@@ -92,6 +92,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ handleNext, handleBack }) => 
                         autoComplete="bday"
                         errorMessage={errors.dob}
                         validate={() => validateField('dob', formData.dob)}
+                        required={true}
             
                     />
                 </div>
@@ -115,7 +116,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ handleNext, handleBack }) => 
                         label="Phone"
                         value={formData.phone}
                         onChange={handleChange('phone')}
-                        autoComplete="phone"
+                        autoComplete="tel"
                         validate={() => validateField('phone', formData.phone)}
                         errorMessage={errors.phone}
                         required={true}
@@ -180,7 +181,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ handleNext, handleBack }) => 
             </div>
 
             {/* Navigation Buttons */}
-            <div className="flex justify-between mt-8">
+            <nav className="flex justify-between mt-12">
                 <button
                     type="button"
                     onClick={handleBack}
@@ -195,7 +196,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ handleNext, handleBack }) => 
                 >
                     Next
                 </button>
-            </div>
+            </nav>
         </form>
     );
 };

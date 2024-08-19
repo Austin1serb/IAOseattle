@@ -13,9 +13,10 @@ export type ThisFormData = {
   zipCode: string;
   email: string;
   phone: string;
-  heardAboutPosition: string;  // New field
-  referralName: string;        // New field
-  startDate: string;           // New field
+  heardAboutPosition: string;  
+  referralName: string;
+  startDate: string;
+
 };
 
 interface FormContextProps {
@@ -42,9 +43,10 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
     zipCode: '',
     email: '',
     phone: '',
-    heardAboutPosition: '',  // Initialize new fields
+    heardAboutPosition: '',  
     referralName: '',
     startDate: '',
+
   });
 
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
@@ -62,7 +64,6 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
     email: 'Email',
     phone: 'Phone Number',
     heardAboutPosition: 'How did you hear about this position?',
-    referralName: 'Referral Name',
     startDate: 'Start Date',
   };
 
@@ -116,6 +117,7 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
         }
         break;
       case 'street':
+        case 'heardAboutPosition':
         if (!value) {
           isValid = false;
           error = `${fieldNames[field]} is required`;
@@ -139,12 +141,7 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
           error = 'Invalid phone number format';
         }
         break;
-      case 'heardAboutPosition':
-        if (!value) {
-          isValid = false;
-          error = `${fieldNames[field]} is required`;
-        }
-        break;
+    
       case 'startDate':
         if (!value) {
           isValid = false;
@@ -181,7 +178,7 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
     setFormData((prev) => ({ ...prev, ...data }));
 
     Object.entries(data).forEach(([key, value]) => {
-      validateField(key as keyof ThisFormData, value as string);
+      validateField(key as keyof ThisFormData, value);
     });
   };
 

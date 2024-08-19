@@ -1,21 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useFormContext } from '@/context/multistep-form-context';
 import { useRouter } from 'next/navigation';
 import ContactForm from './ContactForm';
+import Snackbar from '@/components/SnackBar';
 
 const Step1 = () => {
-    const { validateForm } = useFormContext();
+    const { validateForm, errors } = useFormContext();
+    const [snackbarOpen, setSnackbarOpen] = useState(false);
+
     const router = useRouter();
 
     const handleNext = () => {
-        console.log('handleNext called');
         if (validateForm()) {
-            console.log('Form is valid, navigating to next step');
+            // If form is valid, proceed to the next step
             router.push('/careers/apply?step=2');
         } else {
-            console.log('Form is invalid, staying on the current step');
+            // If form is invalid, show the Snackbar
+            setSnackbarOpen(true);
         }
     };
+
 
     const handleBack = () => {
         console.log('handleBack called, navigating to the previous step');
@@ -24,10 +28,16 @@ const Step1 = () => {
 
     return (
         <div className="flex justify-around items-center bg-slate-200">
-            <div className="w-3/4 p-8 min-w-[380px] mt-12">
+            <div className="w-3/4 p-8 min-w-[380px] my-12">
                 <ContactForm handleNext={handleNext} handleBack={handleBack} />
 
             </div>
+            <Snackbar
+                message="Please correct the errors before proceeding."
+                open={snackbarOpen}
+                onClose={() => setSnackbarOpen(false)}
+
+            />
         </div>
     );
 };

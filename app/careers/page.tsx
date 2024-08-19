@@ -1,16 +1,10 @@
 import React from 'react';
-import VideoSection from '../components/VideoSection';
-import ScrollOnLoad from '../components/utils/ScrollOnLoad';
 import IconSection from './careersComponents/IconSection';
 import Link from 'next/link';
 
 const CareersPage = () => {
   return (
-    <main>
-      <header>
-        <VideoSection videoSrc={'/seattleHome.webm'} text='Careers' />
-        <ScrollOnLoad scrollPosition={150} />
-      </header>
+    <>
       <section className="bg-gray-200 py-12">
         <div className="container mx-auto px-4">
           <div className='py-8'>
@@ -139,7 +133,7 @@ const CareersPage = () => {
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 }
 

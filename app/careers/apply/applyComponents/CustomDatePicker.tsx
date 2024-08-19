@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-const CustomTextField = ({
+const CustomDatePicker = ({
     label,
     value,
     onChange,
@@ -110,4 +110,4 @@ animate-pulse">
     );
 };
 
-export default CustomTextField;
+export default CustomDatePicker;

@@ -37,13 +37,14 @@
 body {
   background-color: var(--color-background);
   color: var(--color-on-background);
-  overflow-x: hidden;
+  overflow-x: scroll;
   min-width: 350px;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: var(--font-montserrat);
 }
+
 
 @media (max-width: 350px) {
   body {
