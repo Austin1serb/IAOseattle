@@ -11,9 +11,10 @@ export type ThisFormData = {
   city: string;
   state: string;
   zipCode: string;
+  //COLLECTED ON NEXT STEP
   email: string;
   phone: string;
-  heardAboutPosition: string;  
+  heardAboutPosition: string;
   referralName: string;
   startDate: string;
 
@@ -25,6 +26,7 @@ interface FormContextProps {
   updateFormData: (data: Partial<ThisFormData>) => void;
   validateField: (field: keyof ThisFormData, value: string) => boolean;
   validateForm: () => boolean;
+  validateStep: (step: number) => boolean;
 }
 
 const FormContext = createContext<FormContextProps | undefined>(undefined);
@@ -43,7 +45,7 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
     zipCode: '',
     email: '',
     phone: '',
-    heardAboutPosition: '',  
+    heardAboutPosition: '',
     referralName: '',
     startDate: '',
 
@@ -117,7 +119,7 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
         }
         break;
       case 'street':
-        case 'heardAboutPosition':
+      case 'heardAboutPosition':
         if (!value) {
           isValid = false;
           error = `${fieldNames[field]} is required`;
@@ -141,7 +143,7 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
           error = 'Invalid phone number format';
         }
         break;
-    
+
       case 'startDate':
         if (!value) {
           isValid = false;
@@ -182,6 +184,25 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
     });
   };
 
+  // In your FormProvider component:
+  const stepFieldMap:{ [key: number]: string[] } = {
+    1: ['firstName', 'lastName', 'preferredName', 'preferredPronouns', 'dob', 'street', 'city', 'state', 'zipCode'],
+    2: ['email', 'phone','heardAboutPosition', 'referralName', 'startDate'],
+  };
+
+  const validateStep = (step: number): boolean => {
+    let isValid = true;
+
+    stepFieldMap[step].forEach((field: string) => {
+      if (!validateField(field as keyof ThisFormData, formData[field as keyof ThisFormData])) {
+        isValid = false;
+      }
+    });
+
+    return isValid;
+  };
+
+  
   const contextValue = useMemo(
     () => ({
       formData,
@@ -189,10 +210,10 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
       updateFormData,
       validateField,
       validateForm,
+      validateStep,  
     }),
     [formData, errors]
   );
-
   return (
     <FormContext.Provider value={contextValue}>
       {children}

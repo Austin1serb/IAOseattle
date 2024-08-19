@@ -14,19 +14,19 @@ const ContactForm: React.FC<ContactFormProps> = ({ handleNext, handleBack }) => 
 
     const handleChange = (field: keyof ThisFormData) => (e: React.ChangeEvent<HTMLInputElement>) => {
         let value = e.target.value;
-    
+
         if (field === 'phone') {
             // Remove all non-numeric characters
             value = value.replace(/\D/g, '');
-    
+
             // Format the phone number as 333-333-3333
             if (value.length > 0) {
-                value = value.substring(0, 3) + (value.length > 3 ? '-' : '') + 
-                        value.substring(3, 6) + (value.length > 6 ? '-' : '') + 
-                        value.substring(6, 10);
+                value = value.substring(0, 3) + (value.length > 3 ? '-' : '') +
+                    value.substring(3, 6) + (value.length > 6 ? '-' : '') +
+                    value.substring(6, 10);
             }
         }
-    
+
         updateFormData({ [field]: value });
         validateField(field, value); // Validate field on change
     };
@@ -54,6 +54,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ handleNext, handleBack }) => 
                         errorMessage={errors.firstName}
                         required={true}
                         type="text"
+                        className='capitalize'
                     />
                     <CustomTextField
                         label="Last Name"
@@ -64,6 +65,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ handleNext, handleBack }) => 
                         errorMessage={errors.lastName}
                         required={true}
                         type="text"
+                        className='capitalize'
                     />
                     <CustomTextField
                         label="Preferred Name"
@@ -74,6 +76,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ handleNext, handleBack }) => 
                         errorMessage={errors.preferredName}
                         required={true}
                         type="text"
+                        className='capitalize'
                     />
                     <CustomTextField
                         label="Preferred Pronouns"
@@ -92,8 +95,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ handleNext, handleBack }) => 
                         autoComplete="bday"
                         errorMessage={errors.dob}
                         validate={() => validateField('dob', formData.dob)}
-                        required={true}
-            
+
                     />
                 </div>
             </div>
@@ -156,6 +158,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ handleNext, handleBack }) => 
                         errorMessage={errors.city}
                         required={true}
                         type="text"
+                        className='capitalize'
                     />
                     <CustomTextField
                         label="State"
@@ -166,6 +169,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ handleNext, handleBack }) => 
                         errorMessage={errors.state}
                         required={true}
                         type="text"
+                        className='uppercase'
                     />
                     <CustomTextField
                         label="Zip Code"
@@ -181,7 +185,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ handleNext, handleBack }) => 
             </div>
 
             {/* Navigation Buttons */}
-            <nav className="flex justify-between mt-12">
+            <div className="flex justify-between mt-12">
                 <button
                     type="button"
                     onClick={handleBack}
@@ -196,7 +200,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ handleNext, handleBack }) => 
                 >
                     Next
                 </button>
-            </nav>
+            </div>
         </form>
     );
 };

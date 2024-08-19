@@ -5,17 +5,19 @@ import ContactForm from './ContactForm';
 import Snackbar from '@/components/SnackBar';
 
 const Step1 = () => {
-    const { validateForm, errors } = useFormContext();
+    const { validateStep, errors } = useFormContext();
     const [snackbarOpen, setSnackbarOpen] = useState(false);
 
     const router = useRouter();
 
     const handleNext = () => {
-        if (validateForm()) {
+        if (validateStep(1)) {
             // If form is valid, proceed to the next step
             router.push('/careers/apply?step=2');
+            console.log(errors)
         } else {
             // If form is invalid, show the Snackbar
+            console.log(errors)
             setSnackbarOpen(true);
         }
     };

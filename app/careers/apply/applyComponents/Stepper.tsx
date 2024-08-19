@@ -20,7 +20,7 @@ const Stepper: React.FC<StepperProps> = ({ currentStep, totalSteps, stepNames })
     };
 
     return (
-        <div className="flex h-28 justify-between items-center w-full mx-auto sm:px-12 shadow-lg z-10">
+        <div className="flex h-28  bg-slate-200 justify-between items-center w-full mx-auto sm:px-12 shadow-lg z-10">
             {Array.from({ length: totalSteps }).map((_, index) => {
                 const isCompleted = index < currentStep;
                 const isActive = index === currentStep;

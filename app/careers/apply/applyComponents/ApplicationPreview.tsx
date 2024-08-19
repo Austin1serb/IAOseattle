@@ -47,9 +47,9 @@ const ApplicationPreview: React.FC<ApplicationPreviewProps> = ({ resumeFile }) =
                     <div className="mb-8">
                         <h3 className="text-3xl font-semibold text-gray-700 mb-4 border-b-4 w-full pl-2 border-blue-500">Personal Information</h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-600">
-                            <p>First Name: <span className="text-blue-600">{formData.firstName}</span></p>
-                            <p>Last Name: <span className="text-blue-600">{formData.lastName}</span></p>
-                            <p>Preferred Name: <span className="text-blue-600">{formData.preferredName}</span></p>
+                            <p>First Name: <span className="text-blue-600 capitalize">{formData.firstName}</span></p>
+                            <p>Last Name: <span className="text-blue-600 capitalize">{formData.lastName}</span></p>
+                            <p>Preferred Name: <span className="text-blue-600 capitalize">{formData.preferredName}</span></p>
                             <p>Preferred Pronouns: <span className="text-blue-600">{formData.preferredPronouns}</span></p>
                             <p>Date of Birth: <span className="text-blue-600">{formData.dob}</span></p>
                         </div>
@@ -70,8 +70,8 @@ const ApplicationPreview: React.FC<ApplicationPreviewProps> = ({ resumeFile }) =
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-600">
                             <p>Street Address: <span className="text-blue-600">{formData.street}</span></p>
                             <p>Street Address 2: <span className="text-blue-600">{formData.street2 || 'N/A'}</span></p>
-                            <p>City: <span className="text-blue-600">{formData.city}</span></p>
-                            <p>State: <span className="text-blue-600">{formData.state}</span></p>
+                            <p>City: <span className="text-blue-600 capitalize">{formData.city}</span></p>
+                            <p>State: <span className="text-blue-600 uppercase">{formData.state}</span></p>
                             <p>Zip Code: <span className="text-blue-600">{formData.zipCode}</span></p>
                         </div>
                     </div>
@@ -80,8 +80,8 @@ const ApplicationPreview: React.FC<ApplicationPreviewProps> = ({ resumeFile }) =
                     <div className="mb-8">
                         <h3 className="text-3xl font-semibold text-gray-700 mb-4 border-b-4 w-full pl-2 border-blue-500">Job Information</h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-600">
-                            <p>How did you hear about this position? <span className="text-blue-600">{formData.heardAboutPosition}</span></p>
-                            <p>Referral Name: <span className="text-blue-600">{formData.referralName || 'N/A'}</span></p>
+                            <p>How did you hear about this position? <span className="text-blue-600 capitalize">{formData.heardAboutPosition}</span></p>
+                            <p>Referral Name: <span className="text-blue-600 capitalize">{formData.referralName || 'N/A'}</span></p>
                             <p>Start Date: <span className="text-blue-600">{formData.startDate}</span></p>
                         </div>
                     </div>

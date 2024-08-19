@@ -5,12 +5,12 @@ const ApplicationIntroduction = () => {
     return (
         <section className="bg-slate-200 py-24">
             <div className="container mx-auto p-8">
-                <div className="bg-white py-12 rounded-lg shadow-lg mb-8">
+                <div className=" py-12 mb-8">
                     <h2 className="text-5xl font-semibold mb-8 text-center py-12"><span className='text-blue-600'>Welcome</span> to the Iron & Oak Application Process</h2>
                     <p className="text-lg mb-4 text-center">
                         Thank you for your interest in joining Iron & Oak Protective Services. We are excited to offer you a rewarding career in private security where you can make a real difference in the community. Our team values diversity, innovation, and excellence, and we look forward to having you on board.
                     </p>
-                    <div className='bg-slate-300 w-full p-12'>
+                    <div className='w-full p-12'>
                         <h3 className="text-3xl font-semibold mb-4 text-center py-12"><span className='text-blue-600'>Scheduling</span> Opportunities</h3>
                         <p className="mb-8 text-center">
                             We have a variety of schedules available. Our Downtown Seattle Association contract is currently a priority, and hiring will be geared toward this role. We are hiring for the following shifts:

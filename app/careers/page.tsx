@@ -1,11 +1,11 @@
 import React from 'react';
-import IconSection from './careersComponents/IconSection';
+import IconSection from './apply/applyComponents/IconSection';
 import Link from 'next/link';
 
 const CareersPage = () => {
   return (
     <>
-      <section className="bg-gray-200 py-12">
+      <section className="bg-slate-200 py-12">
         <div className="container mx-auto px-4">
           <div className='py-8'>
             <div className="text-7xl font-bold text-center flex items-center  justify-center w-full mb-12">
@@ -73,7 +73,7 @@ const CareersPage = () => {
           </p>
         </div>
       </section>
-      <section className="bg-gray-200 py-10">
+      <section className="bg-slate-200 py-10">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-lg">

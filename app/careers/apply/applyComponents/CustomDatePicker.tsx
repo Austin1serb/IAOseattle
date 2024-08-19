@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -19,29 +19,43 @@ const CustomDatePicker = ({
     maxLength?: number;
     required?: boolean;
     helperText?: string;
-    validate?: (value: string) => boolean;
+    validate?: () => boolean;
     errorMessage?: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }) => {
     const [isFocused, setIsFocused] = useState(false);
     const [hasValidated, setHasValidated] = useState(false);
 
-    // NEEDS TO BE HERE FOR VALIDATION EFFECTS
-    const isValid = useMemo(() => {
-        if (!hasValidated) return true;
-        return validate ? validate(value) : true;
-    }, [value, hasValidated, validate]);
+    useEffect(() => {
+        if (value) {
+            setHasValidated(true);
+            if (validate) validate();
+        }
+    }, [value, validate]);
 
+    
     const handleBlur = () => {
         setIsFocused(false);
         setHasValidated(true);
-        console.log(errorMessage);
+
+        // Trigger the validation logic for this specific field on blur
+        if (validate) validate();
     };
 
+    let transformClass = 'translate-y-5 scale-100 top-0 left-3 text-gray-500';
+    let textClass = 'text-gray-500';
 
-    const handleFocus = () => {
-        setIsFocused(true);
-    };
+
+    if (isFocused || value) {
+        transformClass = 'translate-y-4 text-sm -top-2.5 left-3 text-start font-light';
+        if (isFocused) {
+            if (errorMessage) {
+                textClass = 'text-error';
+            } else {
+                textClass = 'text-blue-600';
+            }
+        }
+    }
     return (
         <div className="flex w-full flex-col">
             <div className="relative mt-4 bg-[#F0F0F0] hover:bg-gray-200 rounded-t-[4px] transition-colors group  duration-200">
@@ -67,7 +81,7 @@ const CustomDatePicker = ({
                         }} dateFormat="MM-dd-yyyy"
                         className="block  w-full px-3 pt-8 text-base min-h-16 max-h-16 group-hover:border-gray-400 text-gray-700 placeholder-tranparent bg-transparent border-b-2 border-gray-300 focus:outline-none focus:ring-0 relative transition-colors duration-200 cursor-pointer"
                         showYearDropdown
-                        onFocus={handleFocus}
+                        onFocus={() => setIsFocused(true)}
                         onBlur={handleBlur}
                         showMonthDropdown
                         dropdownMode="select"
