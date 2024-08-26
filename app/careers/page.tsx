@@ -80,7 +80,7 @@ const CareersPage = () => {
               <h3 className="text-2xl font-semibold mb-4">Compensation & Benefits</h3>
               <ul className="list-disc list-inside text-lg space-y-4">
                 <li>
-                  <span className="text-blue-500 font-bold">Competitive Wages:</span> Earn between $23-$28 per hour, based on experience and the nature of the client&apos;s environment.
+                  <span className="text-blue-500 font-bold">Competitive Wages:</span> Earn between $25-$31 per hour, based on experience and the nature of the client&apos;s environment.
                 </li>
                 <li>
                   <span className="text-blue-500 font-bold">License Transfer Fees:</span> We&apos;ll cover the costs to transfer your security officer&apos;s license (guard card) to Iron and Oak.

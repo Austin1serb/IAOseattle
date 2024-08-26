@@ -2,45 +2,36 @@ import Link from 'next/link';
 
 const Footer = () => {
     return (
-        <footer className="bg-secondary-dark text-on-secondary py-6">
-            <div className="container mx-auto px-4">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <footer className="bg-blue-800 text-gray-200 py-12">
+            <div className="container mx-auto px-4 w-full">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-12">
                     <div>
-                        <h2 className="font-bold mb-2">Company</h2>
-                        <ul>
-                            <li><Link href="/about">About Us</Link></li>
-                            <li><Link href="/team">Our Team</Link></li>
-                            <li><Link href="/careers">Careers</Link></li>
-                            <li><Link href="/contact">Contact</Link></li>
+                        <h2 className="text-white text-2xl mb-4 t">Company</h2>
+                        <ul className=" grid grid-cols-2 gap-y-2">
+                            <li><Link href="/about" className="hover:underline">About Us</Link></li>
+                            <li><Link href="/about#team" className="hover:underline">Our Team</Link></li>
+                            <li><Link href="/careers" className="hover:underline">Careers</Link></li>
+                            <li><Link href="/contact" className="hover:underline">Contact</Link></li>
                         </ul>
                     </div>
+
                     <div>
-                        <h2 className="font-bold mb-2">Services</h2>
-                        <ul>
-                            <li><Link href="/services/security">Security Services</Link></li>
-                            <li><Link href="/services/consulting">Consulting</Link></li>
-                            <li><Link href="/services/training">Training</Link></li>
-                            <li><Link href="/services/technology">Technology Solutions</Link></li>
+                        <h2 className="text-white text-2xl mb-4">Resources</h2>
+                        <ul className="space-y-2">
+                            <li><Link  href="/contact#faq" className="hover:underline">FAQ</Link></li>
+                            <li><Link href="/media" className="hover:underline">Media & Articles</Link></li>
                         </ul>
                     </div>
+
                     <div>
-                        <h2 className="font-bold mb-2">Resources</h2>
-                        <ul>
-                            <li><Link href="/blog">Blog</Link></li>
-                            <li><Link href="/faq">FAQ</Link></li>
-                            <li><Link href="/resources/guides">Guides</Link></li>
-                            <li><Link href="/resources/reports">Reports</Link></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h2 className="font-bold mb-2">Legal</h2>
-                        <ul>
-                            <li><Link href="/terms">Terms of Service</Link></li>
-                            <li><Link href="/privacy">Privacy Policy</Link></li>
+                        <h2 className="text-white text-2xl mb-4">Legal</h2>
+                        <ul className="space-y-2">
+                            <li><Link href="/terms" className="hover:underline">Terms of Service</Link></li>
+                            <li><Link href="/privacy" className="hover:underline">Privacy Policy</Link></li>
                         </ul>
                     </div>
                 </div>
-                <div className="text-center mt-6">
+                <div className="text-center mt-8 border-t border-gray-700 pt-6">
                     <p>&copy; {new Date().getFullYear()} Iron & Oak LLC. All rights reserved.</p>
                 </div>
             </div>

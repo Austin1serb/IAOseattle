@@ -4,38 +4,38 @@ import Link from 'next/link';
 import IncidentWidget from './components/IncidentWidget';
 import VideoSection from './components/VideoSection';
 
-//// Define metadata for the page
-//export const metadata = {
-//  title: 'Iron & Oak - Professional Security Guard Services in Seattle, WA',
-//  description:
-//    'Iron & Oak offers a new approach to security in Seattle, focusing on de-escalation and building bridges between the public and emergency services.',
-//  keywords:
-//    'Security Guard Services, De-escalation, Seattle Security Company, Iron & Oak',
-//  openGraph: {
-//    title: 'Iron & Oak - Professional Security Guard Services in Seattle, WA',
-//    description:
-//      'Iron & Oak offers a new approach to security in Seattle, focusing on de-escalation and building bridges between the public and emergency services.',
-//    url: 'https://yourwebsite.com',
-//    siteName: 'Iron & Oak Security',
-//    images: [
-//      {
-//        url: '/path-to-image.jpg',
-//        width: 1200,
-//        height: 630,
-//        alt: 'Iron & Oak Security Services in Seattle',
-//      },
-//    ],
-//    locale: 'en_US',
-//    type: 'website',
-//  },
-//  twitter: {
-//    card: 'summary_large_image',
-//    title: 'Iron & Oak - Professional Security Guard Services in Seattle, WA',
-//    description:
-//      'Iron & Oak offers a new approach to security in Seattle, focusing on de-escalation and building bridges between the public and emergency services.',
-//    images: ['/path-to-image.jpg'],
-//  },
-//};
+// Define metadata for the page
+export const metadata = {
+  title: 'Iron & Oak - Professional Security Guard Services in Seattle, WA',
+  description:
+    'Iron & Oak offers a new approach to security in Seattle, focusing on de-escalation and building bridges between the public and emergency services.',
+  keywords:
+    'Security Guard Services, De-escalation, Seattle Security Company, Iron & Oak',
+  openGraph: {
+    title: 'Iron & Oak - Professional Security Guard Services in Seattle, WA',
+    description:
+      'Iron & Oak offers a new approach to security in Seattle, focusing on de-escalation and building bridges between the public and emergency services.',
+    url: 'https://yourwebsite.com',
+    siteName: 'Iron & Oak Security',
+    images: [
+      {
+        url: '/path-to-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Iron & Oak Security Services in Seattle',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Iron & Oak - Professional Security Guard Services in Seattle, WA',
+    description:
+      'Iron & Oak offers a new approach to security in Seattle, focusing on de-escalation and building bridges between the public and emergency services.',
+    images: ['/path-to-image.jpg'],
+  },
+};
 
 export default function Home() {
   return (
@@ -49,7 +49,7 @@ export default function Home() {
         <IncidentWidget />
       </div>
       <div className="absolute top-0 p-8 flex flex-col items-center justify-center h-full z-0 bg-black bg-opacity-30">
-        <h1 className="text-2xl md:text-3xl text-start mb-8 max-w-2xl text-slate-200 z-10">
+        <h1 className="text-2xl md:text-3xl text-start mb-8 max-w-2xl text-white z-10">
           A New Approach in Security
         </h1>
         <p className="text-lg md:text-2xl text-start mb-8 max-w-2xl text-slate-200 z-10">

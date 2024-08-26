@@ -32,7 +32,7 @@ const VideoSection: React.FC<VideoSectionProps> = ({ videoSrc, size = '96', home
             <div className={`text-nowrap z-10 w-fit h-fit ${homePage ? 'absolute inset-0 flex items-start md:justify-start top-20 left-8 md:items-start justify-center' : "hidden absolute sm:top-12 md:top-20 lg:top-20 left-10 inset-0 md-lg:flex flex-col items-start justify-start"} `}>
                 <div>
                     <span className={`${homePage ? 'text-5xl sm:text-6xl md:text-8xl ' : "sm:text-4xl md:text-3xl lg:text-5xl"} text-shadow text-white font-bold uppercase text-center flex justify-center items-center`}>Iron & Oak</span>
-                    <span className={`text-shadow-2 text-white text-center ${homePage ? 'text-xl md:text-2xl' : 'text-base md:text-sm md-lg:text-lg flex justify-center items-center'}`}>Protective Services</span>
+                    <span className={`flex justify-center items-center text-shadow-2 text-white text-center ${homePage ? 'text-xl md:text-2xl' : 'text-base md:text-sm md-lg:text-lg '}`}>Protective Services</span>
                 </div>
             </div>
 

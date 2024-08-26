@@ -34,7 +34,7 @@ const MeetTheTeam = async () => {
   const displayedMembers = filteredMembers.slice(0,6);
 
   return (
-    <section className="bg-gray-200 py-16">
+    <section id='team' className="bg-gray-200 py-16">
       <div className="max-w-5xl mx-auto px-8">
         <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 text-center mb-8">
           Meet the Team
