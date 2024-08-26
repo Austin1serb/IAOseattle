@@ -4,38 +4,38 @@ import Link from 'next/link';
 import IncidentWidget from './components/IncidentWidget';
 import VideoSection from './components/VideoSection';
 
-// Define metadata for the page
-export const metadata = {
-  title: 'Iron & Oak - Professional Security Guard Services in Seattle, WA',
-  description:
-    'Iron & Oak offers a new approach to security in Seattle, focusing on de-escalation and building bridges between the public and emergency services.',
-  keywords:
-    'Security Guard Services, De-escalation, Seattle Security Company, Iron & Oak',
-  openGraph: {
-    title: 'Iron & Oak - Professional Security Guard Services in Seattle, WA',
-    description:
-      'Iron & Oak offers a new approach to security in Seattle, focusing on de-escalation and building bridges between the public and emergency services.',
-    url: 'https://yourwebsite.com',
-    siteName: 'Iron & Oak Security',
-    images: [
-      {
-        url: '/path-to-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Iron & Oak Security Services in Seattle',
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Iron & Oak - Professional Security Guard Services in Seattle, WA',
-    description:
-      'Iron & Oak offers a new approach to security in Seattle, focusing on de-escalation and building bridges between the public and emergency services.',
-    images: ['/path-to-image.jpg'],
-  },
-};
+//// Define metadata for the page
+//export const metadata = {
+//  title: 'Iron & Oak - Professional Security Guard Services in Seattle, WA',
+//  description:
+//    'Iron & Oak offers a new approach to security in Seattle, focusing on de-escalation and building bridges between the public and emergency services.',
+//  keywords:
+//    'Security Guard Services, De-escalation, Seattle Security Company, Iron & Oak',
+//  openGraph: {
+//    title: 'Iron & Oak - Professional Security Guard Services in Seattle, WA',
+//    description:
+//      'Iron & Oak offers a new approach to security in Seattle, focusing on de-escalation and building bridges between the public and emergency services.',
+//    url: 'https://yourwebsite.com',
+//    siteName: 'Iron & Oak Security',
+//    images: [
+//      {
+//        url: '/path-to-image.jpg',
+//        width: 1200,
+//        height: 630,
+//        alt: 'Iron & Oak Security Services in Seattle',
+//      },
+//    ],
+//    locale: 'en_US',
+//    type: 'website',
+//  },
+//  twitter: {
+//    card: 'summary_large_image',
+//    title: 'Iron & Oak - Professional Security Guard Services in Seattle, WA',
+//    description:
+//      'Iron & Oak offers a new approach to security in Seattle, focusing on de-escalation and building bridges between the public and emergency services.',
+//    images: ['/path-to-image.jpg'],
+//  },
+//};
 
 export default function Home() {
   return (

@@ -5,12 +5,12 @@ interface Props {
     size?: string;
 }
 
-const VideoPlayer: React.FC<Props> = ({ videoSrc, size }) => {
-    
+const VideoPlayer: React.FC<Props> = ({ videoSrc }) => {
+
     return (
-        <div className={`relative w-full object-cover  min-h-48 ${size ? `h-${size}` : 'h-1/3'}`}>
+        <div className='relative w-full object-cover h-full'>
             <video
-                className="w-full h-full object-cover min-h-48"
+                className="absolute w-full h-full object-cover"
                 autoPlay
                 loop
                 muted

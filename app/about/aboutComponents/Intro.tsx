@@ -9,11 +9,11 @@ const Intro: React.FC = () => {
             <div className="max-w-5xl mx-auto">
                 <div className="flex items-center justify-center flex-col md:flex-row pb-8 px-8">
                     <div className="h-full w-full md:h-1/2 md:w-1/2 -translate-x-4 hidden md:flex">
-                        <IaoIcon />
+                        <Image src="https://i.imgur.com/QhYVXy3.png" width={200} height={200} alt='IAO-icon'/>
                     </div>
                     <h2 className="text-4xl font-bold lg:text-[60px] mb- text-start z-10 relative md:text-nowrap">
                         <span className="text-blue-500">Redefining</span> Private Security
-                 
+
                     </h2>
                 </div>
                 <div className="flex items-start px-12">

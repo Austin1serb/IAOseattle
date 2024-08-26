@@ -12,7 +12,7 @@ const VideoPlayer = dynamic(() => import('./VideoPlayer'), {
                 alt='background-img'
                 fill
                 className='w-full h-full object-cover min-h-48'
-                //priority // Ensure the image loads quickly
+            //priority // Ensure the image loads quickly
             />
         </div>
     ),
@@ -25,9 +25,9 @@ interface VideoSectionProps {
     text?: string;
 }
 
-const VideoSection: React.FC<VideoSectionProps> = ({ videoSrc, size = '96', homePage, text }) => {
+const VideoSection: React.FC<VideoSectionProps> = ({ videoSrc, size = '[30vw]', homePage, text }) => {
     return (
-        <div className={`relative w-full h-${size}`}>
+        <div className={`relative w-full h-${size} max-h-[485px]  min-h-48`}>
             <VideoPlayer size={size} videoSrc={videoSrc} />
             <div className={`text-nowrap z-10 w-fit h-fit ${homePage ? 'absolute inset-0 flex items-start md:justify-start top-20 left-8 md:items-start justify-center' : "hidden absolute sm:top-12 md:top-20 lg:top-20 left-10 inset-0 md-lg:flex flex-col items-start justify-start"} `}>
                 <div>

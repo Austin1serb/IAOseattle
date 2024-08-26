@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={montserrat.variable}>
       <body>
-        <nav className="sticky top-0 z-50 w-screen">
+        <nav className="sticky  top-0 z-50 w-screen">
           <Navbar />
         </nav>
         {children}
