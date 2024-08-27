@@ -5,7 +5,6 @@ import VideoSection from '@/components/VideoSection';
 interface PrivacyPolicyProps {
     children: React.ReactNode;
 }
-
 const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ children }) => {
     return (
         <>

@@ -1,6 +1,4 @@
 import React from 'react'
-import ScrollOnLoad from '../components/utils/ScrollOnLoad'
-import VideoSection from '../components/VideoSection'
 const page = () => {
     return (
         <main className='p-12'>
