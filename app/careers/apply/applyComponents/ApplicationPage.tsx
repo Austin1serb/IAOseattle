@@ -6,7 +6,7 @@ import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
 import ApplicationPreview from './ApplicationPreview';
-import { FormProvider, useFormContext } from '@/context/multistep-form-context';
+import { useFormContext } from '@/context/multistep-form-context';
 import Stepper from './Stepper';
 import ApplicationIntroduction from './ApplicationIntroduction';
 

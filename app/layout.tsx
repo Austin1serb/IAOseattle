@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/NavBar";
 import Footer from "./components/Footer";
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,9 +19,9 @@ const montserrat = Montserrat({
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en" className={montserrat.variable}>
       <body>
@@ -28,6 +29,7 @@ export default function RootLayout({
           <Navbar />
         </nav>
         {children}
+        <Analytics/>
         <Footer />
       </body>
     </html>
