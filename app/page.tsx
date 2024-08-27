@@ -43,7 +43,7 @@ export default function Home() {
       <VideoSection
         videoSrc="/seattleVidAbout.webm"
         homePage={true}
-        size="screen"
+        size='100vh'
       />
       <div className="absolute bottom-4 right-4 z-10 p-8">
         <IncidentWidget />

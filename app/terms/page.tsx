@@ -4,19 +4,9 @@ import VideoSection from '../components/VideoSection'
 
 const page = () => {
   return (
-    <main>
-      <ScrollOnLoad scrollPosition={150} />
-      <header aria-label="Media and Articles Header">≈
-        <VideoSection
-          videoSrc={'/seattleVidMedia.webm'}
-          size="1/3"
-          text="Terms of Service"
-          homePage={false}
-        />
-      </header>
-
-      <section className="container mx-auto max-w-[90%] p-12 shadow-lg bg-gray-100 mb-20">
-        <p className="mb-4 text-gray-500">Last updated: Aug 7th, 2024</p>
+    <main className='p-12'>
+      <section className="container mx-auto max-w-[90%] p-12 shadow-lg bg-slate-100 mb-20">
+        <p className="mb-4 text-slate-500">Last updated: Aug 7th, 2024</p>
         <p className="mb-4 ml-12">Welcome to Iron & Oak LLC&apos;s website (&quot;Site&quot;). These Terms of Service (&quot;Terms&quot;) apply to your access to and use of the Site and any related services provided by Iron & Oak LLC (&quot;Company&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;). By accessing or using the Site, you agree to be bound by these Terms.</p>
         <p className="mb-4 ml-12">If you do not agree to these Terms, please do not use the Site.</p>
 

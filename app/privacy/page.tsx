@@ -3,19 +3,9 @@ import ScrollOnLoad from '../components/utils/ScrollOnLoad'
 import VideoSection from '../components/VideoSection'
 const page = () => {
     return (
-        <main>
-            <ScrollOnLoad scrollPosition={150} />
-            <header aria-label="Media and Articles Header">
-                <VideoSection
-                    videoSrc={'/seattleVidMedia.webm'}
-                    size="1/3"
-                    text="Privacy Policy"
-                    homePage={false}
-                />
-            </header>
-
-            <section className="container mx-auto max-w-[90%] p-12 shadow-lg bg-gray-100 mb-208">
-                    <p className="mb-4 text-gray-500">Last updated: Aug 7th, 2024</p>
+        <main className='p-12'>
+            <section className="container mx-auto max-w-[90%] p-12 shadow-lg bg-slate-100 mb-208">
+                    <p className="mb-4 text-slate-500">Last updated: Aug 7th, 2024</p>
                     <p className="mb-4 ml-12">
                         Iron & Oak LLC (&quot;Company&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, including any other media form, media channel, mobile website, or mobile application related or connected thereto (collectively, the &quot;Site&quot;). Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.
                     </p>

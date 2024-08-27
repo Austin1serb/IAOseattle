@@ -14,8 +14,8 @@ const articles = [
 
         date: 'February 10, 2022',
         content: `
-    <h2 class="text-2xl font-bold mb-2">BY DALTON DAY</h2>
-    <p class="text-sm text-gray-500 mb-4">Former MyNorthwest Editor</p>
+    <h2 class="text-2xl font-bold mb-2 text-blue-600">BY DALTON DAY</h2>
+    <p class="text-sm text-slate-500 mb-4">Former MyNorthwest Editor</p>
 
     <p class="mb-4">Private security is increasingly being relied upon in Seattle’s downtown area. The Downtown Business Association says that is only intended to be a stopgap measure until Seattle Mayor Bruce Harrell’s policing plan crystalizes.</p>
 
@@ -67,8 +67,8 @@ const articles = [
         videoEmbed: '<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/b206af068557454bb976a818278226d1.m3u8&autostart=false"  frameborder="0" scrolling="auto" loading="lay"></iframe>',
         date: 'July 28, 2023',
         content: `
-    <h2 class="text-2xl font-bold mb-2">BY JACKIE KENT</h2>
-    <p class="text-sm text-gray-500 mb-4">KOMO News Reporter</p>
+    <h2 class="text-2xl font-bold mb-2 text-blue-600">BY JACKIE KENT</h2>
+    <p class="text-sm text-slate-500 mb-4">KOMO News Reporter</p>
 
     <p class="mb-4">In response to rising crime and other safety issues, a downtown Seattle group has hired private security guards to do the work police officers aren’t able to do amid SPD’s staffing crisis. Those guards will help protect Third Avenue between Stewart and Union streets, according to the Downtown Seattle Association.</p>
 
@@ -110,8 +110,8 @@ const articles = [
         imageUrl: 'https://mynorthwest.com/wp-content/uploads/2022/01/3rd_900-900x506.jpg',
         date: 'February 1, 2022',
         content: `
-        <h2 class="text-2xl font-bold mb-2">BY DALTON DAY</h2>
-        <p class="text-sm text-gray-500 mb-4">Former MyNorthwest Editor</p>
+        <h2 class="text-2xl font-bold mb-2 text-blue-600">BY DALTON DAY</h2>
+        <p class="text-sm text-slate-500 mb-4">Former MyNorthwest Editor</p>
     
         <p class="mb-4">As a response to the Seattle Police Department’s (SPD) reported staffing shortage, the Downtown Seattle Association (DSA), via a community levy referred to as a Business Improvement Area (BIA), hired a private security firm, Iron and Oak, to provide public safety support to Third Avenue between Stewart and Union.</p>
     
@@ -154,8 +154,8 @@ const articles = [
         imageUrl: 'https://mynorthwest.com/wp-content/uploads/2022/03/pike_900-900x506.jpg',
         date: 'June 3, 2024',
         content: `
-        <h2 class="text-2xl font-bold mb-2">BY DALTON DAY</h2>
-        <p class="text-sm text-gray-500 mb-4">Former MyNorthwest Editor</p>
+        <h2 class="text-2xl font-bold mb-2 text-blue-600">BY DALTON DAY</h2>
+        <p class="text-sm text-slate-500 mb-4">Former MyNorthwest Editor</p>
     
         <p class="mb-4">The city of Seattle and King County Metro will temporarily shut down the northbound bus stop on Third Avenue between Pike and Pine Streets, beginning April 2. The stop will move about a block down the road to Third and Pike, in front of the Ross store.</p>
     
@@ -185,7 +185,7 @@ const articles = [
     
         <p class="mb-4">Shifting the location of the bus stop is intended to calm foot traffic and congestion in the area.</p>
     
-        <p class="text-sm text-gray-500 mb-4">KIRO Newsradio’s Nicole Jennings contributed to this report.</p>
+        <p class="text-sm text-slate-500 mb-4">KIRO Newsradio’s Nicole Jennings contributed to this report.</p>
     `
     },
     {
@@ -195,8 +195,8 @@ const articles = [
         imageUrl: 'https://mynorthwest.com/wp-content/uploads/2021/11/damageballard-900x506-1-900x506.jpg',
         date: 'July 28, 2023',
         content: `
-        <h2 class="text-2xl font-bold mb-2">BY JASON RANTZ SHOW</h2>
-        <p class="text-sm text-gray-500 mb-4">AM 770 KTTH Host</p>
+        <h2 class="text-2xl font-bold mb-2 text-blue-600">BY JASON RANTZ SHOW</h2>
+        <p class="text-sm text-slate-500 mb-4">AM 770 KTTH Host</p>
     
         <p class="mb-4">Fed up with surging crime rates that have failed to dissipate, multiple Seattle business owners called upon their elected officials for increased support at a town hall in Ballard Monday night.</p>
     
@@ -259,8 +259,8 @@ const articles = [
         date: 'April 14, 2023',
         videoEmbed: '<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/464b0c8253b0492d83e19c90f9be5e2a.m3u8&autostart=false" frameborder="0" scrolling="auto" loading="lazy"></iframe>',
         content: `
-        <h2 class="text-2xl font-bold mb-2">BY SUZANNE PHAN</h2>
-        <p class="text-sm text-gray-500 mb-4">KOMO News Reporter</p>
+        <h2 class="text-2xl font-bold mb-2 text-blue-600">BY SUZANNE PHAN</h2>
+        <p class="text-sm text-slate-500 mb-4">KOMO News Reporter</p>
     
         <p class="mb-4">Many businesses are starting to hire for the summer season. Private security companies said they are having a tough time filling jobs because of a massive demand for their services.</p>
     
@@ -314,8 +314,8 @@ const articles = [
         slug: 'seattle-business-owners-turn-private-security',
         description: 'With rising crime and police staffing issues, businesses are increasingly relying on private security to ensure safety.',
         content: `
-    <h2 class="text-2xl font-bold mb-2">BY DALTON DAY</h2>
-    <p class="text-sm text-gray-500 mb-4">Former MyNorthwest Editor</p>
+    <h2 class="text-2xl font-bold mb-2 text-blue-600">BY DALTON DAY</h2>
+    <p class="text-sm text-slate-500 mb-4">Former MyNorthwest Editor</p>
 
     <p class="mb-4">Private security is increasingly being relied upon in Seattle’s downtown area. The Downtown Business Association says that is only intended to be a stopgap measure until Seattle Mayor Bruce Harrell’s policing plan crystalizes.</p>
 
@@ -369,7 +369,9 @@ const articles = [
         date: 'September 4, 2020',
         videoEmbed: '', // No video embed provided
         content: `
-            <h2 class="text-2xl font-bold mb-2">Posted on Friday, September 4, 2020 - 9:17 am by jseattle</h2>
+    
+            <h2 class="text-2xl font-bold mb-2 text-blue-600"> by jseattle</h2>
+              <p class="text-sm text-slate-500 mb-4"> Posted on Friday, September 4, 2020 - 9:17 am</p>
             <p class="mb-4">Seattle has not yet seen large groups of amateur militia coming into the city from around the region to make a right wing stand against protesters. The groups here — and especially on Capitol Hill — are professionals.</p>
         
             <p class="mb-4">The city’s parks department has now added to the influx, hiring private security to patrol Cal Anderson Park this week following another police raid and camp sweep.</p>
@@ -486,8 +488,8 @@ const articles = [
         date: 'June 21, 2023',
         videoEmbed: '<iframe style="border:1px solid #e6e6e6" src="https://www.king5.com/embeds/video/responsive/281-997fdec1-6ee7-4349-81e0-a11d7f0bfa52/iframe" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>',
         content: `
-        <h2 class="text-2xl font-bold mb-2">‘My heart really broke’: Security guard describes moments helping Eina Kwon after Belltown shooting</h2>
-        <p class="text-sm text-gray-500 mb-4">By Julie Calhoun</p>
+        <h2 class="text-2xl font-bold mb-2 text-blue-600">‘My heart really broke’: Security guard describes moments helping Eina Kwon after Belltown shooting</h2>
+        <p class="text-sm text-slate-500 mb-4">By Julie Calhoun</p>
     
         <p class="mb-4">SEATTLE — It's been a week since Eina Kwon and her baby were shot and killed in a seemingly random shooting. Last Tuesday is a day that keeps Randy Norberg up at night.</p>
     
@@ -542,8 +544,8 @@ const articles = [
         date: 'February 1, 2022',
         videoEmbed: '<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/b206af068557454bb976a818278226d1.m3u8&autostart=false" frameborder="0" scrolling="auto" loading="lazy"></iframe>',
         content: `
-        <h2 class="text-2xl font-bold mb-2">Downtown Seattle Association hires private security guards amid police staffing issues</h2>
-        <p class="text-sm text-gray-500 mb-4">by Jackie Kent, KOMO News Reporter</p>
+        <h2 class="text-2xl font-bold mb-2 text-blue-600">Downtown Seattle Association hires private security guards amid police staffing issues</h2>
+        <p class="text-sm text-slate-500 mb-4">by Jackie Kent, KOMO News Reporter</p>
     
         <p class="mb-4">SEATTLE - In response to rising crime and other safety issues, a downtown Seattle group has hired private security guards to do the work police officers aren’t able to do amid SPD’s staffing crisis. Those guards will help protect Third Avenue between Stewart and Union streets, according to the Downtown Seattle Association.</p>
     
@@ -584,7 +586,7 @@ const articles = [
         imageUrl: 'https://res.cloudinary.com/sagacity/image/upload/c_crop,h_2333,w_3500,x_0,y_0/c_limit,dpr_2,f_auto,fl_lossy,q_80,w_1479/emoji-seattle-01_yac8ly.png',
         date: 'March 30, 2022',
         content: `
-        <p class="text-sm text-gray-500 mb-4">by Benjamin Cassidy</p>
+     <h2 class="text-2xl font-bold mb-2 text-blue-600">by Benjamin Cassidy</h2>
     
         <p class="mb-4">IN EARLY FEBRUARY, a comment about Pike Place Market by Seattle City Council president Debora Juarez set off a fresh round of discourse about downtown Seattle. “I don’t go to the Market anymore unless it’s Saturday, broad daylight,” Juarez said at an economic development committee meeting, adding that it’s “a real safety issue.”</p>
     
@@ -642,8 +644,8 @@ const articles = [
         imageUrl: 'https://i0.wp.com/www.capitolhillseattle.com/wp-content/uploads/2020/08/Mitgang_200812_0132-scaled.jpg?w=1168&ssl=1',
         date: 'August 13, 2020',
         content: `
-        <h2 class="text-2xl font-bold mb-2">SPD says officer injured, two arrested as police step into clash between private security team and Capitol Hill protesters — UPDATE</h2>
-        <p class="text-sm text-gray-500 mb-4">by Capitol Hill Seattle Staff</p>
+
+     <h2 class="text-2xl font-bold mb-2 text-blue-600">by Capitol Hill Seattle Staff</h2>
     
         <p class="mb-4">An officer was reported injured and two people were arrested after police say they were forced to intervene in a clash between a small group of protesters and private security on the eastern edge of Cal Anderson Park late Wednesday night.</p>
     
@@ -707,8 +709,8 @@ const articles = [
         imageUrl: 'https://downtownseattle.org/app/uploads/2022/06/programs-services-mid-renewal-202206-services-iron-oak-4x3-v1.jpg',
         date: 'July 30, 2024',
         content: `
-        <h2 class="text-2xl font-bold mb-2">Private Security & SPD Patrols</h2>
-        <p class="text-sm text-gray-500 mb-4">Through a contract with Iron & Oak, property owners within the MID invest in over 800 hours per week of private security downtown in addition to funding dedicated overtime bike patrols with the Seattle Police Department. These safety services help ensure a greater security presence downtown for residents, workers, and visitors. Iron & Oak officers walk alongside MID ambassadors so they can safely perform their duties. They also patrol streets and parks within the MID and provide support during DSA/MID events.</p>
+        <h2 class="text-2xl font-bold mb-2 text-blue-600">Private Security & SPD Patrols</h2>
+        <p class="text-sm text-slate-500 mb-4">Through a contract with Iron & Oak, property owners within the MID invest in over 800 hours per week of private security downtown in addition to funding dedicated overtime bike patrols with the Seattle Police Department. These safety services help ensure a greater security presence downtown for residents, workers, and visitors. Iron & Oak officers walk alongside MID ambassadors so they can safely perform their duties. They also patrol streets and parks within the MID and provide support during DSA/MID events.</p>
         
         <h3 class="text-xl font-bold mt-4 mb-2">MID Ratepayer Information</h3>
         <ul class="list-disc pl-5">
@@ -766,8 +768,7 @@ const articles = [
         date: 'June 21, 2023',
         videoEmbed: '<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/88f699c6d79c41e4af3e6cdf186b3709.m3u8&autostart=false" frameborder="0" scrolling="auto" loading="lazy"></iframe>',
         content: `
-    <h2 class="text-2xl font-bold mb-2">I wish I could’ve saved her: Security officer recalls fatal shooting of pregnant woman in Seattle</h2>
-    <p class="text-sm text-gray-500 mb-4">by LYNNANNE NGUYEN | KOMO StaffFri, June 23rd 2023 at 4:17 PM</p>
+       <h2 class="text-2xl font-bold mb-6 text-blue-600">by LYNNANNE NGUYEN | KOMO StaffFri, June 23rd 2023 at 4:17 PM</h2>
 
     <p class="mb-4">SEATTLE (KOMO) — The pregnant mother and business owner shot and killed in Seattle's Belltown neighborhood last week is being laid to rest on Friday.</p>
 
@@ -810,9 +811,9 @@ const articles = [
         date: 'May 1, 2023',
         videoEmbed: '<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/a669121946f448a5b4a3e9fd07487482.m3u8&autostart=false" frameborder="0" scrolling="auto" loading="lazy"></iframe>',
         content: `
-    <h2 class="text-2xl font-bold mb-2">Person sought in connection to shooting that killed 2, injured 1 in Capitol Hill</h2>
-    <p class="text-sm text-gray-500 mb-4">by Jackie Kent, KOMO News Reporter</p>
-    <p class="text-sm text-gray-500 mb-4">Updated Thu, May 4th 2023 at 2:21 PM</p>
+    <h2 class="text-2xl font-bold mb-2 text-blue-600">Person sought in connection to shooting that killed 2, injured 1 in Capitol Hill</h2>
+    <p class="text-sm text-slate-500 mb-4">by Jackie Kent, KOMO News Reporter</p>
+    <p class="text-sm text-slate-500 mb-4">Updated Thu, May 4th 2023 at 2:21 PM</p>
 
     <p class="mb-4">Seattle police are looking for one person connected to a shooting in the heart of Seattle’s Capitol Hill neighborhood that killed two men and critically injured a third man. The missing person’s involvement in the incident was unclear as of Monday evening.</p>
 
@@ -857,9 +858,9 @@ const articles = [
         date: 'April 23, 2022',
         videoEmbed: '<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/77dcc4c03d4a4543bdc798d44eef6057.m3u8&autostart=false" width="640" height="360" frameborder="0" scrolling="auto" loading="lazy"></iframe>',
         content: `
-    <h2 class="text-2xl font-bold mb-2">Efforts to clean up crime in Downtown Seattle continue; business owners still see threats</h2>
-    <p class="text-sm text-gray-500 mb-4">by Suzanne Phan, KOMO News Reporter</p>
-    <p class="text-sm text-gray-500 mb-4">Updated Sun, April 24th 2022 at 10:32 AM</p>
+    <h2 class="text-2xl font-bold mb-2 text-blue-600">by Suzanne Phan, KOMO News Reporter</h2>
+
+    <p class="text-sm text-slate-500 mb-4">Updated Sun, April 24th 2022 at 10:32 AM</p>
 
     <p class="mb-4">The owner of the popular Piroshky Piroshky Bakery in Seattle said she was held up at knifepoint this week on 1st Avenue near Pike and Stewart.</p>
 
@@ -913,8 +914,8 @@ const articles = [
         imageUrl: 'https://southseattleemerald.com/wp-content/uploads/2022/03/SecuritySign_WestlakePark_SecurityOfficerRally_312022_AlexGarland-1024x683.jpg',
         date: 'March 21, 2022',
         content: `
-        <h2 class="text-2xl font-bold mb-2">Union Security Officers Rally for Respect</h2>
-        <p class="text-sm text-gray-500 mb-4">by Alex Garland</p>
+        <h2 class="text-2xl font-bold mb-2 text-blue-600">by Alex Garland</h2>
+    
     
         <p class="mb-4">In 2020, the phrase “essential worker” became synonymous with health care, grocery store employees, and first responders. However, local security officers are saying they often feel forgotten, despite their daily interactions with the public.</p>
     
@@ -1001,8 +1002,8 @@ const articles = [
         imageUrl: 'https://media.bizj.us/view/img/12703991/aleksandr-butowicz-iron-oak-06*900x506x4200-2368-0-416.jpg',
         date: 'March 11, 2024',
         content: `
-        <h2 class="text-2xl font-bold mb-2">A Call for Security: Safety Concerns Around Downtown Seattle</h2>
-        <p class="text-sm text-gray-500 mb-4">by Marc Stiles – Senior Reporter, Puget Sound Business Journal</p>
+        <h2 class="text-2xl font-bold mb-2 text-blue-600">by Marc Stiles </h2>
+        <p class="text-sm text-slate-500 mb-4"> Senior Reporter, Puget Sound Business Journal</p>
 
         <p class="mb-4">Private security costs in downtown Seattle have surged by up to 400%, prompting concerns from building owners. Aleksandr Butowicz, founder of Iron & Oak Protective Services, discusses the impact of rising security expenses in the area.</p>
         <p class="mb-4">Aleksandr Butowicz founded Iron and Oak Protective Services, LLC in 2019.</p>
@@ -1037,16 +1038,12 @@ export default function Page({ params }: { params: { slug: string } }) {
     }
 
     return (
-        <main className='min-w-[350px] w-screen'>
-            <ScrollOnLoad scrollPosition={150} />
-            <header aria-label="Media and Articles Header">
-                <VideoSection videoSrc={'/seattleVidAbout.webm'} size={'96'} text='Media & Articles' />
-            </header>
+        <main className='p-16'>
             <section className="container mx-auto px-4 h-auto w-full min-w-[350px]">
                 <div className="p-4 pt-0">
                     <header>
-                        <h1 className="text-4xl font-bold">{article.title}</h1>
-                        <p className="text-gray-600 mb-4">{article.date}</p>
+                        <h1 className="text-4xl font-bold text-blue-600">{article.title}</h1>
+                        <p className="text-slate-600 mb-4">{article.date}</p>
                     </header>
                     {videoEmbedSrc ? (
                         <div className="relative w-full md:w-3/5 border-l-4 border-blue-500 pl-4" aria-label='video container'>

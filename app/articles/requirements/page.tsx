@@ -1,17 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import ScrollOnLoad from '@/components/utils/ScrollOnLoad';
-import VideoSection from '@/components/VideoSection';
 
 const HowToBecomeSecurityGuard = () => {
     return (
         <main>
-            <header>
-                <VideoSection videoSrc={'/seattleHome.webm'} text='articles' />
-                <ScrollOnLoad scrollPosition={150} />
-            </header>
-
-            <section className="bg-gray-200 py-12">
+            <section className="bg-slate-200 py-12">
                 <div className="container mx-auto px-4">
                     <div className='py-8'>
                         <div className="text-7xl font-bold text-center flex items-center justify-center w-full mb-12">

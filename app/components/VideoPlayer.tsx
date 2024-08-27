@@ -8,7 +8,7 @@ interface Props {
 const VideoPlayer: React.FC<Props> = ({ videoSrc }) => {
 
     return (
-        <div className='relative w-full object-cover h-full'>
+        <div className={`relative w-full h-full`}>
             <video
                 className="absolute w-full h-full object-cover"
                 autoPlay

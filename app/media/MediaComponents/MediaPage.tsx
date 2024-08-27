@@ -1,6 +1,5 @@
 'use client'
-import ScrollOnLoad from '@/components/utils/ScrollOnLoad';
-import VideoSection from '@/components/VideoSection';
+
 import dynamic from 'next/dynamic';
 import React, { useEffect, useState } from 'react';
 import MediaItemSkeleton from './MediaItemSkeleton';
@@ -56,7 +55,12 @@ const Media: React.FC = () => {
     };
 
     return (
-        <main >
+        <main className='bg-slate-100'>
+            <div className="text-center p-16 ">
+                <p className="text-lg text-slate-700">
+                    Explore the latest news and media coverage about Iron & Oak. Stay updated with our industry presence and community impact through articles, videos, and more.
+                </p>
+            </div>
             <section
                 aria-label="Media and Articles Section"
                 className="container mx-auto px-4"
