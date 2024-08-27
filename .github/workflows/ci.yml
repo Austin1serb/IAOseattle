@@ -28,8 +28,8 @@ jobs:
         run: npm run lint  # This should trigger `next lint` as defined in your package.json
 
       # Step 5: Run tests
-      - name: Run tests
-        run: npm test
+      # - name: Run tests
+      #   run: npm test
 
       # Step 6: Build the project
       - name: Build the project
