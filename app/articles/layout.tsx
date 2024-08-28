@@ -10,7 +10,7 @@ const ArticlesLayout: React.FC<ArticlesLayoutProps> = ({ children }) => {
     return (
         <>
             <header>
-                <VideoSection videoSrc={'/seattleVidMedia.webm'} text="Media & Articles" />
+                <VideoSection videoSrc={'/seattleVidMedia.webm'} text="Articles" />
             </header>
 
             {children}

@@ -11,10 +11,10 @@ const SuccessPage: React.FC = () => {
                 </p>
 
                 <div className="flex flex-col w-fit justify-center gap-4 mb-6 ">
-                    <Link href="/about" className="text-blue-600 hover:underline text-lg transition-all duration-300">
+                    <Link href="/about" className="text-blue-600 underline hover:text-blue-800 transition duration-300 inline-block cursor-pointer text-lg">
                         Learn More About Us
                     </Link>
-                    <Link href="/media" className="text-blue-600 hover:underline text-lg transition-all duration-300">
+                    <Link href="/media" className="text-blue-600 underline hover:text-blue-800 transition duration-300 inline-block cursor-pointer text-lg">
                         See Us in the Media
                     </Link>
                 </div>

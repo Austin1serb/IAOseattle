@@ -10,12 +10,15 @@ const VideoPlayer: React.FC<Props> = ({ videoSrc }) => {
     return (
         <div className={`relative w-full h-full`}>
             <video
-                className="absolute w-full h-full object-cover"
+                className="video-setion absolute w-full h-full object-cover"
                 autoPlay
                 loop
                 muted
                 playsInline
                 preload="auto"
+                poster="/images/seattleVidAbout-min.jpg"
+                
+
             >
                 <source src={videoSrc} type="video/webm" />
                 Your browser does not support the video tag.

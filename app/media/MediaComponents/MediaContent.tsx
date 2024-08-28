@@ -37,7 +37,7 @@ const MediaContent: React.FC<MediaContentProps> = ({ videoEmbed, videoUrl, image
         );
     } else if (videoEmbed && !isVideoPlaying) {
         return (
-            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black group">
+            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black group transition-all duration-300">
                 <button
                     aria-label='play button'
                     type='button'
@@ -47,11 +47,11 @@ const MediaContent: React.FC<MediaContentProps> = ({ videoEmbed, videoUrl, image
                     <svg
                         stroke="currentColor"
                         fill="currentColor"
-                        className="fill-gray-300 group-hover:fill-gray-600 transition-colors duration-100"
+                        className="fill-gray-300 hover:fill-gray-600 transition-colors duration-300"
                         strokeWidth="0"
                         viewBox="0 0 512 512"
-                        height="3em"
-                        width="3em"
+                        height="4.5em"
+                        width="4.5em"
                         xmlns="http://www.w3.org/2000/svg"
                     >
                         <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path>

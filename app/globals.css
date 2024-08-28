@@ -53,13 +53,75 @@ body {
 }
 
 
-/* Add more global styles as needed */
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .animate-shine {
+    pointer-events: none;
+    position: relative;
+    overflow: hidden;
+
+  }
+
+  .animate-shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(-75deg,
+        rgba(255, 255, 255, 0) 25%,
+        rgba(255, 255, 255, 0.5) 50%,
+        rgba(255, 255, 255, 0) 75%);
+    filter: brightness(5);
+    animation: shine 4s infinite alternate ease-in-out;
+  }
+
+  @keyframes shine {
+    0% {
+      left: -150%;
+    }
+
+    100% {
+      left: 150%;
+    }
   }
 }
+
+
+
+@layer utilities {
+  .animate-under-shine {
+    background-image: linear-gradient(-75deg, rgba(255, 255, 255, 0.1) 30%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, 0.1) 70%);
+    background-size: 200%;
+    animation: shine 4s infinite alternate ease-in-out;
+  }
+
+  @keyframes shine {
+    0% {
+      background-position: 150%;
+    }
+
+    50% {
+      background-position: -50%;
+    }
+
+    100% {
+      background-position: 150%;
+    }
+  }
+}
+
+.video-section {
+  position: absolute;
+  background-image: url('https://i.imgur.com/ZSrvByi.jpeg');
+  /* optional fallback image */
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+
 
 .widget-container {
   width: 100%;
@@ -81,36 +143,6 @@ body {
 }
 
 
-/*Default text hover effect
-a {
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: var(--color-primary);
-}
-
-a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 2px;
-  background-color: var(--color-primary);
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.3s ease;
-}
-
-a:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}*/
-
-
-
 
 .text-shadow {
   text-shadow:
@@ -130,9 +162,9 @@ a:hover::after {
   /* Shadow slightly to the right and elow on small text */
 }
 
-.ddd {
+.shadow-dark {
   box-shadow:
-    rgb(38, 57, 77) 0px -5px 10px -5px,
+    rgb(38, 57, 77) 0px -5px 15px -5px,
 
     rgb(38, 57, 77) 0px 20px 30px -10px;
 }
@@ -184,6 +216,7 @@ a:hover::after {
   bottom: 0px;
   left: 0px;
 }
+
 .nav-icon.open span:nth-child(3) {
   bottom: 0px;
   left: 0px;
@@ -217,15 +250,15 @@ a:hover::after {
 
 @media (max-width: 468px) {
 
-.nav-icon:not(.open):hover span:nth-child(1) {
-  transform: rotate(-0deg) scaleY(1.1);
-}
+  .nav-icon:not(.open):hover span:nth-child(1) {
+    transform: rotate(-0deg) scaleY(1.1);
+  }
 
-.nav-icon:not(.open):hover span:nth-child(2) {
-  transform: rotate(0deg) scaleY(1.1);
-}
+  .nav-icon:not(.open):hover span:nth-child(2) {
+    transform: rotate(0deg) scaleY(1.1);
+  }
 
-.nav-icon:not(.open):hover span:nth-child(3) {
-  transform: rotate(0deg) scaleY(1.1);
-}
+  .nav-icon:not(.open):hover span:nth-child(3) {
+    transform: rotate(0deg) scaleY(1.1);
+  }
 }

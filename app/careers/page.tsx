@@ -106,8 +106,8 @@ const CareersPage = () => {
                 <li>Able to perform a range of physical tasks, including standing for extended periods and navigating stairs.</li>
                 <li>
                   Eligibility to obtain an unarmed security officer&apos;s license, or{' '}
-                  <Link href="/how-to-become-security-guard" className="text-blue-500 hover:underline font-bold">
-                  &quot;Guard Card&quot;
+                  <Link href="/articles/how-to-become-security-guard" className="text-blue-600 underline hover:text-blue-800 transition duration-300 inline-block cursor-pointer font-bold">
+                    &quot;Guard Card&quot;
                   </Link>
                   .
                 </li>

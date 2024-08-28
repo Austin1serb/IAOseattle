@@ -7,6 +7,7 @@ async function fetchRecords(airtableApiKey: string, baseId: string, tableName: s
         const response = await fetch(url, {
             headers: {
                 Authorization: `Bearer ${airtableApiKey}`,
+                
             },
         });
 
@@ -61,9 +62,7 @@ export async function GET(req: NextRequest) {
         const allRecords = await fetchAllRecordsForCurrentMonth(airtableApiKey, baseId, tableName);
 
         return NextResponse.json(allRecords, {
-            headers: {
-                'Cache-Control': 's-maxage=3600, stale-while-revalidate',
-            },
+
         });
     } catch (error: any) {
         console.error('API request error:', error.message);

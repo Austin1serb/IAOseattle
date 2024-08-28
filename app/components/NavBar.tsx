@@ -1,5 +1,4 @@
 'use client';
-
 import Image from 'next/image';
 import NavLink from './NavLink';
 import Link from 'next/link';
@@ -53,16 +52,7 @@ const Navbar: React.FC = () => {
                 <div className="max-w-8xl mx-auto px-2 sm:px-6 lg:px-8">
                     <div className="relative flex items-center justify-between h-16">
                         <div className="flex-1 flex items-center justify-between sm:items-stretch sm:justify-start">
-                            <Link href={'/'} className='flex sm:block'>
-                                <Image
-                                    src="https://www.jotform.com/uploads/iaoadmin/form_files/222058180857156_mainPWAIcon.6382b2a1a860f.png"
-                                    alt="Iron & Oak Logo"
-                                    width={50}
-                                    height={50}
-                                    className="cursor-pointer rounded-md  sm:block"
-                                />
 
-                            </Link>
                             <span className='text-3xl sm:hidden text-center  text-shadow text-white font-bold uppercase flex justify-center items-center'>Iron & Oak</span>
                             <div className="hidden sm:block ml-12 w-full">
                                 <div className="flex space-x-4 font-bold">
@@ -73,6 +63,16 @@ const Navbar: React.FC = () => {
                                     <NavLink href="/careers" label="Careers" />
                                 </div>
                             </div>
+                            <Link href={'/'} className='flex sm:block'>
+                                <Image
+                                    src="https://www.jotform.com/uploads/iaoadmin/form_files/222058180857156_mainPWAIcon.6382b2a1a860f.png"
+                                    alt="Iron & Oak Logo"
+                                    width={50}
+                                    height={50}
+                                    className="cursor-pointer rounded-md  sm:block"
+                                />
+
+                            </Link>
                             {/* Hamburger Icon for Mobile */}
                             <div className=' sm:hidden'>
                                 <HamburgerIcon isOpen={isOpen} setIsOpen={() => setIsOpen(!isOpen)} />

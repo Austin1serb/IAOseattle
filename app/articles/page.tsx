@@ -1,35 +1,33 @@
 'use client'
 
-import dynamic from 'next/dynamic';
+
 import React, { useEffect, useState } from 'react';
-import MediaItemSkeleton from './MediaItemSkeleton';
-import { newsItems } from './newsItems';
-import Pagination from './Pagination';
-import styles from '../MediaItem.module.css';
+import styles from './ArticleItem.module.css'; // A separate CSS module for articles if needed
+import Pagination from '@/media/MediaComponents/Pagination';
+import ArticleItem from './articlesComponents/ArticleItem';
+import { articleData } from './articlesComponents/ArticleData';
 import Link from 'next/link';
 
-const MediaItem = dynamic(() => import('./MediaItem'), {
-    ssr: true,
-    loading: () => <MediaItemSkeleton />,
-});
+const ITEMS_PER_PAGE =6; // Number of articles per page
 
 
-const ITEMS_PER_PAGE = 5; // Total items per page (5 items per row, 3 rows)
-
-const MediaPage: React.FC = () => {
+const Articles: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [transitionStage, setTransitionStage] = useState<'idle' | 'out' | 'in'>('idle');
     const [pendingPage, setPendingPage] = useState(currentPage);
     const [direction, setDirection] = useState<'forward' | 'backward'>('forward');
 
-    const totalPages = Math.ceil(newsItems.length / ITEMS_PER_PAGE);
+    const totalPages = Math.ceil(articleData.length / ITEMS_PER_PAGE);
 
     useEffect(() => {
+        articleData.forEach(article => {
+            console.log(article.title);
+        });
         if (transitionStage === 'out') {
             const timer = setTimeout(() => {
                 setTransitionStage('in');
                 setCurrentPage(pendingPage);
-            }, 400); // Match this with your CSS animation duration
+            }, 400);
             return () => clearTimeout(timer);
         }
     }, [transitionStage, pendingPage]);
@@ -43,7 +41,7 @@ const MediaPage: React.FC = () => {
     };
 
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-    const currentItems = newsItems.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+    const currentItems = articleData.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
     const getClassName = (): string => {
         if (transitionStage === 'out') {
@@ -56,41 +54,40 @@ const MediaPage: React.FC = () => {
     };
 
     return (
-        <main className='bg-slate-100'>
+        <main className='bg-slate-200'>
             <div className="text-center p-16 ">
                 <p className="text-3xl text-slate-700">
-                    Explore the latest news and media coverage about Iron & Oak. <br /> 
+                    Explore our latest articles and industry insights.
                 </p>
-                <p className='m-8'>Stay updated with our industry presence and community impact through articles, videos, and more.</p>
-                <Link className='text-blue-600 underline hover:text-blue-800 transition duration-300 inline-block cursor-pointer' href={'/articles'}>
-                View Articles?
+                <p className='m-8'>Stay informed with the latest news and articles that reflect our commitment to excellence in security services.</p>
+                <Link className='text-blue-600 underline hover:text-blue-800 transition duration-300 inline-block cursor-pointer' href={'/media'}>
+                    View Media?
                 </Link>
             </div>
             <section
-                aria-label="Media and Articles Section"
+                aria-label="Articles Section"
                 className="container mx-auto px-4"
             >
-                <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-8 justify-center items-center ${getClassName()}`}>
-                    {currentItems.map((item, index) => (
+                <div className={`grid mx-auto w-fit grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-8 justify-center items-center ${getClassName()}`}>
+                    {currentItems.map((item: { title: string; slug: string; description: string; date: string; content:any; }, index: any) => (
                         <article
-                            key={`${item.title}-media-item-${index}`}
-                            className="h-full"
-                            aria-labelledby={`media-item-title-${item.title}`}
+                            key={`${item.title}-article-item-${index}`}
+                            className="h-full w-fit"
+                            aria-labelledby={`article-item-title-${item.title}`}
                         >
-                            <MediaItem
+                            <ArticleItem
                                 slug={item.slug}
                                 title={item.title}
                                 description={item.description}
-                                imageUrl={item.imageUrl}
-                                videoUrl={item.videoUrl}
-                                videoEmbed={item.videoEmbed}
                                 date={item.date}
-                                id={`media-item-id-${index}`}
+                                content={item.content}
+                                id={`article-item-id-${index}`}
                             />
                         </article>
                     ))}
                 </div>
             </section>
+            
 
             <nav aria-label="Pagination Navigation" className="container mx-auto px-4 mt-4">
                 <Pagination
@@ -103,4 +100,4 @@ const MediaPage: React.FC = () => {
     );
 };
 
-export default MediaPage;
+export default Articles;

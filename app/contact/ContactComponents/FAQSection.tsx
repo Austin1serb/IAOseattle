@@ -77,7 +77,7 @@ const FAQSection = () => {
                     <h2 className="text-3xl font-semibold mb-6">Still Have Questions?</h2>
                     <p className="text-lg mb-8">If you didn&apos;t find what you were looking for in the FAQs, feel free to reach out directly.</p>
                     <Link href="/contact">
-                        <span className="bg-blue-600 text-white py-4 px-8 rounded-md font-semibold hover:bg-blue-800 transition-colors duration-300">
+                        <span className="bg-blue-600 text-white py-4 px-8 rounded-md font-semibold hover:bg-blue-800 transition-colors duration-300 cursor-pointer">
                             Contact Us
                         </span>
                     </Link>

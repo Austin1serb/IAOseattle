@@ -1,12 +1,8 @@
 import React from 'react'
-
-import Media from './MediaComponents/MediaPage'
-
-const page:React.FC = () => {
+import MediaPage from './MediaComponents/MediaPage'
+const page: React.FC = () => {
   return (
-   
-        <Media/>
-
+    <MediaPage />
   )
 }
 

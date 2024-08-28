@@ -3,10 +3,15 @@ import React from 'react';
 import { BarChart, IncidentCount } from './ChartComponents';
 import moment from 'moment-timezone';
 
+//export const revalidate = 3600 // invalidate every hour
+
 const IncidentWidget = async () => {
     // Fetch records from the API route
     const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/airtable`, {
         headers: { 'Content-Type': 'application/json' },
+        //cache: 'no-store',
+        //next: { revalidate: 3600 },
+
     });
     if (!response.ok) {
         throw new Error('Failed to fetch incident data');
@@ -18,7 +23,7 @@ const IncidentWidget = async () => {
     const currentMonth = moment().tz('America/Los_Angeles').format('YYYY-MM');
     const today = moment().tz('America/Los_Angeles').format('YYYY-MM-DD');
     const currentMonthRecords = result.filter((record: any) =>
-        record.fields['Incident Date'] && record.fields['Incident Date'].startsWith(currentMonth)
+        record?.fields['Incident Date']?.startsWith(currentMonth)
     );
     const typesCount: { [key: string]: number } = {};
     let overdoses = 0;
@@ -50,8 +55,8 @@ const IncidentWidget = async () => {
         labels: Object.keys(typesCount),
         datasets: [
             {
-                label: 'Monthly Incident Types',
-                data: Object.values(typesCount) as number[],
+                label: '',
+                data: Object.values(typesCount),
                 backgroundColor: Object.keys(typesCount).map(
                     (key) => colorMapping[key]?.background || 'rgba(0, 0, 0, 0.2)'
                 ),
@@ -63,7 +68,7 @@ const IncidentWidget = async () => {
         ],
     };
 
-    console.log("Fetching Data...");
+    console.log("Fetching Data: ", currentMonthRecords.length);
 
 
     const options = {
@@ -84,11 +89,11 @@ const IncidentWidget = async () => {
         },
         plugins: {
             legend: {
-                labels: {
-                    color: 'white',
-                },
+                display: false, // This hides the legend
             },
+
         },
+        maintainAspectRatio: false,
     };
 
     return (
@@ -97,21 +102,24 @@ const IncidentWidget = async () => {
                 {currentMonthFormatted} Monthly Overview
             </h1>
 
-            <div className="widget-container mx-auto p-4 z-20 backdrop-blur-md min-w-[500px] rounded-lg">
-
-                <div className="stats-container flex justify-around mb-4 w-full">
-                    <div className="stat b-primary-light">
-                        <h2 className="text-md font-bold text-white">Incidents Resolved</h2>
-                        <IncidentCount totalCount={currentMonthRecords.length} todaysCount={todayCount} />
-                    </div>
-                    <div className="stat">
-                        <h2 className="text-md font-bold text-white">Overdoses Prevented</h2>
-                        <IncidentCount totalCount={overdoses === 0 ? 1 : overdoses} color="text-green-500" />
+            <div className="widget-container relative mx-auto p-4 z-20 backdrop-blur-md min-w-[500px] h-full w-full rounded-lg">
+                <div className='-mb-6'>
+                    <div className="stats-container flex justify-around mb-4 w-full">
+                        <div className="stat b-primary-light">
+                            <h2 className="text-md font-bold text-white">Incidents Resolved</h2>
+                            <IncidentCount totalCount={currentMonthRecords.length} todaysCount={todayCount} />
+                        </div>
+                        <div className={`stat ${overdoses > 0 && 'hidden'}`}>
+                            <h2 className="text-md font-bold text-white">Overdoses Prevented</h2>
+                            <IncidentCount totalCount={overdoses === 0 ? 1 : overdoses} color="text-green-500" />
+                        </div>
                     </div>
                 </div>
-                <div className="chart-container w-full ">
+                <div className="chart-container w-full h-full">
                     <BarChart data={chartData} options={options} />
+
                 </div>
+
             </div>
         </>
     );

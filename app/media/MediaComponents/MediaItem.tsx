@@ -7,7 +7,6 @@ const MediaContent = dynamic(() => import('./MediaContent'), {
     ssr: true,
 });
 
-
 interface MediaItemProps {
     title: string;
     slug: string;
@@ -29,7 +28,7 @@ const MediaItem: React.FC<MediaItemProps> = ({
     videoEmbed,
 }) => {
     return (
-        <div className="bg-white rounded-lg ddd overflow-hidden flex flex-col justify-between items-center w-full h-[525px] max-w-[425px] group hover:scale-[98%] transition-all duration-300">
+        <div className="bg-white rounded-lg shadow-dark overflow-hidden flex flex-col justify-between items-center w-full h-[525px] max-w-[425px] group hover:scale-[98%] transition-all duration-300">
             <header aria-label='media-card-header'>
                 <div aria-label='media-card-image/video' className="relative w-full pb-[56.25%]">
                     <MediaContent
@@ -40,7 +39,7 @@ const MediaItem: React.FC<MediaItemProps> = ({
                     />
                 </div>
                 <div className="p-4" aria-label='media-card-body-text'>
-                    <Link aria-label={`Link to article ${title}`} href={`/articles/${slug}`}>
+                    <Link aria-label={`Link to article ${title}`} href={`/media/${slug}`}>
                         <div className="overflow-hidden relative">
                             <div className="line-clamp-combined line-clamp-6 h-40">
                                 <h2 className="text-xl font-bold mb-2">{title}</h2>
