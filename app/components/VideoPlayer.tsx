@@ -3,9 +3,10 @@ import React from 'react';
 interface Props {
     videoSrc: string;
     size?: string;
+    poster?: string;
 }
 
-const VideoPlayer: React.FC<Props> = ({ videoSrc }) => {
+const VideoPlayer: React.FC<Props> = ({ videoSrc, poster }) => {
 
     return (
         <div className={`relative w-full h-full`}>
@@ -16,8 +17,7 @@ const VideoPlayer: React.FC<Props> = ({ videoSrc }) => {
                 muted
                 playsInline
                 preload="auto"
-                poster="/images/seattleVidAbout-min.jpg"
-                
+                poster={poster}
 
             >
                 <source src={videoSrc} type="video/webm" />

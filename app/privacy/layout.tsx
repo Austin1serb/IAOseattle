@@ -9,7 +9,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ children }) => {
     return (
         <>
             <header>
-                <VideoSection videoSrc={'/seattleVidMedia.webm'} text="Privacy Policy" />
+                <VideoSection videoSrc={'/seattleVidMedia.webm'} text="Privacy Policy" poster='/images/seattleVidMedia-min.jpg' />
             </header>
 
             {children}

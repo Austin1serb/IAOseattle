@@ -8,6 +8,7 @@ export default function Home() {
       <div className="absolute h-screen w-screen overflow-hidden text-white">
         <VideoSection
           videoSrc="/seattleVidAbout.webm"
+          poster='/images/seattleVidAbout-min.jpg'
           homePage={true}
           size='70vh'
         />

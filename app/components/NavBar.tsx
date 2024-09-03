@@ -59,6 +59,7 @@ const Navbar: React.FC = () => {
                                     <NavLink href="/" label="Home" />
                                     <NavLink href="/about" label="About" />
                                     <NavLink href="/media" label="Media" />
+                                    <NavLink href="/articles" label="Articles" />
                                     <NavLink href="/contact" label="Contact" />
                                     <NavLink href="/careers" label="Careers" />
                                 </div>
@@ -69,7 +70,7 @@ const Navbar: React.FC = () => {
                                     alt="Iron & Oak Logo"
                                     width={50}
                                     height={50}
-                                    className="cursor-pointer rounded-md  sm:block"
+                                    className="cursor-pointer rounded-md  hidden sm:block"
                                 />
 
                             </Link>
@@ -83,13 +84,14 @@ const Navbar: React.FC = () => {
             </div>
 
             <div className={`mobile-menu sm:hidden fixed top-0 left-0 w-full z-40 transition-transform ease-out duration-300 ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}>
-                <div className="w-full h-[50vh] bg-[#0000009d] backdrop-blur flex flex-col items-center justify-center">
-                    <div className={`mobile-nav-links w-1/3 h-3/4 mt-12 flex flex-col items-center justify-evenly text-xl`}>
-                        <NavLink onClick={() => setIsOpen(false)} href="/" label="Home" className={`${isOpen ? 'translate-x-0' : 'translate-x-[100vw] delay-0'} transition-transform ease-out delay-[300ms] duration-300 `} />
-                        <NavLink onClick={() => setIsOpen(false)} href="/about" label="About" className={`${isOpen ? 'translate-x-0' : 'translate-x-[100vw]  delay-0'} transition-transform ease-out delay-[400ms] duration-300 `} />
-                        <NavLink onClick={() => setIsOpen(false)} href="/media" label="Media" className={`${isOpen ? 'translate-x-0' : 'translate-x-[100vw]  delay-0'} transition-transform ease-out delay-[500ms] duration-300 `} />
-                        <NavLink onClick={() => setIsOpen(false)} href="/contact" label="Contact" className={`${isOpen ? 'translate-x-0' : 'translate-x-[100vw]  delay-0'} transition-transform ease-out delay-[600ms] duration-300 `} />
-                        <NavLink onClick={() => setIsOpen(false)} href="/careers" label="Careers" className={`${isOpen ? 'translate-x-0' : 'translate-x-[100vw]  delay-0'} transition-transform ease-out delay-[700ms] duration-500 `} />
+                <div className="w-full h-[60vh] bg-[#0000009d] backdrop-blur flex flex-col items-center justify-center">
+                    <div className={`mobile-nav-links w-1/3 h-3/4 mt-16 flex flex-col items-center justify-evenly text-xl`}>
+                        <NavLink onClick={() => setIsOpen(false)} href="/" label="Home" className={`${isOpen ? 'translate-x-0 transition-transform ease-out delay-[300ms] duration-300' : 'translate-x-[100vw] delay-0'}  `} />
+                        <NavLink onClick={() => setIsOpen(false)} href="/about" label="About" className={`${isOpen ? 'translate-x-0 transition-transform ease-out delay-[400ms] duration-300' : 'translate-x-[100vw]  delay-0'}  `} />
+                        <NavLink onClick={() => setIsOpen(false)} href="/media" label="Media" className={`${isOpen ? 'translate-x-0 transition-transform ease-out delay-[500ms] duration-300' : 'translate-x-[100vw]  delay-0'}  `} />
+                        <NavLink onClick={() => setIsOpen(false)} href="/articles" label="Articles" className={`${isOpen ? 'translate-x-0  transition-transform ease-out delay-[600ms] duration-300' : 'translate-x-[100vw]  delay-0'} `} />
+                        <NavLink onClick={() => setIsOpen(false)} href="/contact" label="Contact" className={`${isOpen ? 'translate-x-0 transition-transform ease-out delay-[700ms] duration-300' : 'translate-x-[100vw]  delay-0'}  `} />
+                        <NavLink onClick={() => setIsOpen(false)} href="/careers" label="Careers" className={`${isOpen ? 'translate-x-0 transition-transform ease-out delay-[800ms] duration-500 ' : 'translate-x-[100vw]  delay-0'} `} />
 
                     </div>
                 </div>

@@ -10,7 +10,7 @@ const MediaLayout: React.FC<MediaLayoutProps> = ({ children }) => {
     return (
         <>
             <header>
-                <VideoSection videoSrc={'/seattleVidMedia.webm'} text="Media" />
+                <VideoSection videoSrc={'/seattleVidMedia.webm'} text="Media" poster='/images/seattleVidMedia-min.jpg' />
             </header>
 
             {children}

@@ -1,11 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-
-const MediaContent = dynamic(() => import('./MediaContent'), {
-    loading: () => <div className="absolute w-full h-full bg-gray-800 animate-pulse" />,
-    ssr: true,
-});
+import MediaContent from './MediaContent';
 
 interface MediaItemProps {
     title: string;

@@ -3,31 +3,30 @@ import React from 'react';
 import { BarChart, IncidentCount } from './ChartComponents';
 import moment from 'moment-timezone';
 
-//export const revalidate = 3600 // invalidate every hour
-
 const IncidentWidget = async () => {
     // Fetch records from the API route
     const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/airtable`, {
         headers: { 'Content-Type': 'application/json' },
-        //cache: 'no-store',
-        //next: { revalidate: 3600 },
-
     });
     if (!response.ok) {
         throw new Error('Failed to fetch incident data');
     }
     const result = await response.json();
+
     // Get the current month and year
     const currentMonthFormatted = moment().tz('America/Los_Angeles').format('MMMM YYYY');
-    // Date and filtering logic
     const currentMonth = moment().tz('America/Los_Angeles').format('YYYY-MM');
     const today = moment().tz('America/Los_Angeles').format('YYYY-MM-DD');
+    
+    // Filter records for the current month
     const currentMonthRecords = result.filter((record: any) =>
         record?.fields['Incident Date']?.startsWith(currentMonth)
     );
+
     const typesCount: { [key: string]: number } = {};
     let overdoses = 0;
     let todayCount = 0;
+
     currentMonthRecords.forEach((record: any) => {
         const type = getShortName(record.fields['Incident Type']);
         typesCount[type] = (typesCount[type] || 0) + 1;
@@ -38,38 +37,47 @@ const IncidentWidget = async () => {
             todayCount += 1;
         }
     });
-    const colorMapping: { [key: string]: { background: string; border: string } } = {
-        'Suspicious Activity': { background: '#282F48', border: '#0F75E0' },
-        Theft: { background: '#102A72', border: '#0F75E0' },
-        'Disorderly Conduct': { background: '#0F75E0', border: '#102a71' },
-        Medical: { background: '#4fb1e4', border: '#0F75E0' },
-        Trespassing: { background: '#282F48', border: '#0F75E0' },
-        Vandalism: { background: '#102A72', border: '#0F75E0' },
-        'Use Of Protection': { background: '#0F75E0', border: '#102a71' },
-        'Property Damage': { background: '#4fb1e4', border: '#0F75E0' },
-        Arson: { background: '#282F48', border: '#0F75E0' },
-        Assault: { background: '#0F75E0', border: '#102a71' },
-    };
+
+    // Get the top 8 incident types
+// Get the top 8 incident types
+const sortedTypes = Object.entries(typesCount)
+    .sort(([, a], [, b]) => b - a) 
+    .slice(0, 8);
+
+// Shuffle the top 8 incident types randomly
+const shuffledTypes = sortedTypes.sort(() => Math.random() - 0.5);
+
+const colorMapping: { [key: string]: { background: string; border: string } } = {
+    'Suspicious Activity': { background: '#0F75E0', border: '#0D5CA0' }, // Primary Blue
+    Theft: { background: '#8E44AD', border: '#732D91' }, // Purple
+    'Disorderly Conduct': { background: '#0F75E0', border: '#0D5CA0' }, // Primary Blue
+    Medical: { background: '#16A085', border: '#0F75E0' }, // Teal
+    Trespassing: { background: '#8E44AD', border: '#732D91' }, // Purple
+    Vandalism: { background: '#16A085', border: '#0F75E0' }, // Teal
+    'Use Of Protection': { background: '#0F75E0', border: '#0D5CA0' }, // Primary Blue
+    'Property Damage': { background: '#8E44AD', border: '#732D91' }, // Purple
+    Arson: { background: '#16A085', border: '#0F75E0' }, // Teal
+    Assault: { background: '#0F75E0', border: '#0D5CA0' }, // Primary Blue
+};
+
 
     const chartData = {
-        labels: Object.keys(typesCount),
+        
+        labels: shuffledTypes.map(([key]) => key),
         datasets: [
             {
                 label: '',
-                data: Object.values(typesCount),
-                backgroundColor: Object.keys(typesCount).map(
-                    (key) => colorMapping[key]?.background || 'rgba(0, 0, 0, 0.2)'
+                data: shuffledTypes.map(([, value]) => value),
+                backgroundColor: shuffledTypes.map(
+                    ([key]) => colorMapping[key]?.background || 'rgba(0, 0, 0, 0.2)'
                 ),
-                borderColor: Object.keys(typesCount).map(
-                    (key) => colorMapping[key]?.border || 'rgba(0, 0, 0, 1)'
+                borderColor: shuffledTypes.map(
+                    ([key]) => colorMapping[key]?.border || 'rgba(0, 0, 0, 1)'
                 ),
                 borderWidth: 1,
             },
         ],
     };
-
-    console.log("Fetching Data: ", currentMonthRecords.length);
-
 
     const options = {
         scales: {
@@ -89,9 +97,8 @@ const IncidentWidget = async () => {
         },
         plugins: {
             legend: {
-                display: false, // This hides the legend
+                display: false, // Hide the legend
             },
-
         },
         maintainAspectRatio: false,
     };
@@ -117,9 +124,7 @@ const IncidentWidget = async () => {
                 </div>
                 <div className="chart-container w-full h-full">
                     <BarChart data={chartData} options={options} />
-
                 </div>
-
             </div>
         </>
     );
@@ -137,7 +142,6 @@ const getShortName = (name: string) => {
         'Property Damage, Less than $5K': 'Property Damage',
         'Fire / Arson': 'Arson',
         "Maintenance Emergency (Broken Water Main / Gas Leak / Electrical Hazard)": 'Maintenance Emergency',
-
     };
     return nameMapping[name] || name;
 };

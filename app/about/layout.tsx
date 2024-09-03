@@ -10,7 +10,7 @@ const AboutLayout: React.FC<AboutLayoutProps> = ({ children }) => {
     return (
         <>
             <header>
-                <VideoSection videoSrc={'/seattleVidAbout.webm'} text="About Us" />
+                <VideoSection videoSrc={'/seattleVidAbout.webm'} text="About Us" poster={'/images/seattleVidAbout-min.jpg'} />
             </header>
 
             {children}

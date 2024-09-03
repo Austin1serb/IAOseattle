@@ -11,7 +11,7 @@ const ContactLayout: React.FC<ContactLayoutProps> = ({ children }) => {
     return (
         <>
             <header>
-                <VideoSection videoSrc={'/seattleVidMedia.webm'} text="Contact Us"  />
+                <VideoSection videoSrc={'/seattleVidMedia.webm'} text="Contact Us" poster='/images/seattleVidMedia-min.jpg'  />
             </header>
 
             {children}

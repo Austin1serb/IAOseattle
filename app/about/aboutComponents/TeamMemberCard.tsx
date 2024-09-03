@@ -26,7 +26,7 @@ const TeamMemberCard: React.FC<{ member: TeamMember }> = ({ member }) => {
             <h3 className="text-xl font-semibold text-gray-700 mb-2">
                 {member.fields['Preferred Name']}
             </h3>
-            <p className="text-gray-500">{member.fields['Primary Team']}</p>
+            <p className="text-gray-500">{member.fields['Primary Team']} Team</p>
             <p className="text-blue-500">{member.fields['Certified Trainer Endorsement'] === 'Yes' && 'State Certified Trainer'}</p>
         </div>
     );

@@ -1,88 +1,112 @@
 export const articleData = [
 
     {
-        title: 'How to Become a Security Guard in Washington',
-        slug: 'how-to-become-security-guard',
-        description: 'Discover the path to a rewarding career in security. Learn the steps to becoming a licensed security guard in Washington.',
+        title: 'Essential Steps to Become a Security Guard in Washington - A Complete Guide',
+        slug: 'how-to-become-security-guard-washington',
+        description: 'Discover the path to a rewarding career in security. Start your journey to becoming a licensed security guard in Washington with Iron & Oak.',
         date: 'September 1, 2024',
-        imageUrl: '',
-        metaTags: ['Security', 'Urban Areas', 'Safety', 'Public Safety', 'Seattle Jobs', 'Seattle entry level jobs'],
+        imageUrl: 'path/to/your/image.jpg',
+        metaTags: ['Security', 'Urban Areas', 'Safety', 'Public Safety', 'Seattle Jobs', 'Seattle entry level jobs', 'Security Guard Training', 'Washington Security Jobs', 'Iron & Oak Protective Services'],
         content: `
-                <section class="bg-slate-200 py-12">
-                    <div class="container mx-auto px-4">
-                        <div class='py-8'>
-                            <div class="text-5xl sm:text-7xl font-bold text-center flex items-center justify-center w-full mb-12">
-                                <span>How to Become a <span class="text-blue-500">Security Guard</span> in Washington</span>
-                            </div>
-                            <h1 class="text-xl text-center mb-6">
-                                Discover the path to a rewarding career in security. With rising demand for qualified security personnel across Washington, now is the perfect time to start your journey. Learn the steps to becoming a licensed security guard and explore opportunities with Iron & Oak.
-                            </h1>
+            <section class="bg-slate-200 py-12">
+                <div class="container mx-auto px-4">
+                    <div class='py-8'>
+                        <div class="text-5xl sm:text-7xl font-bold text-center flex items-center justify-center w-full mb-12">
+                            <span>Essential Steps to Become a <span class="text-blue-500">Security Guard</span> in Washington</span>
                         </div>
+                        <h1 class="text-xl text-center mb-6">
+                            Discover the path to a rewarding career in security. With rising demand for qualified security personnel across Washington, now is the perfect time to start your journey. Learn the steps to becoming a licensed security guard and explore opportunities with Iron & Oak Protective Services.
+                        </h1>
+                    </div>
     
-                        <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
-                            <h2 class="text-4xl font-semibold mb-4 text-blue-600 text-center">Overview</h2>
-                            <p class="text-lg">
-                                Becoming a security guard in Washington opens up numerous career opportunities. With rising property crime rates across the state, there is a growing demand for qualified security personnel. Security guards are employed in various settings, including residential and commercial properties, and play a vital role in risk management and loss prevention.
-                            </p>
-                            <p class="text-lg mt-4">
-                                This guide provides a comprehensive overview of the steps needed to become a licensed security guard in Washington, from meeting basic criteria to completing required training and obtaining a license.
-                            </p>
-                        </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                        <h2 class="text-4xl font-semibold mb-4 text-blue-600 text-center">Overview</h2>
+                        <p class="text-lg">
+                            Becoming a security guard in Washington opens up numerous career opportunities. With rising property crime rates across the state, there is a growing demand for qualified security personnel. Security guards are employed in various settings, including residential and commercial properties, and play a vital role in risk management and loss prevention.
+                        </p>
+                        <p class="text-lg mt-4">
+                            This guide provides a comprehensive overview of the steps needed to become a licensed security guard in Washington, from meeting basic criteria to completing required training and obtaining a license.
+                        </p>
+                    </div>
     
-                        <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
-                            <h2 class="text-3xl font-semibold mb-4 text-center"><span class='text-blue-600'>Steps</span> to Obtain a Security Guard License in Washington</h2>
-                            <h3 class="text-2xl font-semibold mb-4">Basic Criteria</h3>
-                            <ul class="list-disc list-inside text-lg space-y-2">
-                                <li>Be at least 18 years of age.</li>
-                                <li>Be a U.S. citizen or Resident Alien (Green Card Holder).</li>
-                                <li>Pass a Criminal Record Check (no felony convictions in the last five years).</li>
-                                <li>Be employed or have an offer of employment from a licensed private security company.</li>
-                                <li>Meet training requirements.</li>
-                                <li>Submit a set of fingerprints.</li>
-                                <li>Pay a non-refundable fee $100 (Covered by I&O).</li>
-                                <li>Submit a completed application.</li>
-                            </ul>
+                    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                        <h2 class="text-3xl font-semibold mb-4 text-center"><span class='text-blue-600'>Steps</span> to Obtain a Security Guard License in Washington</h2>
+                        <h3 class="text-2xl font-semibold mb-4">Basic Criteria</h3>
+                        <ul class="list-disc list-inside text-lg space-y-2">
+                            <li>Be at least 18 years of age.</li>
+                            <li>Be a U.S. citizen or Resident Alien (Green Card Holder).</li>
+                            <li>Pass a Criminal Record Check (no felony convictions in the last five years).</li>
+                            <li>Be employed or have an offer of employment from a licensed private security company.</li>
+                            <li>Meet training requirements.</li>
+                            <li>Submit a set of fingerprints.</li>
+                            <li>Pay a non-refundable fee of $100 (Covered by Iron & Oak).</li>
+                            <li>Submit a completed application.</li>
+                        </ul>
     
-                            <h3 class="text-2xl font-semibold mb-4 mt-8">Training <span class='text-blue-600'>Requirements</span></h3>
-                            <p class="text-lg">
-                                Applicants must complete a state-approved training course, which covers essential topics such as basic principles, report writing, safety and accident prevention, emergency response, and legal powers and limitations. It is advisable to take training from accredited organizations or individuals.
-                            </p>
-                        </div>
+                        <h3 class="text-2xl font-semibold mb-4 mt-8">Training <span class='text-blue-600'>Requirements</span></h3>
+                        <p class="text-lg">
+                            Applicants must complete a state-approved training course, which covers essential topics such as basic principles, report writing, safety and accident prevention, emergency response, and legal powers and limitations. It is advisable to take training from accredited organizations or individuals.
+                        </p>
+                    </div>
     
-                        <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
-                            <h2 class="text-3xl font-semibold mb-4 text-center">Application <span class='text-blue-600'>Process</span></h2>
-                            <p class="text-lg">
-                                After completing the required training and securing employment or an offer from a licensed security company, you can submit your application for a security guard license. This includes a completed application form and all supporting documents.
-                            </p>
-                            <p class="text-lg mt-4">
-                                Security guard licenses in Washington must be renewed annually. The renewal process is straightforward and involves confirming that you have not committed any crimes in the past 12 months.
-                            </p>
-                        </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                        <h2 class="text-3xl font-semibold mb-4 text-center">Application <span class='text-blue-600'>Process</span></h2>
+                        <p class="text-lg">
+                            After completing the required training and securing employment or an offer from a licensed security company, you can submit your application for a security guard license. This includes a completed application form and all supporting documents.
+                        </p>
+                        <p class="text-lg mt-4">
+                            Security guard licenses in Washington must be renewed annually. The renewal process is straightforward and involves confirming that you have not committed any crimes in the past 12 months.
+                        </p>
+                    </div>
     
-                        <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
-                            <h2 class="text-3xl font-semibold mb-4 text-center">Additional <span class='text-blue-600'>Opportunities</span></h2>
-                            <p class="text-lg">
-                                For those interested in becoming an armed security guard, additional training and certification are required. This involves meeting specific criteria and passing further tests to obtain an armed security guard license in Washington.
-                            </p>
-                        </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                        <h2 class="text-3xl font-semibold mb-4 text-center">Additional <span class='text-blue-600'>Opportunities</span></h2>
+                        <p class="text-lg">
+                            For those interested in becoming an armed security guard, additional training and certification are required. This involves meeting specific criteria and passing further tests to obtain an armed security guard license in Washington.
+                        </p>
+                    </div>
     
-                        <div class="bg-white p-6 rounded-lg shadow-lg mb-8 text-center">
-                            <h2 class="text-3xl sm:text-4xl font-semibold mb-4"><span class='text-blue-600'>Start Your Career</span> with Iron & Oak Protective Services</h2>
-                            <p class="text-lg">
-                                Iron & Oak Protective Services offers a supportive environment for aspiring security guards. We provide paid training to help you gain the skills needed to succeed and assist you in obtaining your guard card. Our team is dedicated to helping you start your career in private security with stability, growth, and a commitment to excellence.
-                            </p>
-                            <p class="text-lg mt-4">
-                                Join us and be part of a company that values diversity, innovation, and a positive impact on the community. Whether you are new to the field or an experienced professional, Iron & Oak provides opportunities for advancement and development.
-                            </p>
-                            <div class="flex justify-center mt-6">
-                                <a href="/careers" class="bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300">
-                                    Learn More
-                                </a>
-                            </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg mb-8 text-center">
+                        <h2 class="text-3xl sm:text-4xl font-semibold mb-4"><span class='text-blue-600'>Start Your Career</span> with Iron & Oak Protective Services</h2>
+                        <p class="text-lg">
+                            Iron & Oak Protective Services offers a supportive environment for aspiring security guards. We provide paid training to help you gain the skills needed to succeed and assist you in obtaining your guard card. Our team is dedicated to helping you start your career in private security with stability, growth, and a commitment to excellence.
+                        </p>
+                        <p class="text-lg mt-4">
+                            Join us and be part of a company that values diversity, innovation, and a positive impact on the community. Whether you are new to the field or an experienced professional, Iron & Oak provides opportunities for advancement and development.
+                        </p>
+                        <div class="flex justify-center mt-6">
+                            <a href="/careers" class="bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300">
+                                Learn More
+                            </a>
                         </div>
                     </div>
-                </section>
-            `
+    
+                    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                        <h2 class="text-3xl font-semibold mb-4 text-center">Frequently Asked Questions</h2>
+                        <div class="text-lg">
+                            <h3 class="font-semibold mt-4">1. How long does it take to become a security guard in Washington?</h3>
+                            <p>The process generally takes a few weeks, including time for training, background checks, and processing of the application.</p>
+                            
+                            <h3 class="font-semibold mt-4">2. Do I need prior experience to become a security guard?</h3>
+                            <p>No prior experience is necessary. Iron & Oak provides paid training to help you get started.</p>
+                            
+                            <h3 class="font-semibold mt-4">3. Can I work as a security guard while my license application is pending?</h3>
+                            <p>You may be able to work under supervision while your application is processed, depending on the employer's policies.</p>
+                            
+                            <h3 class="font-semibold mt-4">4. What is the cost of security guard training?</h3>
+                            <p>Training costs vary but are often covered by employers like Iron & Oak. The state licensing fee is $100, which Iron & Oak may cover for you.</p>
+                            
+                            <h3 class="font-semibold mt-4">5. What additional steps are needed to become an armed security guard?</h3>
+                            <p>Additional training and certification are required, including firearms training and passing a state examination.</p>
+                            
+                            <h3 class="font-semibold mt-4">6. How often must I renew my security guard license?</h3>
+                            <p>In Washington, your security guard license must be renewed annually.</p>
+                        </div>
+                    </div>
+    
+                </div>
+            </section>
+        `
     },
     {
         title: 'Public Safety in Seattle: Challenges and Solutions',
@@ -1778,7 +1802,221 @@ export const articleData = [
 
 
 
+    {
+        title: 'Top 10 Reasons to Start a Security Career in Seattle - Opportunities with Iron & Oak',
+        slug: 'top-10-reasons-security-career-seattle',
+        description: 'Discover why starting a security career in Seattle with Iron & Oak could be the best decision you make. Explore the top benefits and opportunities awaiting you.',
+        date: 'September 1, 2024',
+        imageUrl: 'path/to/your/image.jpg',
+        metaTags: ['Security Careers', 'Seattle Jobs', 'Private Security', 'Iron & Oak Protective Services', 'Washington State Security Jobs', 'Career Growth', 'Public Safety Jobs', 'Security Training Seattle'],
+        content: `
+            <section class="bg-slate-200 py-12">
+                <div class="container mx-auto px-4">
+                    <div class='py-8'>
+                        <div class="text-5xl sm:text-7xl font-bold text-center flex items-center justify-center w-full mb-12">
+                            <span>Top 10 Reasons to Start a <span class="text-blue-500">Security Career</span> in Seattle</span>
+                        </div>
+                        <h1 class="text-xl text-center mb-6">
+                            If you're considering a career in security, Seattle offers a dynamic and rewarding environment. From excellent job prospects to career growth opportunities, Iron & Oak Protective Services provides an ideal platform to launch your career in security. Discover the top 10 reasons to join the security industry in Seattle today.
+                        </h1>
+                    </div>
+    
+                    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                        <h2 class="text-4xl font-semibold mb-4 text-blue-600 text-center">1. High Demand for Security Professionals</h2>
+                        <p class="text-lg">
+                            With increasing concerns over public safety and property protection, Seattle is experiencing a growing demand for qualified security professionals. This demand translates into abundant job opportunities, especially for those willing to work in diverse environments like residential complexes, commercial buildings, and events.
+                        </p>
+                    </div>
+    
+                    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                        <h2 class="text-4xl font-semibold mb-4 text-blue-600 text-center">2. Competitive Salaries and Benefits</h2>
+                        <p class="text-lg">
+                            Security roles in Seattle offer competitive salaries, with potential for additional benefits such as health insurance, retirement plans, and paid time off. Iron & Oak Protective Services is committed to providing a comprehensive benefits package to ensure job satisfaction and employee well-being.
+                        </p>
+                    </div>
+    
+                    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                        <h2 class="text-4xl font-semibold mb-4 text-blue-600 text-center">3. Opportunities for Career Advancement</h2>
+                        <p class="text-lg">
+                            Starting as a security guard is just the beginning. With experience and additional training, you can advance to supervisory roles, specialize in areas like cybersecurity, or even transition into law enforcement. Iron & Oak offers continuous training and professional development to help you climb the career ladder.
+                        </p>
+                    </div>
+    
+                    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                        <h2 class="text-4xl font-semibold mb-4 text-blue-600 text-center">4. Work in a Variety of Environments</h2>
+                        <p class="text-lg">
+                            Security professionals in Seattle have the chance to work in various settings, from corporate offices and retail stores to residential communities and public events. This variety keeps the job interesting and allows you to gain experience in different aspects of security work.
+                        </p>
+                    </div>
+    
+                    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                        <h2 class="text-4xl font-semibold mb-4 text-blue-600 text-center">5. Contribute to Public Safety</h2>
+                        <p class="text-lg">
+                            As a security professional, you play a vital role in maintaining public safety and protecting communities. Your presence can deter criminal activity, provide peace of mind to residents and business owners, and ensure that Seattle remains a safe place to live and work.
+                        </p>
+                    </div>
+    
+                    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                        <h2 class="text-4xl font-semibold mb-4 text-blue-600 text-center">6. Flexible Work Schedules</h2>
+                        <p class="text-lg">
+                            Security jobs often offer flexible work hours, including part-time and full-time positions, night shifts, and weekend opportunities. This flexibility makes it easier to balance work with personal commitments, pursue education, or even work a second job.
+                        </p>
+                    </div>
+    
+                    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                        <h2 class="text-4xl font-semibold mb-4 text-blue-600 text-center">7. Paid Training and Certification</h2>
+                        <p class="text-lg">
+                            Iron & Oak Protective Services provides paid training to ensure you meet Washington state security requirements and develop the skills necessary for the job. This includes certification courses that cover essential topics like emergency response, legal limitations, and customer service.
+                        </p>
+                    </div>
+    
+                    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                        <h2 class="text-4xl font-semibold mb-4 text-blue-600 text-center">8. A Gateway to Law Enforcement Careers</h2>
+                        <p class="text-lg">
+                            A career in private security can serve as a stepping stone to a career in law enforcement. The experience gained in security can be valuable if you decide to pursue a role with the Seattle Police Department or another law enforcement agency.
+                        </p>
+                    </div>
+    
+                    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                        <h2 class="text-4xl font-semibold mb-4 text-blue-600 text-center">9. Be Part of a Growing Industry</h2>
+                        <p class="text-lg">
+                            The security industry is one of the fastest-growing sectors in the job market. As security needs continue to rise, there are more opportunities for career growth, specialization, and long-term stability. Joining Iron & Oak puts you at the forefront of this expanding field.
+                        </p>
+                    </div>
+    
+                    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                        <h2 class="text-4xl font-semibold mb-4 text-blue-600 text-center">10. Join a Supportive Team at Iron & Oak</h2>
+                        <p class="text-lg">
+                            At Iron & Oak Protective Services, we pride ourselves on fostering a supportive and inclusive work environment. We value diversity, teamwork, and the contributions of each team member. Whether you are new to the field or an experienced professional, you will find a community dedicated to your success.
+                        </p>
+                        <div class="flex justify-center mt-6">
+                            <a href="/careers" class="bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300">
+                                Explore Career Opportunities
+                            </a>
+                        </div>
+                    </div>
+    
+                    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                        <h2 class="text-3xl font-semibold mb-4 text-center">Frequently Asked Questions</h2>
+                        <div class="text-lg">
+                            <h3 class="font-semibold mt-4">1. What qualifications do I need to start a security career in Seattle?</h3>
+                            <p>You need to be at least 18 years old, have a clean criminal record, and complete the required state-approved training program.</p>
+                            
+                            <h3 class="font-semibold mt-4">2. Does Iron & Oak offer on-the-job training?</h3>
+                            <p>Yes, we provide paid training to help you meet all state requirements and prepare you for your role in security.</p>
+                            
+                            <h3 class="font-semibold mt-4">3. Can I work part-time as a security guard?</h3>
+                            <p>Yes, Iron & Oak offers both part-time and full-time positions with flexible schedules to suit your needs.</p>
+                            
+                            <h3 class="font-semibold mt-4">4. Is previous experience required to work with Iron & Oak?</h3>
+                            <p>No previous experience is necessary. We welcome individuals new to the security field and provide all the training needed.</p>
+                            
+                            <h3 class="font-semibold mt-4">5. How do I apply for a security position with Iron & Oak?</h3>
+                            <p>You can apply online through our careers page or contact our HR department directly for more information.</p>
+                            
+                            <h3 class="font-semibold mt-4">6. What are the growth opportunities at Iron & Oak?</h3>
+                            <p>We offer numerous opportunities for career advancement, including supervisory roles, specialized security positions, and training for those interested in moving into law enforcement.</p>
+                        </div>
+                    </div>
+    
+                </div>
+            </section>
+        `
+    },
 
+    {
+        title: 'Start Your Career with No Experience: Entry-Level Security Jobs in Seattle with Iron & Oak',
+        slug: 'entry-level-security-jobs-no-experience-seattle',
+        description: 'Discover entry-level security jobs in Seattle that require no prior experience. Start your career in security with Iron & Oak and receive paid training today.',
+        date: 'September 1, 2024',
+        imageUrl: 'path/to/your/image.jpg',
+        metaTags: ['No Experience Jobs', 'Entry-Level Jobs', 'Seattle Jobs', 'No Experience Security Jobs', 'Iron & Oak Protective Services', 'Security Careers', 'Seattle Entry-Level Jobs', 'Paid Training'],
+        content: `
+            <section class="bg-slate-200 py-12">
+                <div class="container mx-auto px-4">
+                    <div class='py-8'>
+                        <div class="text-5xl sm:text-7xl font-bold text-center flex items-center justify-center w-full mb-12">
+                            <span>Start Your Career with <span class="text-blue-500">No Experience</span>: Entry-Level Security Jobs in Seattle</span>
+                        </div>
+                        <h1 class="text-xl text-center mb-6">
+                            Looking for a job with no experience required? Seattle has numerous entry-level opportunities, especially in the growing field of security. Iron & Oak Protective Services is here to help you launch a fulfilling career, offering paid training and the support you need to succeed.
+                        </h1>
+                    </div>
+    
+                    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                        <h2 class="text-4xl font-semibold mb-4 text-blue-600 text-center">Why Choose an Entry-Level Security Job?</h2>
+                        <p class="text-lg">
+                            Entry-level security jobs are perfect for those looking to start a new career without prior experience. Whether you're a recent graduate, someone changing careers, or simply in need of stable employment, security offers a rewarding path with growth potential. Plus, with the right employer, you can gain valuable skills and certifications on the job.
+                        </p>
+                    </div>
+    
+                    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                        <h2 class="text-4xl font-semibold mb-4 text-blue-600 text-center">No Experience? No Problem!</h2>
+                        <p class="text-lg">
+                            At Iron & Oak Protective Services, we believe that everyone deserves a chance to prove themselves. That’s why we offer entry-level positions that require no prior experience. We provide all the training you need to become a licensed security guard in Washington, helping you build a strong foundation for your career.
+                        </p>
+                    </div>
+    
+                    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                        <h2 class="text-4xl font-semibold mb-4 text-blue-600 text-center">Benefits of Working with Iron & Oak</h2>
+                        <p class="text-lg">
+                            Starting your career with Iron & Oak comes with numerous benefits. Our entry-level security jobs offer competitive pay, flexible work schedules, and the opportunity to advance within the company. Additionally, our paid training program ensures you meet all state requirements and feel confident in your new role.
+                        </p>
+                        <ul class="list-disc list-inside text-lg space-y-2 mt-4">
+                            <li>Competitive starting salary</li>
+                            <li>Paid training and certification</li>
+                            <li>Flexible work hours, including part-time and full-time positions</li>
+                            <li>Opportunities for career advancement</li>
+                            <li>Supportive work environment</li>
+                        </ul>
+                    </div>
+    
+                    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                        <h2 class="text-4xl font-semibold mb-4 text-blue-600 text-center">What to Expect in an Entry-Level Security Job</h2>
+                        <p class="text-lg">
+                            As an entry-level security guard, your primary responsibilities will include patrolling assigned areas, monitoring security systems, and reporting any unusual activity. You’ll work closely with a team to ensure the safety of the property and its occupants. No two days are the same, making this an exciting and dynamic job.
+                        </p>
+                    </div>
+    
+                    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                        <h2 class="text-4xl font-semibold mb-4 text-blue-600 text-center">How to Apply for an Entry-Level Security Job with Iron & Oak</h2>
+                        <p class="text-lg">
+                            Applying for an entry-level security job with Iron & Oak is simple. Visit our careers page, fill out the application form, and our HR team will get in touch with you. We welcome applicants from all backgrounds and experience levels. If you’re motivated, reliable, and eager to learn, we want to hear from you!
+                        </p>
+                        <div class="flex justify-center mt-6">
+                            <a href="/careers" class="bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300">
+                                Apply Now
+                            </a>
+                        </div>
+                    </div>
+    
+                    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                        <h2 class="text-3xl font-semibold mb-4 text-center">Frequently Asked Questions</h2>
+                        <div class="text-lg">
+                            <h3 class="font-semibold mt-4">1. Do I need any qualifications to apply for an entry-level security job?</h3>
+                            <p>No specific qualifications are required. We provide all the necessary training to help you get started.</p>
+                            
+                            <h3 class="font-semibold mt-4">2. How much can I earn as a security guard with no experience?</h3>
+                            <p>Entry-level security guards in Seattle can earn a competitive starting salary, with opportunities for raises as you gain experience.</p>
+                            
+                            <h3 class="font-semibold mt-4">3. What kind of training will I receive?</h3>
+                            <p>Iron & Oak provides state-approved training that covers all essential areas, including emergency response, legal limitations, and customer service.</p>
+                            
+                            <h3 class="font-semibold mt-4">4. Can I work part-time while attending school?</h3>
+                            <p>Yes, we offer flexible schedules that can accommodate your education or other commitments.</p>
+                            
+                            <h3 class="font-semibold mt-4">5. What is the application process like?</h3>
+                            <p>Our application process is straightforward. Simply fill out the form on our website, and we’ll guide you through the next steps.</p>
+                            
+                            <h3 class="font-semibold mt-4">6. Is there room for advancement in this job?</h3>
+                            <p>Absolutely. We encourage our employees to pursue career advancement, and we provide opportunities for growth within the company.</p>
+                        </div>
+                    </div>
+    
+                </div>
+            </section>
+        `
+    }
 
 
 

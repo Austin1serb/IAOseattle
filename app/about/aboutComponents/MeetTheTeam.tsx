@@ -1,16 +1,13 @@
 // app/about/MeetTheTeam.tsx
 import React from 'react';
-import TeamMemberCardSkeleton from './TeamMemberCardSkeleton';
-import dynamic from 'next/dynamic';
+
 import { fetchAllOrgChartRecords } from '@/components/utils/fetch';
+import TeamMemberCard from './TeamMemberCard';
+import Image from 'next/image';
+import MeetTheOwner from './MeetTheOwner';
 
 
 
-
-const TeamMemberCard = dynamic(() => import('./TeamMemberCard'), {
-  ssr: false,
-  loading: () => <TeamMemberCardSkeleton />,
-});
 
 
 // Server Component
@@ -31,18 +28,23 @@ const MeetTheTeam = async () => {
   );
 
   // Slice the filtered members to only include the first 6
-  const displayedMembers = filteredMembers.slice(0,6);
+  const displayedMembers = filteredMembers.slice(0, 6);
 
   return (
     <section id='team' className="bg-slate-200 py-16">
       <div className="max-w-5xl mx-auto px-8">
-        <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 text-center mb-8">
-          Meet the Team
+        <h2 className="text-5xl lg:text-7xl font-bold text-slate-800 text-center mb-8">
+          Meet the   <span className="text-blue-500">Team.</span>
         </h2>
+        <div>
+
+          <MeetTheOwner />
+        </div>
         <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {displayedMembers.map((member) => (
+          {/*{displayedMembers.map((member) => (
             <TeamMemberCard key={member.id} member={member} />
-          ))}
+          ))}*/}
+
         </div>
       </div>
     </section>

@@ -8,7 +8,7 @@ const CareersLayout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     return (
         <main className="w-full min-w-350px">
             <header>
-                <VideoSection videoSrc={'/seattleHome.webm'} text='Careers' homePage={false} />
+                <VideoSection videoSrc={'/seattleHome.webm'} text='Careers' homePage={false} poster='/images/seattleHome-min.jpg' />
             </header>
             
                 {children}

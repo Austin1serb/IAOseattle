@@ -44,10 +44,10 @@ const FAQSection = () => {
                     <div className="space-y-4 text-left">
                         {faqs.map((faq, index) => (
                             <div key={index} className="hover:bg-slate-100 transition-all duration-300 rounded-lg shadow-md relative mx-2">
-                                <input type="checkbox" id={`faq-${index}`} className="hidden peer" />
+                                <input type="checkbox" id={`faq-${index}`} className="hidden peer w-full h-full" />
                                 <label
                                     htmlFor={`faq-${index}`}
-                                    className="flex justify-between items-center cursor-pointer  p-6"
+                                    className="flex justify-between items-center cursor-pointer p-6"
                                 >
                                     <h3 className="text-xl font-semibold text-gray-800">
                                         {faq.question}

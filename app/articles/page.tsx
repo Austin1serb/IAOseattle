@@ -56,12 +56,12 @@ const Articles: React.FC = () => {
     return (
         <main className='bg-slate-200'>
             <div className="text-center p-16 ">
-                <p className="text-3xl text-slate-700">
+                <p className="text-3xl ">
                     Explore our latest articles and industry insights.
                 </p>
-                <p className='m-8'>Stay informed with the latest news and articles that reflect our commitment to excellence in security services.</p>
+                <p className='mt-16 text-gray-600 font-thin'>Stay informed with the latest news and articles that reflect our commitment to excellence in security services.</p>
                 <Link className='text-blue-600 underline hover:text-blue-800 transition duration-300 inline-block cursor-pointer' href={'/media'}>
-                    View Media?
+                    View Media
                 </Link>
             </div>
             <section
