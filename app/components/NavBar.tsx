@@ -1,4 +1,5 @@
-'use client';
+"use client";
+
 import Image from 'next/image';
 import NavLink from './NavLink';
 import Link from 'next/link';
@@ -23,23 +24,32 @@ const Navbar: React.FC = () => {
     const [totalScrollableHeight, setTotalScrollableHeight] = useState(1);
     const [isOpen, setIsOpen] = useState(false);
 
+    // Calculate total scrollable height and set initial scroll position
     useEffect(() => {
-        setTotalScrollableHeight(document.documentElement.scrollHeight - window.innerHeight);
+        const calculateTotalScrollableHeight = () => {
+            setTotalScrollableHeight(document.documentElement.scrollHeight - window.innerHeight);
+            setScrollY(window.scrollY); // Set the initial scroll position
+        };
+
+        calculateTotalScrollableHeight();
+
         const handleScroll = throttle(() => {
             setScrollY(window.scrollY);
         }, 50);
 
         window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', calculateTotalScrollableHeight); // Recalculate on resize
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', calculateTotalScrollableHeight);
         };
     }, []);
 
     const getOpacity = () => {
         const scrollFraction = scrollY / totalScrollableHeight;
-        const opacity = Math.floor(scrollFraction * 100) / 100;
-        return scrollY > 300 ? opacity + 0.3 : 0;
+        const opacity = Math.min(Math.floor(scrollFraction * 100) / 100 + 0.3, 1); // Ensure opacity doesn't exceed 1
+        return scrollY > 300 ? opacity : 0;
     };
 
     return (
@@ -52,9 +62,10 @@ const Navbar: React.FC = () => {
                 <div className="max-w-8xl mx-auto px-2 sm:px-6 lg:px-8">
                     <div className="relative flex items-center justify-between h-16">
                         <div className="flex-1 flex items-center justify-between sm:items-stretch sm:justify-start">
-
-                            <span className='text-3xl sm:hidden text-center  text-shadow text-white font-bold uppercase flex justify-center items-center'>Iron & Oak</span>
-                            <div className="hidden sm:block ml-12 w-full">
+                            <span className='text-3xl sm:hidden text-center text-shadow text-white font-bold uppercase flex justify-center items-center'>
+                                Iron & Oak
+                            </span>
+                            <div className="hidden sm:block w-full">
                                 <div className="flex space-x-4 font-bold">
                                     <NavLink href="/" label="Home" />
                                     <NavLink href="/about" label="About" />
@@ -64,18 +75,17 @@ const Navbar: React.FC = () => {
                                     <NavLink href="/careers" label="Careers" />
                                 </div>
                             </div>
-                            <Link href={'/'} className='flex sm:block'>
+                            <Link href="/" className='flex sm:block'>
                                 <Image
                                     src="https://www.jotform.com/uploads/iaoadmin/form_files/222058180857156_mainPWAIcon.6382b2a1a860f.png"
                                     alt="Iron & Oak Logo"
                                     width={50}
                                     height={50}
-                                    className="cursor-pointer rounded-md  hidden sm:block"
+                                    className="cursor-pointer rounded-md hidden sm:block"
                                 />
-
                             </Link>
                             {/* Hamburger Icon for Mobile */}
-                            <div className=' sm:hidden'>
+                            <div className='sm:hidden'>
                                 <HamburgerIcon isOpen={isOpen} setIsOpen={() => setIsOpen(!isOpen)} />
                             </div>
                         </div>
@@ -92,7 +102,6 @@ const Navbar: React.FC = () => {
                         <NavLink onClick={() => setIsOpen(false)} href="/articles" label="Articles" className={`${isOpen ? 'translate-x-0  transition-transform ease-out delay-[600ms] duration-300' : 'translate-x-[100vw]  delay-0'} `} />
                         <NavLink onClick={() => setIsOpen(false)} href="/contact" label="Contact" className={`${isOpen ? 'translate-x-0 transition-transform ease-out delay-[700ms] duration-300' : 'translate-x-[100vw]  delay-0'}  `} />
                         <NavLink onClick={() => setIsOpen(false)} href="/careers" label="Careers" className={`${isOpen ? 'translate-x-0 transition-transform ease-out delay-[800ms] duration-500 ' : 'translate-x-[100vw]  delay-0'} `} />
-
                     </div>
                 </div>
             </div>

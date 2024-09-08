@@ -4,7 +4,7 @@
 
 :root {
   /* FONT */
-  --font-montserrat: 'Montserrat', sans-serif;
+
   /* Primary and Secondary Colors */
   --color-primary: #33A8A5;
   --color-primary-light: #84cccb;
@@ -118,6 +118,30 @@ body,html {
   }
 }
 
+
+.loader {
+    border-top-color: #3498db;
+    -webkit-animation: spin 1s ease-in-out infinite;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 .video-section {
   position: absolute;
   background-image: url('https://i.imgur.com/ZSrvByi.jpeg');

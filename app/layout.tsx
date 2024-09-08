@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Lexend_Deca } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/NavBar";
 import Footer from "./components/Footer";
@@ -27,10 +27,10 @@ export const metadata: Metadata = {
 };
 
 // Load Montserrat font
-const montserrat = Montserrat({
+const montserrat = Lexend_Deca({
   subsets: ["latin"],
   variable: "--font-montserrat",
-  weight: ["400", "700"],
+  weight: ["200","300","400", "700"],
 });
 
 export default function RootLayout({
