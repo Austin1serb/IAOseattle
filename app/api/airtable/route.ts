@@ -7,14 +7,11 @@ async function fetchRecords(airtableApiKey: string, baseId: string, tableName: s
         const response = await fetch(url, {
             headers: {
                 Authorization: `Bearer ${airtableApiKey}`,
-                
             },
         });
-
         if (!response.ok) {
             throw new Error(`Error: ${response.status} ${response.statusText}`);
         }
-
         const data = await response.json();
         return data;
     } catch (error) {

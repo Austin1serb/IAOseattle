@@ -73,6 +73,7 @@ const Navbar: React.FC = () => {
                                     <NavLink href="/articles" label="Articles" />
                                     <NavLink href="/contact" label="Contact" />
                                     <NavLink href="/careers" label="Careers" />
+                                    <NavLink href="/services" label="Services" />
                                 </div>
                             </div>
                             <Link href="/" className='flex sm:block'>
@@ -102,6 +103,7 @@ const Navbar: React.FC = () => {
                         <NavLink onClick={() => setIsOpen(false)} href="/articles" label="Articles" className={`${isOpen ? 'translate-x-0  transition-transform ease-out delay-[600ms] duration-300' : 'translate-x-[100vw]  delay-0'} `} />
                         <NavLink onClick={() => setIsOpen(false)} href="/contact" label="Contact" className={`${isOpen ? 'translate-x-0 transition-transform ease-out delay-[700ms] duration-300' : 'translate-x-[100vw]  delay-0'}  `} />
                         <NavLink onClick={() => setIsOpen(false)} href="/careers" label="Careers" className={`${isOpen ? 'translate-x-0 transition-transform ease-out delay-[800ms] duration-500 ' : 'translate-x-[100vw]  delay-0'} `} />
+                        <NavLink onClick={() => setIsOpen(false)} href="/services" label="Services" className={`${isOpen ? 'translate-x-0 transition-transform ease-out delay-[900ms] duration-500 ' : 'translate-x-[100vw]  delay-0'} `} />
                     </div>
                 </div>
             </div>

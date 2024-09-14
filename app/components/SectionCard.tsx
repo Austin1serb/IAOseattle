@@ -12,7 +12,7 @@ interface SectionCardProps {
 
 const SectionCard: React.FC<SectionCardProps> = ({ title, description, linkText, linkHref, icon, features }) => {
     return (
-        <div className="bg-white group hover:bg-slate-100 p-8 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out flex flex-col justify-between w-96">
+        <div className="bg-white group hover:bg-slate-100 p-8 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out flex flex-col justify-between w-full max-w-[420px] min-w-48">
             <div>
                 {/* Heading Section */}
                 <div className="flex items-center mb-4">

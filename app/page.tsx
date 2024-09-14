@@ -33,7 +33,7 @@ export default function Home() {
             </p>
             <Link
               href="/about"
-              className="inline-block px-6 py-3 font-bold text-lg  bg-blue-600 opacity-90 rounded-md transition duration-300 ease-in-out transform hover:bg-blue-700 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 text-white hover:animate-pulse"
+              className="inline-block px-6 py-3 font-bold text-lg  bg-blue-600 opacity-90 rounded-md transition duration-300 ease-in-out transform hover:bg-blue-700 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 text-white "
             >
               Learn More
             </Link>
@@ -55,7 +55,7 @@ export default function Home() {
 
         {/* Incident Overview Section */}
         <IncidentComponent />
-        <section className="grid grid-cols-1 md:grid-cols-4 gap-8 px-4 py-16 bg-slate-200 justify-items-center mx-auto">
+        <section className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 gap-8 px-4 py-16 bg-slate-200 justify-items-center mx-auto">
           <SectionCard
             title="Our Services"
             description="Explore the wide range of security services we offer to keep your business, community, and events safe."

@@ -2,6 +2,7 @@
 import React from 'react';
 import { BarChart, IncidentCount } from './ChartComponents';
 import moment from 'moment-timezone';
+import { AirtableResponse } from './IncidentComponent';
 
 const IncidentWidget = async () => {
     // Fetch records from the API route
@@ -11,7 +12,8 @@ const IncidentWidget = async () => {
     if (!response.ok) {
         throw new Error('Failed to fetch incident data');
     }
-    const result = await response.json();
+    const result:AirtableResponse = await response.json();
+    
 
     // Get the current month and year
     const currentMonthFormatted = moment().tz('America/Los_Angeles').format('MMMM YYYY');
