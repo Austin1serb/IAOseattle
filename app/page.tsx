@@ -2,6 +2,8 @@ import Link from "next/link";
 import VideoSection from "./components/VideoSection";
 import IncidentComponent from "./components/IncidentComponent";
 import SectionCard from "./components/SectionCard";
+import JoinTheTeamCTA from "./about/aboutComponents/JoinTheTeamCTA";
+import CustomLink from "./components/CustomLink";
 
 export default function Home() {
   return (
@@ -31,12 +33,14 @@ export default function Home() {
               <span className="text-shadow-2 text-white">Building Bridges</span>{" "}
               between communities and emergency services.
             </p>
-            <Link
-              href="/about"
-              className="inline-block px-6 py-3 font-bold text-lg  bg-blue-600 opacity-90 rounded-md transition duration-300 ease-in-out transform hover:bg-blue-700 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 text-white "
-            >
-              Learn More
-            </Link>
+            <div className="flex-center w-full h-full">
+              <CustomLink
+                href="/about"
+                className="w-40 h-14 flex-center  font-bold text-lg  bg-blue-600 opacity-90 rounded-md transition duration-300 ease-in-out transform hover:bg-blue-700 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 text-white "
+              >
+                Learn More
+              </CustomLink>
+            </div>
           </div>
         </section>
         {/* Hero Section */}
@@ -163,6 +167,7 @@ export default function Home() {
             }
           />
         </section>
+        <JoinTheTeamCTA />
       </main>
     </div>
   );

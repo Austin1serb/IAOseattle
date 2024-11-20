@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
-const defaultTheme = require('tailwindcss/defaultTheme')
+import plugin from "tailwindcss/plugin";
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 const config: Config = {
   content: [
@@ -8,9 +9,9 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    screens:{
-      'xs': '475px',
-      'md-lg': '900px',
+    screens: {
+      xs: "475px",
+      "md-lg": "900px",
       ...defaultTheme.screens,
     },
     extend: {
@@ -21,29 +22,39 @@ const config: Config = {
       },
       colors: {
         primary: {
-          DEFAULT: '#03dac6',
-          light: '#d4f6f2',
-          dark: '#00b798',
+          DEFAULT: "#03dac6",
+          light: "#d4f6f2",
+          dark: "#00b798",
         },
         secondary: {
-          DEFAULT: '#0F75E0',
-          light: '#4fb1e4',
-          dark: '#102a71',
-          darktransparent:'#102a7190',
+          DEFAULT: "#0F75E0",
+          light: "#4fb1e4",
+          dark: "#102a71",
+          darktransparent: "#102a7190",
         },
-        accent:'#c503da',
-        background: '#FDFCFD',
-        surface: '#FFFFFF',
-        error: '#B00020',
-        'on-primary': '#000000',
-        'on-secondary': '#FFFFFF',
-        'on-background': '#000000',
-        'on-surface': '#000000',
-        'on-error': '#FFFFFF',
-        'on-light': '#000000',
+        accent: "#c503da",
+        background: "#FDFCFD",
+        surface: "#FFFFFF",
+        error: "#B00020",
+        "on-primary": "#000000",
+        "on-secondary": "#FFFFFF",
+        "on-background": "#000000",
+        "on-surface": "#000000",
+        "on-error": "#FFFFFF",
+        "on-light": "#000000",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        ".flex-center": {
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+        },
+      });
+    }),
+  ],
 };
 export default config;

@@ -6,32 +6,32 @@
   /* FONT */
 
   /* Primary and Secondary Colors */
-  --color-primary: #33A8A5;
+  --color-primary: #33a8a5;
   --color-primary-light: #84cccb;
   --color-primary-dark: #1c8b85;
 
-  --color-secondary: #0F75E0;
+  --color-secondary: #0f75e0;
   --color-secondary-light: #4fb1e4;
   --color-secondary-dark: #102a71;
 
   /* Background and Surface Colors */
-  --color-background: #FDFCFD;
-  --color-surface: #FFFFFF;
+  --color-background: #fdfcfd;
+  --color-surface: #ffffff;
 
   /* Error Color */
-  --color-error: #B00020;
+  --color-error: #b00020;
 
   /* Text Colors */
-  --color-on-primary: #FFFFFF;
-  --color-on-secondary: #FFFFFF;
+  --color-on-primary: #ffffff;
+  --color-on-secondary: #ffffff;
   --color-on-light: #000000;
   --color-on-background: #000000;
   --color-on-surface: #000000;
-  --color-on-error: #FFFFFF;
+  --color-on-error: #ffffff;
 }
 
-
-body,html {
+body,
+html {
   scroll-behavior: smooth;
   background-color: var(--color-background);
   color: var(--color-on-background);
@@ -43,62 +43,63 @@ body,html {
   font-family: var(--font-montserrat);
 }
 
-
 @media (max-width: 350px) {
   body {
     overflow-x: auto;
   }
 }
 
-
-
-
-
-  .animate-shine:hover {
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
-    background: linear-gradient(-75deg, rgba(255, 255, 255, 0.2) 30%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.2) 70%);
-    background-color: #E2E8F0;
-    background-size: 200%;
-    background-position: -100%;
-    animation: shine 4s infinite linear;
-    cursor: pointer; /* Ensure cursor consistency */
-    transition: all 0.3s;
-  }
-  .animate-shine{
-    background: linear-gradient(-75deg, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.8) 70%);
-    background-color: #E2E8F0;
-  }
-  @keyframes shine {
-    0% {
-      background-position: 150%;
-    }
-
-    50% {
-      background-position: -50%;
-    }
-
-    100% {
-      background-position: 150%;
-    }
+.animate-shine:hover {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  background: linear-gradient(
+    -75deg,
+    rgba(255, 255, 255, 0.2) 30%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0.2) 70%
+  );
+  background-color: #e2e8f0;
+  background-size: 200%;
+  background-position: -100%;
+  animation: shine 4s infinite linear;
+  cursor: pointer; /* Ensure cursor consistency */
+  transition: all 0.3s;
+}
+.animate-shine {
+  background: linear-gradient(
+    -75deg,
+    rgba(255, 255, 255, 0.8) 30%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0.8) 70%
+  );
+  background-color: #e2e8f0;
+}
+@keyframes shine {
+  0% {
+    background-position: 150%;
   }
 
+  50% {
+    background-position: -50%;
+  }
+
+  100% {
+    background-position: 150%;
+  }
+}
 
 /* /////////////////////// */
 /*//*/
 
-
-
-
-
-
-
-
-
 @layer utilities {
   .animate-under-shine {
-    background-image: linear-gradient(-75deg, rgba(255, 255, 255, 0.1) 30%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, 0.1) 70%);
+    background-image: linear-gradient(
+      -75deg,
+      rgba(255, 255, 255, 0.1) 30%,
+      rgba(255, 255, 255, 0.8) 50%,
+      rgba(255, 255, 255, 0.1) 70%
+    );
     background-size: 200%;
     animation: shine2 4s infinite alternate ease-in-out;
   }
@@ -118,40 +119,37 @@ body,html {
   }
 }
 
-
 .loader {
-    border-top-color: #3498db;
-    -webkit-animation: spin 1s ease-in-out infinite;
-    animation: spin 1s ease-in-out infinite;
+  border-top-color: #3498db;
+  -webkit-animation: spin 1s ease-in-out infinite;
+  animation: spin 1s ease-in-out infinite;
 }
 
 @-webkit-keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-    }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .video-section {
   position: absolute;
-  background-image: url('https://i.imgur.com/ZSrvByi.jpeg');
+  background-image: url("https://i.imgur.com/ZSrvByi.jpeg");
   /* optional fallback image */
   object-fit: cover;
   height: 100%;
   width: 100%;
 }
-
-
 
 .widget-container {
   width: 100%;
@@ -172,20 +170,15 @@ body,html {
   margin-top: 1rem;
 }
 
-
-
 .text-shadow {
-  text-shadow:
-    6px 5px 0 rgb(0, 0, 0);
+  text-shadow: 6px 5px 0 rgb(0, 0, 0);
   /* Shadow slightly to the right and below  on large txt */
 }
 
 .text-shadow-white {
-  text-shadow:
-    3px 3px 0 rgb(255, 255, 255);
+  text-shadow: 3px 3px 0 rgb(255, 255, 255);
   /* Shadow slightly to the right and below  on large txt */
 }
-
 
 .text-shadow-2 {
   text-shadow: 3px 2px 0 rgb(0, 0, 0);
@@ -193,22 +186,13 @@ body,html {
 }
 
 .shadow-dark {
-  box-shadow:
-    rgb(38, 57, 77) 0px -5px 15px -5px,
-
+  box-shadow: rgb(38, 57, 77) 0px -5px 15px -5px,
     rgb(38, 57, 77) 0px 20px 30px -10px;
 }
-
 
 .label {
   height: 64px;
 }
-
-
-
-
-
-
 
 /* global.css or your custom CSS file */
 .nav-icon {
@@ -219,7 +203,6 @@ body,html {
   cursor: pointer;
   display: inline-block;
 }
-
 
 .nav-icon span {
   background-color: #ffffff;
@@ -279,7 +262,6 @@ body,html {
 }
 
 @media (max-width: 468px) {
-
   .nav-icon:not(.open):hover span:nth-child(1) {
     transform: rotate(-0deg) scaleY(1.1);
   }

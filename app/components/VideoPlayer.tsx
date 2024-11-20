@@ -1,30 +1,30 @@
-import React from 'react';
+import Image from "next/image";
+import React, { lazy, Suspense } from "react";
+
+const LazyVideo = lazy(() => import("./LazyVideo"));
 
 interface Props {
-    videoSrc: string;
-    size?: string;
-    poster?: string;
+  videoSrc: string;
+  poster: string;
 }
 
 const VideoPlayer: React.FC<Props> = ({ videoSrc, poster }) => {
-
-    return (
-        <div className={`relative w-full h-full`}>
-            <video
-                className="video-setion absolute w-full h-full object-cover"
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="auto"
-                poster={poster}
-
-            >
-                <source src={videoSrc} type="video/webm" />
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    );
+  return (
+    <div className="relative w-full h-full">
+      <Suspense
+        fallback={
+          <Image
+            src={poster}
+            alt="Loading video"
+            className="absolute w-full h-full object-cover bg-gray-800"
+            priority
+          />
+        }
+      >
+        <LazyVideo videoSrc={videoSrc} />
+      </Suspense>
+    </div>
+  );
 };
 
 export default VideoPlayer;
