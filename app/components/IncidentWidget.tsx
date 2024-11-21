@@ -1,18 +1,22 @@
-// app/incidents/IncidentWidget.tsx
-import React from "react";
 import { BarChart, IncidentCount } from "./ChartComponents";
 import moment from "moment-timezone";
 import { AirtableResponse } from "./IncidentComponent";
 
-const IncidentWidget: React.FC = async () => {
-  // Fetch records from the API route
+export async function getIncidentData() {
   const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/airtable`, {
     headers: { "Content-Type": "application/json" },
+    next: { revalidate: 3600 }, // Revalidate every hour
   });
+
   if (!response.ok) {
     throw new Error("Failed to fetch incident data");
   }
-  const result: AirtableResponse = await response.json();
+
+  return response.json();
+}
+
+const IncidentWidget: React.FC = async () => {
+  const result: AirtableResponse = await getIncidentData();
 
   // Get the current month and year
   const currentMonthFormatted = moment()

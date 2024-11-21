@@ -1,4 +1,3 @@
-import Link from "next/link";
 import VideoSection from "./components/VideoSection";
 import IncidentComponent from "./components/IncidentComponent";
 import SectionCard from "./components/SectionCard";

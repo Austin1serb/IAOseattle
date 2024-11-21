@@ -142,14 +142,6 @@ html {
     transform: rotate(360deg);
   }
 }
-.video-section {
-  position: absolute;
-  background-image: url("https://i.imgur.com/ZSrvByi.jpeg");
-  /* optional fallback image */
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-}
 
 .widget-container {
   width: 100%;

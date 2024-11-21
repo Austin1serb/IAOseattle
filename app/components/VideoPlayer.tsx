@@ -17,6 +17,8 @@ const VideoPlayer: React.FC<Props> = ({ videoSrc, poster }) => {
             src={poster}
             alt="Loading video"
             className="absolute w-full h-full object-cover bg-gray-800"
+            fill
+            sizes="100vw"
             priority
           />
         }

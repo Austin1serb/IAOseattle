@@ -12,8 +12,8 @@ async function fetchRecords(
     const response = await fetch(url, {
       headers: {
         Authorization: `Bearer ${airtableApiKey}`,
-        "Cache-Control": "no-store", // Prevent caching
       },
+      next: { revalidate: 3600 },
     });
     if (!response.ok) {
       throw new Error(`Error: ${response.status} ${response.statusText}`);
