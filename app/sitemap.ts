@@ -6,7 +6,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	const baseUrl = process.env.NEXT_PUBLIC_URL || "https://iao-seattle.vercel.app";
 
 	// **Static Pages (Manually Defined)**
-	const staticRoutes = ["/", "/about", "/media", "/articles", "/contact", "/careers", "/careers/apply", "/careers/apply/success", "/services"].map((path) => ({
+	const staticRoutes = ["", "about", "media", "articles", "contact", "careers", "careers/apply", "careers/apply/success", "services"].map((path) => ({
 		url: `${baseUrl}${path}`,
 		lastModified: new Date(),
 		changeFrequency: "weekly" as const,
@@ -20,13 +20,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	// **Convert Dynamic Slugs to Sitemap URLs**
 	const dynamicRoutes = [
 		...articleSlugs.map(({ slug }) => ({
-			url: `${baseUrl}/articles/${slug}`,
+			url: `${baseUrl}articles/${slug}`,
 			lastModified: new Date(),
 			changeFrequency: "daily" as const,
 			priority: 0.7,
 		})),
 		...mediaSlugs.map(({ slug }) => ({
-			url: `${baseUrl}/media/${slug}`,
+			url: `${baseUrl}media/${slug}`,
 			lastModified: new Date(),
 			changeFrequency: "weekly" as const,
 			priority: 0.6,
