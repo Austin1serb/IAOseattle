@@ -26,7 +26,7 @@ const NavLink: React.FC<NavLinkProps> = ({
       : "hover:animate-under-shine text-white hover:text-blue-600 hover:bg-[#ffffff64]"
   }`;
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+  const handleClick = () => {
     console.log("handleClick");
     if (onClick) {
       onClick();
