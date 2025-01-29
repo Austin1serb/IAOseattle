@@ -1,13 +1,22 @@
 export const articleData = [
-
-    {
-        title: 'Essential Steps to Become a Security Guard in Washington - A Complete Guide',
-        slug: 'how-to-become-security-guard-washington',
-        description: 'Discover the path to a rewarding career in security. Start your journey to becoming a licensed security guard in Washington with Iron & Oak.',
-        date: 'September 1, 2024',
-        imageUrl: 'path/to/your/image.jpg',
-        metaTags: ['Security', 'Urban Areas', 'Safety', 'Public Safety', 'Seattle Jobs', 'Seattle entry level jobs', 'Security Guard Training', 'Washington Security Jobs', 'Iron & Oak Protective Services'],
-        content: `
+	{
+		title: "Essential Steps to Become a Security Guard in Washington - A Complete Guide",
+		slug: "how-to-become-security-guard-washington",
+		description: "Discover the path to a rewarding career in security. Start your journey to becoming a licensed security guard in Washington with Iron & Oak.",
+		date: "September 1, 2024",
+		imageUrl: "path/to/your/image.jpg",
+		metaTags: [
+			"Security",
+			"Urban Areas",
+			"Safety",
+			"Public Safety",
+			"Seattle Jobs",
+			"Seattle entry level jobs",
+			"Security Guard Training",
+			"Washington Security Jobs",
+			"Iron & Oak Protective Services",
+		],
+		content: `
             <section class="bg-slate-200 py-12">
                 <div class="container mx-auto px-4">
                     <div class='py-8'>
@@ -106,16 +115,16 @@ export const articleData = [
     
                 </div>
             </section>
-        `
-    },
-    {
-        title: 'Public Safety in Seattle: Challenges and Solutions',
-        slug: 'public-safety-seattle-challenges-solutions',
-        description: 'An in-depth look at the challenges of maintaining public safety in Seattle and the strategies employed to overcome them.',
-        date: 'September 5, 2024',
-        imageUrl: '',
-        metaTags: ['Security', 'Urban Areas', 'Safety', 'Public Safety'],
-        content: `
+        `,
+	},
+	{
+		title: "Public Safety in Seattle: Challenges and Solutions",
+		slug: "public-safety-seattle-challenges-solutions",
+		description: "An in-depth look at the challenges of maintaining public safety in Seattle and the strategies employed to overcome them.",
+		date: "September 5, 2024",
+		imageUrl: "",
+		metaTags: ["Security", "Urban Areas", "Safety", "Public Safety"],
+		content: `
             <section class="bg-slate-200 py-12">
                 <div class="container mx-auto px-4">
                     <div class='py-8'>
@@ -185,16 +194,16 @@ export const articleData = [
                     </div>
                 </div>
             </section>
-        `
-    },
-    {
-        title: 'Bridging the Gap: Innovative Security Practices by Iron & Oak',
-        slug: 'bridging-the-gap-innovative-security-practices',
-        description: 'Explore how Iron & Oak Protective Services is transforming security in Seattle through community-focused, non-aggressive practices.',
-        date: 'August 28, 2024',
-        imageUrl: '/images/teamMemberImage.jpg',
-        metaTags: ['Security', 'Community Engagement', 'Non-Aggressive Practices', 'Seattle'],
-        content: `
+        `,
+	},
+	{
+		title: "Bridging the Gap: Innovative Security Practices by Iron & Oak",
+		slug: "bridging-the-gap-innovative-security-practices",
+		description: "Explore how Iron & Oak Protective Services is transforming security in Seattle through community-focused, non-aggressive practices.",
+		date: "August 28, 2024",
+		imageUrl: "/images/teamMemberImage.jpg",
+		metaTags: ["Security", "Community Engagement", "Non-Aggressive Practices", "Seattle"],
+		content: `
             <section class="bg-slate-200 py-12">
                 <div class="container mx-auto px-4">
                     <div class='py-8'>
@@ -243,16 +252,16 @@ export const articleData = [
                     </div>
                 </div>
             </section>
-        `
-    },
-    {
-        title: 'Top 5 Reasons Why Private Security is Essential for Businesses',
-        slug: 'top-5-reasons-private-security-essential-for-businesses',
-        description: 'Learn why private security is crucial for protecting your business, employees, and assets in today’s fast-paced environment.',
-        date: 'September 15, 2024',
-        imageUrl: '/images/business-security.jpg',
-        metaTags: ['Private Security', 'Business Security', 'Asset Protection', 'Employee Safety', 'Security Services'],
-        content: `
+        `,
+	},
+	{
+		title: "Top 5 Reasons Why Private Security is Essential for Businesses",
+		slug: "top-5-reasons-private-security-essential-for-businesses",
+		description: "Learn why private security is crucial for protecting your business, employees, and assets in today’s fast-paced environment.",
+		date: "September 15, 2024",
+		imageUrl: "/images/business-security.jpg",
+		metaTags: ["Private Security", "Business Security", "Asset Protection", "Employee Safety", "Security Services"],
+		content: `
             <section class="bg-slate-200 py-12">
                 <div class="container mx-auto px-4">
                     <div class='py-8'>
@@ -312,15 +321,15 @@ export const articleData = [
                     </div>
                 </div>
             </section>
-        `
-    },
-    {
-        title: 'Cybersecurity Threats Impacting Seattle: A Wake-Up Call for Urban Security',
-        slug: 'cybersecurity-threats-impacting-seattle-urban-security',
-        description: 'Explore the recent cybersecurity incidents in Seattle and their implications for urban security, highlighting the need for robust digital defenses in modern cities.',
-        date: 'August 26, 2024',
-        imageUrl: '/images/cybersecurity.jpg',
-        content: ` <section class="bg-slate-200 py-12">
+        `,
+	},
+	{
+		title: "Cybersecurity Threats Impacting Seattle: A Wake-Up Call for Urban Security",
+		slug: "cybersecurity-threats-impacting-seattle-urban-security",
+		description: "Explore the recent cybersecurity incidents in Seattle and their implications for urban security, highlighting the need for robust digital defenses in modern cities.",
+		date: "August 26, 2024",
+		imageUrl: "/images/cybersecurity.jpg",
+		content: ` <section class="bg-slate-200 py-12">
     <div class="container mx-auto px-4">
         <div class="py-8">
             <div class="text-5xl sm:text-7xl font-bold text-center flex items-center justify-center w-full mb-12">
@@ -374,16 +383,16 @@ export const articleData = [
           
         </div>
     </div>
-</section>`
-    },
-    {
-        title: "How AI is Revolutionizing Private Security Services",
-        slug: "ai-revolutionizing-private-security",
-        description: "Explore how artificial intelligence is transforming private security, enhancing efficiency, and predicting threats.",
-        date: "August 28, 2024",
-        imageUrl: "/images/ai-security.jpg",
-        metaTags: ["AI in Security", "Private Security", "Technology in Security", "Threat Detection"],
-        content: `
+</section>`,
+	},
+	{
+		title: "How AI is Revolutionizing Private Security Services",
+		slug: "ai-revolutionizing-private-security",
+		description: "Explore how artificial intelligence is transforming private security, enhancing efficiency, and predicting threats.",
+		date: "August 28, 2024",
+		imageUrl: "/images/ai-security.jpg",
+		metaTags: ["AI in Security", "Private Security", "Technology in Security", "Threat Detection"],
+		content: `
         <section class="bg-slate-200 py-12">
             <div class="container mx-auto px-4">
                 <div class="py-8">
@@ -439,16 +448,16 @@ export const articleData = [
                 </div>
             </div>
         </section>
-    `
-    },
-    {
-        title: "Top Strategies for Ensuring Safe and Successful Events in Seattle",
-        slug: "top-strategies-event-security-seattle",
-        description: "Explore essential strategies for ensuring the safety and success of events in Seattle, from crowd management to emergency planning.",
-        date: "August 28, 2024",
-        imageUrl: "https://www.seattleeventsecurity.com/images/event-security.jpg",
-        metaTags: ["Event Security", "Seattle Events", "Crowd Management", "Safety Planning"],
-        content: `
+    `,
+	},
+	{
+		title: "Top Strategies for Ensuring Safe and Successful Events in Seattle",
+		slug: "top-strategies-event-security-seattle",
+		description: "Explore essential strategies for ensuring the safety and success of events in Seattle, from crowd management to emergency planning.",
+		date: "August 28, 2024",
+		imageUrl: "https://www.seattleeventsecurity.com/images/event-security.jpg",
+		metaTags: ["Event Security", "Seattle Events", "Crowd Management", "Safety Planning"],
+		content: `
         <section class="bg-slate-200 py-12">
             <div class="container mx-auto px-4">
                 <div class="py-8">
@@ -500,17 +509,16 @@ export const articleData = [
                 </div>
             </div>
         </section>
-    `
-
-    },
-    {
-        title: "Enhancing Security in Seattle's Nightlife: Key Practices for Bars and Clubs",
-        slug: "enhancing-security-seattle-nightlife",
-        description: "Explore the best practices for ensuring safety in Seattle's nightlife venues, from bars to nightclubs.",
-        date: "August 28, 2024",
-        imageUrl: "https://i.imgur.com/qHbMl7W.jpg", // Example image URL from Imgur
-        metaTags: ["Nightlife Security", "Seattle Bars", "Club Safety", "Event Security"],
-        content: `
+    `,
+	},
+	{
+		title: "Enhancing Security in Seattle's Nightlife: Key Practices for Bars and Clubs",
+		slug: "enhancing-security-seattle-nightlife",
+		description: "Explore the best practices for ensuring safety in Seattle's nightlife venues, from bars to nightclubs.",
+		date: "August 28, 2024",
+		imageUrl: "https://i.imgur.com/qHbMl7W.jpg", // Example image URL from Imgur
+		metaTags: ["Nightlife Security", "Seattle Bars", "Club Safety", "Event Security"],
+		content: `
         <section class="bg-slate-200 py-12">
             <div class="container mx-auto px-4">
                 <div class="py-8">
@@ -556,16 +564,16 @@ export const articleData = [
                 </div>
             </div>
         </section>
-    `
-    },
-    {
-        title: "Securing Seattle's Growing Tech Sector: Best Practices and Challenges",
-        slug: "securing-seattle-tech-sector",
-        description: "Explore the unique security challenges faced by Seattle's booming tech industry and discover the best practices to safeguard these vital businesses.",
-        date: "August 28, 2024",
-        imageUrl: "https://i.imgur.com/BGJzUpq.jpg", // Sourced image from Imgur
-        metaTags: ["Tech Security", "Seattle", "Cybersecurity", "Corporate Security"],
-        content: `
+    `,
+	},
+	{
+		title: "Securing Seattle's Growing Tech Sector: Best Practices and Challenges",
+		slug: "securing-seattle-tech-sector",
+		description: "Explore the unique security challenges faced by Seattle's booming tech industry and discover the best practices to safeguard these vital businesses.",
+		date: "August 28, 2024",
+		imageUrl: "https://i.imgur.com/BGJzUpq.jpg", // Sourced image from Imgur
+		metaTags: ["Tech Security", "Seattle", "Cybersecurity", "Corporate Security"],
+		content: `
         <section class="bg-slate-200 py-12">
             <div class="container mx-auto px-4">
                 <div class="py-8">
@@ -611,16 +619,16 @@ export const articleData = [
                 </div>
             </div>
         </section>
-    `
-    },
-    {
-        title: 'Exploring Seattle’s Nightlife: Bars and Clubs Security Challenges',
-        slug: 'seattle-nightlife-security-challenges',
-        description: 'A look at the unique security challenges faced by bars and clubs in Seattle’s vibrant nightlife scene, and how they are being addressed.',
-        date: 'September 15, 2024',
-        imageUrl: 'https://images.pexels.com/photos/348532/pexels-photo-348532.jpeg', // Image from Pexels
-        metaTags: ['Seattle Nightlife', 'Bar Security', 'Club Security', 'Safety'],
-        content: `
+    `,
+	},
+	{
+		title: "Exploring Seattle’s Nightlife: Bars and Clubs Security Challenges",
+		slug: "seattle-nightlife-security-challenges",
+		description: "A look at the unique security challenges faced by bars and clubs in Seattle’s vibrant nightlife scene, and how they are being addressed.",
+		date: "September 15, 2024",
+		imageUrl: "https://images.pexels.com/photos/348532/pexels-photo-348532.jpeg", // Image from Pexels
+		metaTags: ["Seattle Nightlife", "Bar Security", "Club Security", "Safety"],
+		content: `
         <section class="bg-slate-200 py-12">
             <div class="container mx-auto px-4">
                 <div class='py-8'>
@@ -680,16 +688,16 @@ export const articleData = [
                 </div>
             </div>
         </section>
-    `
-    },
-    {
-        title: 'The Role of Community Watch Programs in Seattle’s Safety',
-        slug: 'community-watch-programs-seattle-safety',
-        description: 'Explore how community watch programs are enhancing safety and fostering stronger neighborhoods in Seattle.',
-        date: 'September 20, 2024',
-        imageUrl: '',
-        metaTags: ['Community Watch', 'Seattle Safety', 'Neighborhood Security', 'Public Safety'],
-        content: `
+    `,
+	},
+	{
+		title: "The Role of Community Watch Programs in Seattle’s Safety",
+		slug: "community-watch-programs-seattle-safety",
+		description: "Explore how community watch programs are enhancing safety and fostering stronger neighborhoods in Seattle.",
+		date: "September 20, 2024",
+		imageUrl: "",
+		metaTags: ["Community Watch", "Seattle Safety", "Neighborhood Security", "Public Safety"],
+		content: `
         <section class="bg-slate-200 py-12">
             <div class="container mx-auto px-4">
                 <div class='py-8'>
@@ -735,17 +743,17 @@ export const articleData = [
                 </div>
             </div>
         </section>
-    `
-    },
+    `,
+	},
 
-    {
-        title: 'Seattle’s Summer Events: Ensuring Safety and Enjoyment for All',
-        slug: 'seattle-summer-events-safety-enjoyment',
-        description: 'A look at how Seattle is preparing for a safe and enjoyable summer with various community events and security measures.',
-        date: 'September 22, 2024',
-        imageUrl: '',
-        metaTags: ['Seattle Events', 'Summer Safety', 'Community', 'Public Safety'],
-        content: `
+	{
+		title: "Seattle’s Summer Events: Ensuring Safety and Enjoyment for All",
+		slug: "seattle-summer-events-safety-enjoyment",
+		description: "A look at how Seattle is preparing for a safe and enjoyable summer with various community events and security measures.",
+		date: "September 22, 2024",
+		imageUrl: "",
+		metaTags: ["Seattle Events", "Summer Safety", "Community", "Public Safety"],
+		content: `
         <section class="bg-slate-200 py-12">
             <div class="container mx-auto px-4">
                 <div class='py-8'>
@@ -796,17 +804,17 @@ export const articleData = [
                 </div>
             </div>
         </section>
-    `
-    },
+    `,
+	},
 
-    {
-        title: 'Join the Iron & Oak Team: Careers in Security',
-        slug: 'join-iron-oak-careers',
-        description: 'Explore rewarding career opportunities with Iron & Oak, Seattle’s leading provider of innovative security solutions.',
-        date: 'September 25, 2024',
-        imageUrl: '',
-        metaTags: ['Security Careers', 'Job Opportunities', 'Seattle Jobs', 'Iron & Oak Careers'],
-        content: `
+	{
+		title: "Join the Iron & Oak Team: Careers in Security",
+		slug: "join-iron-oak-careers",
+		description: "Explore rewarding career opportunities with Iron & Oak, Seattle’s leading provider of innovative security solutions.",
+		date: "September 25, 2024",
+		imageUrl: "",
+		metaTags: ["Security Careers", "Job Opportunities", "Seattle Jobs", "Iron & Oak Careers"],
+		content: `
         <section class="bg-slate-200 py-12">
             <div class="container mx-auto px-4">
                 <div class='py-8'>
@@ -865,16 +873,16 @@ export const articleData = [
                 </div>
             </div>
         </section>
-    `
-    },
-    {
-        title: 'A Day in the Life of a Security Guard: Challenges and Responsibilities',
-        slug: 'day-in-life-of-security-guard',
-        description: 'Explore the daily experiences of a security guard, from routine patrols to managing emergencies.',
-        date: 'September 27, 2024',
-        imageUrl: '',
-        metaTags: ['Security', 'Daily Life', 'Challenges', 'Security Guard Duties'],
-        content: `
+    `,
+	},
+	{
+		title: "A Day in the Life of a Security Guard: Challenges and Responsibilities",
+		slug: "day-in-life-of-security-guard",
+		description: "Explore the daily experiences of a security guard, from routine patrols to managing emergencies.",
+		date: "September 27, 2024",
+		imageUrl: "",
+		metaTags: ["Security", "Daily Life", "Challenges", "Security Guard Duties"],
+		content: `
         <section class="bg-slate-200 py-12">
             <div class="container mx-auto px-4">
                 <div class='py-8'>
@@ -939,17 +947,17 @@ export const articleData = [
                 </div>
             </div>
         </section>
-    `
-    },
+    `,
+	},
 
-    {
-        title: 'Top 5 Emerging Neighborhoods in Seattle for New Businesses',
-        slug: 'emerging-neighborhoods-seattle-new-businesses',
-        description: 'Explore the top up-and-coming neighborhoods in Seattle that are becoming hotspots for new businesses and startups.',
-        date: 'September 28, 2024',
-        imageUrl: '',
-        metaTags: ['Seattle', 'New Businesses', 'Neighborhoods', 'Startups'],
-        content: `
+	{
+		title: "Top 5 Emerging Neighborhoods in Seattle for New Businesses",
+		slug: "emerging-neighborhoods-seattle-new-businesses",
+		description: "Explore the top up-and-coming neighborhoods in Seattle that are becoming hotspots for new businesses and startups.",
+		date: "September 28, 2024",
+		imageUrl: "",
+		metaTags: ["Seattle", "New Businesses", "Neighborhoods", "Startups"],
+		content: `
         <section class="bg-slate-200 py-12">
             <div class="container mx-auto px-4">
                 <div class='py-8'>
@@ -1011,17 +1019,17 @@ export const articleData = [
                 </div>
             </div>
         </section>
-    `
-    },
+    `,
+	},
 
-    {
-        title: 'Securing Seattle’s Waterfront: Strategies for Safety Amidst Tourism and Development',
-        slug: 'securing-seattle-waterfront-strategies-safety-tourism-development',
-        description: 'Explore the unique security challenges and strategies employed to ensure the safety of Seattle\'s bustling waterfront amidst growing tourism and development.',
-        date: 'September 23, 2024',
-        imageUrl: '',
-        metaTags: ['Seattle Waterfront', 'Tourism Safety', 'Urban Development', 'Public Safety'],
-        content: `
+	{
+		title: "Securing Seattle’s Waterfront: Strategies for Safety Amidst Tourism and Development",
+		slug: "securing-seattle-waterfront-strategies-safety-tourism-development",
+		description: "Explore the unique security challenges and strategies employed to ensure the safety of Seattle's bustling waterfront amidst growing tourism and development.",
+		date: "September 23, 2024",
+		imageUrl: "",
+		metaTags: ["Seattle Waterfront", "Tourism Safety", "Urban Development", "Public Safety"],
+		content: `
         <section class="bg-slate-200 py-12">
             <div class="container mx-auto px-4">
                 <div class='py-8'>
@@ -1062,18 +1070,17 @@ export const articleData = [
                 </div>
             </div>
         </section>
-    `
-    },
+    `,
+	},
 
-
-    {
-        title: 'The Impact of Public Art on Urban Safety in Seattle',
-        slug: 'impact-of-public-art-urban-safety-seattle',
-        description: 'An exploration of how public art initiatives in Seattle contribute to urban safety and community engagement.',
-        date: 'September 25, 2024',
-        imageUrl: '',
-        metaTags: ['Public Art', 'Urban Safety', 'Seattle', 'Community Engagement'],
-        content: `
+	{
+		title: "The Impact of Public Art on Urban Safety in Seattle",
+		slug: "impact-of-public-art-urban-safety-seattle",
+		description: "An exploration of how public art initiatives in Seattle contribute to urban safety and community engagement.",
+		date: "September 25, 2024",
+		imageUrl: "",
+		metaTags: ["Public Art", "Urban Safety", "Seattle", "Community Engagement"],
+		content: `
         <section class="bg-slate-200 py-12">
             <div class="container mx-auto px-4">
                 <div class='py-8'>
@@ -1114,17 +1121,17 @@ export const articleData = [
                 </div>
             </div>
         </section>
-    `
-    },
+    `,
+	},
 
-    {
-        title: 'Enhancing Neighborhood Safety Through Smart Technology in Seattle',
-        slug: 'enhancing-neighborhood-safety-through-smart-technology-seattle',
-        description: 'An exploration of how smart technology is being used to improve neighborhood safety across Seattle, from surveillance systems to smart lighting.',
-        date: 'September 30, 2024',
-        imageUrl: '',
-        metaTags: ['Smart Technology', 'Neighborhood Safety', 'Seattle', 'Urban Security'],
-        content: `
+	{
+		title: "Enhancing Neighborhood Safety Through Smart Technology in Seattle",
+		slug: "enhancing-neighborhood-safety-through-smart-technology-seattle",
+		description: "An exploration of how smart technology is being used to improve neighborhood safety across Seattle, from surveillance systems to smart lighting.",
+		date: "September 30, 2024",
+		imageUrl: "",
+		metaTags: ["Smart Technology", "Neighborhood Safety", "Seattle", "Urban Security"],
+		content: `
         <section class="bg-slate-200 py-12">
             <div class="container mx-auto px-4">
                 <div class='py-8'>
@@ -1171,16 +1178,16 @@ export const articleData = [
                 </div>
             </div>
         </section>
-    `
-    },
-    {
-        title: 'Tips for Ensuring Safety During Seattle’s Rainy Season',
-        slug: 'seattle-rainy-season-safety-tips',
-        description: 'Practical safety tips to help Seattle residents navigate the rainy season while staying secure and avoiding common hazards.',
-        date: 'October 2, 2024',
-        imageUrl: '',
-        metaTags: ['Seattle Safety', 'Rainy Season', 'Public Safety'],
-        content: `
+    `,
+	},
+	{
+		title: "Tips for Ensuring Safety During Seattle’s Rainy Season",
+		slug: "seattle-rainy-season-safety-tips",
+		description: "Practical safety tips to help Seattle residents navigate the rainy season while staying secure and avoiding common hazards.",
+		date: "October 2, 2024",
+		imageUrl: "",
+		metaTags: ["Seattle Safety", "Rainy Season", "Public Safety"],
+		content: `
       <section class="bg-slate-200 py-12">
           <div class="container mx-auto px-4">
               <div class='py-8'>
@@ -1206,16 +1213,16 @@ export const articleData = [
               </div>
           </div>
       </section>
-    `
-    },
-    {
-        title: 'Seattle’s Neighborhood Watch Programs: Strengthening Community Ties',
-        slug: 'seattle-neighborhood-watch-programs',
-        description: 'An overview of Seattle’s neighborhood watch programs and how they contribute to community safety and cohesion.',
-        date: 'October 2, 2024',
-        imageUrl: '',
-        metaTags: ['Neighborhood Watch', 'Community Safety', 'Seattle'],
-        content: `
+    `,
+	},
+	{
+		title: "Seattle’s Neighborhood Watch Programs: Strengthening Community Ties",
+		slug: "seattle-neighborhood-watch-programs",
+		description: "An overview of Seattle’s neighborhood watch programs and how they contribute to community safety and cohesion.",
+		date: "October 2, 2024",
+		imageUrl: "",
+		metaTags: ["Neighborhood Watch", "Community Safety", "Seattle"],
+		content: `
       <section class="bg-slate-200 py-12">
           <div class="container mx-auto px-4">
               <div class='py-8'>
@@ -1234,16 +1241,16 @@ export const articleData = [
               </div>
           </div>
       </section>
-    `
-    },
-    {
-        title: 'Seattle’s Public Transportation: Enhancing Safety Measures',
-        slug: 'seattle-public-transportation-safety',
-        description: 'A closer look at the safety measures being implemented across Seattle’s public transportation system to ensure passenger security.',
-        date: 'October 2, 2024',
-        imageUrl: '',
-        metaTags: ['Seattle', 'Public Transportation', 'Safety', 'Security'],
-        content: `
+    `,
+	},
+	{
+		title: "Seattle’s Public Transportation: Enhancing Safety Measures",
+		slug: "seattle-public-transportation-safety",
+		description: "A closer look at the safety measures being implemented across Seattle’s public transportation system to ensure passenger security.",
+		date: "October 2, 2024",
+		imageUrl: "",
+		metaTags: ["Seattle", "Public Transportation", "Safety", "Security"],
+		content: `
       <section class="bg-slate-200 py-12">
           <div class="container mx-auto px-4">
               <div class='py-8'>
@@ -1262,78 +1269,17 @@ export const articleData = [
               </div>
           </div>
       </section>
-    `
-    },
+    `,
+	},
 
-
-
-
-    {
-        title: 'Top Questions About Security in Seattle: Your Guide to Staying Safe',
-        slug: 'top-questions-about-security-in-seattle',
-        description: 'Answers to the most common questions about security in Seattle, covering everything from personal safety tips to choosing a security company.',
-        date: 'October 3, 2024',
-        imageUrl: '',
-        metaTags: ['Seattle Security', 'Safety Tips', 'Security Companies', 'Personal Safety'],
-        content: `
-    <section class="bg-slate-200 py-12">
-        <div class="container mx-auto px-4">
-            <div class='py-8'>
-                <div class="text-4xl sm:text-5xl font-bold text-center flex items-center justify-center w-full mb-8">
-                    <span>Top Questions About <span class="text-blue-500">Security</span> in Seattle: Your Guide to Staying Safe</span>
-                </div>
-                <h1 class="text-lg text-center mb-6">
-                    Get answers to the most frequently asked questions about security in Seattle and learn how to keep yourself and your property safe.
-                </h1>
-            </div>
-
-            <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
-                <h2 class="text-2xl font-semibold mb-4 text-blue-600">What Are the Best Personal Safety Tips for Living in Seattle?</h2>
-                <p class="text-lg">
-                    Seattle is a vibrant city, but like any urban area, it has its share of safety challenges. To stay safe, always be aware of your surroundings, especially at night. Stick to well-lit areas, avoid distractions like your phone when walking alone, and consider carrying personal safety devices like pepper spray. Joining local neighborhood watch programs can also provide an extra layer of security.
-                </p>
-            </div>
-
-            <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
-                <h2 class="text-2xl font-semibold mb-4 text-blue-600">How Do I Choose the Right Security Company in Seattle?</h2>
-                <p class="text-lg">
-                    When selecting a security company in Seattle, it's important to research their reputation, client reviews, and the specific services they offer. Look for companies with experience in the type of security you need, whether it's for residential, commercial, or event security. Ensure they have proper licensing and training programs for their personnel.
-                </p>
-            </div>
-
-            <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
-                <h2 class="text-2xl font-semibold mb-4 text-blue-600">What Are the Crime Rates in Seattle’s Neighborhoods?</h2>
-                <p class="text-lg">
-                    Crime rates in Seattle vary significantly by neighborhood. Areas like Capitol Hill and Belltown have higher incidents of property crime, while neighborhoods like Queen Anne and Magnolia tend to have lower crime rates. It's essential to stay informed about crime trends in your area by following local news and using online crime mapping tools.
-                </p>
-            </div>
-
-            <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
-                <h2 class="text-2xl font-semibold mb-4 text-blue-600">What Are the Benefits of Hiring Private Security for My Business?</h2>
-                <p class="text-lg">
-                    Hiring private security for your business in Seattle can provide peace of mind and protect your assets. Private security firms offer services such as regular patrols, alarm response, and even on-site security personnel. They act as a deterrent to criminal activity and can respond quickly to any incidents, reducing potential losses and enhancing the safety of your employees and customers.
-                </p>
-            </div>
-
-            <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
-                <h2 class="text-2xl font-semibold mb-4 text-blue-600">How Can I Improve Security Around My Home in Seattle?</h2>
-                <p class="text-lg">
-                    Improving security around your home in Seattle involves a combination of physical measures and smart technology. Consider installing a home security system with cameras, motion detectors, and alarms. Secure all entry points with high-quality locks, and keep your property well-lit at night. Joining or starting a neighborhood watch program can also enhance your home's security.
-                </p>
-            </div>
-        </div>
-    </section>
-  `
-    },
-
-    {
-        title: 'Top Questions About Security in Seattle: Your Guide to Staying Safe',
-        slug: 'top-questions-about-security-in-seattle',
-        description: 'Answers to the most common questions about security in Seattle, covering everything from personal safety tips to choosing a security company.',
-        date: 'October 3, 2024',
-        imageUrl: '',
-        metaTags: ['Seattle Security', 'Safety Tips', 'Security Companies', 'Personal Safety'],
-        content: `
+	{
+		title: "Top Questions About Security in Seattle: Your Guide to Staying Safe",
+		slug: "top-questions-about-security-in-seattle",
+		description: "Answers to the most common questions about security in Seattle, covering everything from personal safety tips to choosing a security company.",
+		date: "October 3, 2024",
+		imageUrl: "",
+		metaTags: ["Seattle Security", "Safety Tips", "Security Companies", "Personal Safety"],
+		content: `
       <section class="bg-slate-200 py-12">
           <div class="container mx-auto px-4">
               <div class='py-8'>
@@ -1386,16 +1332,16 @@ export const articleData = [
                     </div>
           </div>
       </section>
-    `
-    },
-    {
-        title: 'The Future of Security in Seattle: Trends and Predictions',
-        slug: 'future-of-security-seattle-trends-predictions',
-        description: 'An exploration of the emerging trends in Seattle\'s security landscape and predictions for how the industry will evolve over the next decade.',
-        date: 'October 4, 2024',
-        imageUrl: '',
-        metaTags: ['Seattle Security', 'Security Trends', 'Future Predictions', 'Urban Safety'],
-        content: `
+    `,
+	},
+	{
+		title: "The Future of Security in Seattle: Trends and Predictions",
+		slug: "future-of-security-seattle-trends-predictions",
+		description: "An exploration of the emerging trends in Seattle's security landscape and predictions for how the industry will evolve over the next decade.",
+		date: "October 4, 2024",
+		imageUrl: "",
+		metaTags: ["Seattle Security", "Security Trends", "Future Predictions", "Urban Safety"],
+		content: `
       <section class="bg-slate-200 py-12">
         <div class="container mx-auto px-4">
           <div class='py-8'>
@@ -1436,17 +1382,17 @@ export const articleData = [
           </div>
         </div>
       </section>
-    `
-    },
+    `,
+	},
 
-    {
-        title: 'Top 10 Hidden Gems in Seattle for a Safe and Relaxing Weekend',
-        slug: 'hidden-gems-seattle-safe-relaxing-weekend',
-        description: 'Discover some of Seattle\'s best-kept secrets for a peaceful and safe weekend getaway, away from the hustle and bustle of the city.',
-        date: 'October 5, 2024',
-        imageUrl: '',
-        metaTags: ['Seattle', 'Hidden Gems', 'Safe Places', 'Weekend Getaway', 'Relaxation'],
-        content: `
+	{
+		title: "Top 10 Hidden Gems in Seattle for a Safe and Relaxing Weekend",
+		slug: "hidden-gems-seattle-safe-relaxing-weekend",
+		description: "Discover some of Seattle's best-kept secrets for a peaceful and safe weekend getaway, away from the hustle and bustle of the city.",
+		date: "October 5, 2024",
+		imageUrl: "",
+		metaTags: ["Seattle", "Hidden Gems", "Safe Places", "Weekend Getaway", "Relaxation"],
+		content: `
       <section class="bg-slate-200 py-12">
         <div class="container mx-auto px-4">
           <div class='py-8'>
@@ -1536,16 +1482,16 @@ export const articleData = [
           </div>
         </div>
       </section>
-    `
-    },
-    {
-        title: 'Why Choose a Career in Security? Top 5 Reasons to Join Iron & Oak',
-        slug: 'top-5-reasons-to-join-iron-and-oak',
-        description: 'Discover why a career in security with Iron & Oak could be the perfect fit for you.',
-        date: 'October 6, 2024',
-        imageUrl: '',
-        metaTags: ['Security Career', 'Join Iron & Oak', 'Seattle Jobs', 'Career Growth'],
-        content: `
+    `,
+	},
+	{
+		title: "Why Choose a Career in Security? Top 5 Reasons to Join Iron & Oak",
+		slug: "top-5-reasons-to-join-iron-and-oak",
+		description: "Discover why a career in security with Iron & Oak could be the perfect fit for you.",
+		date: "October 6, 2024",
+		imageUrl: "",
+		metaTags: ["Security Career", "Join Iron & Oak", "Seattle Jobs", "Career Growth"],
+		content: `
         <section class="bg-slate-200 py-12">
             <div class="container mx-auto px-4">
                 <div class='py-8'>
@@ -1606,17 +1552,17 @@ export const articleData = [
                 
             </div>
         </section>
-    `
-    },
+    `,
+	},
 
-    {
-        title: 'What Makes Iron & Oak the Best Place to Start Your Security Career?',
-        slug: 'best-place-to-start-security-career-iron-and-oak',
-        description: 'Find out why Iron & Oak is the best place to begin your career in security.',
-        date: 'October 8, 2024',
-        imageUrl: '',
-        metaTags: ['Security Career Start', 'Iron & Oak Security Jobs', 'Seattle Security Jobs', 'Best Security Jobs'],
-        content: `
+	{
+		title: "What Makes Iron & Oak the Best Place to Start Your Security Career?",
+		slug: "best-place-to-start-security-career-iron-and-oak",
+		description: "Find out why Iron & Oak is the best place to begin your career in security.",
+		date: "October 8, 2024",
+		imageUrl: "",
+		metaTags: ["Security Career Start", "Iron & Oak Security Jobs", "Seattle Security Jobs", "Best Security Jobs"],
+		content: `
         <section class="bg-slate-200 py-12">
             <div class="container mx-auto px-4">
                 <div class='py-8'>
@@ -1662,15 +1608,16 @@ export const articleData = [
                 </div>
             </div>
         </section>
-    `
-    }, {
-        title: 'Frequently Asked Questions About Private Security Services',
-        slug: 'faqs-private-security-services',
-        description: 'Get answers to common questions about private security services, including types, costs, and benefits.',
-        date: 'September 28, 2024',
-        imageUrl: '',
-        metaTags: ['Private Security', 'Security Services FAQs', 'Security Industry', 'Public Safety'],
-        content: `
+    `,
+	},
+	{
+		title: "Frequently Asked Questions About Private Security Services",
+		slug: "faqs-private-security-services",
+		description: "Get answers to common questions about private security services, including types, costs, and benefits.",
+		date: "September 28, 2024",
+		imageUrl: "",
+		metaTags: ["Private Security", "Security Services FAQs", "Security Industry", "Public Safety"],
+		content: `
         <section class="bg-slate-200 py-12">
             <div class="container mx-auto px-4">
                 <div class='py-8'>
@@ -1734,15 +1681,15 @@ export const articleData = [
             </div>
         </section>
     `,
-    },
-    {
-        title: 'Debunking the Myth: Not All Security Guards Aspire to Be Police Officers',
-        slug: 'security-guards-dont-want-to-be-police',
-        description: 'A closer look at the diverse motivations and career aspirations of security professionals.',
-        date: 'September 30, 2024',
-        imageUrl: '',
-        metaTags: ['Security Guards', 'Career Choices', 'Private Security', 'Law Enforcement'],
-        content: `
+	},
+	{
+		title: "Debunking the Myth: Not All Security Guards Aspire to Be Police Officers",
+		slug: "security-guards-dont-want-to-be-police",
+		description: "A closer look at the diverse motivations and career aspirations of security professionals.",
+		date: "September 30, 2024",
+		imageUrl: "",
+		metaTags: ["Security Guards", "Career Choices", "Private Security", "Law Enforcement"],
+		content: `
         <section class="bg-slate-200 py-12">
             <div class="container mx-auto px-4">
                 <div class='py-8'>
@@ -1798,18 +1745,25 @@ export const articleData = [
             </div>
         </section>
     `,
-    },
+	},
 
-
-
-    {
-        title: 'Top 10 Reasons to Start a Security Career in Seattle - Opportunities with Iron & Oak',
-        slug: 'top-10-reasons-security-career-seattle',
-        description: 'Discover why starting a security career in Seattle with Iron & Oak could be the best decision you make. Explore the top benefits and opportunities awaiting you.',
-        date: 'September 1, 2024',
-        imageUrl: 'path/to/your/image.jpg',
-        metaTags: ['Security Careers', 'Seattle Jobs', 'Private Security', 'Iron & Oak Protective Services', 'Washington State Security Jobs', 'Career Growth', 'Public Safety Jobs', 'Security Training Seattle'],
-        content: `
+	{
+		title: "Top 10 Reasons to Start a Security Career in Seattle - Opportunities with Iron & Oak",
+		slug: "top-10-reasons-security-career-seattle",
+		description: "Discover why starting a security career in Seattle with Iron & Oak could be the best decision you make. Explore the top benefits and opportunities awaiting you.",
+		date: "September 1, 2024",
+		imageUrl: "path/to/your/image.jpg",
+		metaTags: [
+			"Security Careers",
+			"Seattle Jobs",
+			"Private Security",
+			"Iron & Oak Protective Services",
+			"Washington State Security Jobs",
+			"Career Growth",
+			"Public Safety Jobs",
+			"Security Training Seattle",
+		],
+		content: `
             <section class="bg-slate-200 py-12">
                 <div class="container mx-auto px-4">
                     <div class='py-8'>
@@ -1921,17 +1875,26 @@ export const articleData = [
     
                 </div>
             </section>
-        `
-    },
+        `,
+	},
 
-    {
-        title: 'Start Your Career with No Experience: Entry-Level Security Jobs in Seattle with Iron & Oak',
-        slug: 'entry-level-security-jobs-no-experience-seattle',
-        description: 'Discover entry-level security jobs in Seattle that require no prior experience. Start your career in security with Iron & Oak and receive paid training today.',
-        date: 'September 1, 2024',
-        imageUrl: 'path/to/your/image.jpg',
-        metaTags: ['No Experience Jobs', 'Entry-Level Jobs', 'Seattle Jobs', 'No Experience Security Jobs', 'Iron & Oak Protective Services', 'Security Careers', 'Seattle Entry-Level Jobs', 'Paid Training'],
-        content: `
+	{
+		title: "Start Your Career with No Experience: Entry-Level Security Jobs in Seattle with Iron & Oak",
+		slug: "entry-level-security-jobs-no-experience-seattle",
+		description: "Discover entry-level security jobs in Seattle that require no prior experience. Start your career in security with Iron & Oak and receive paid training today.",
+		date: "September 1, 2024",
+		imageUrl: "path/to/your/image.jpg",
+		metaTags: [
+			"No Experience Jobs",
+			"Entry-Level Jobs",
+			"Seattle Jobs",
+			"No Experience Security Jobs",
+			"Iron & Oak Protective Services",
+			"Security Careers",
+			"Seattle Entry-Level Jobs",
+			"Paid Training",
+		],
+		content: `
             <section class="bg-slate-200 py-12">
                 <div class="container mx-auto px-4">
                     <div class='py-8'>
@@ -2015,9 +1978,6 @@ export const articleData = [
     
                 </div>
             </section>
-        `
-    }
-
-
-
+        `,
+	},
 ];
