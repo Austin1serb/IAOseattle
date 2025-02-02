@@ -1,5 +1,9 @@
-User-Agent: *
+# *
+User-agent: *
 Allow: /
-Disallow: /api/
 
-Sitemap: https://iao-seattle.vercel.app/sitemap.xml
+# Host
+Host: https://iao-seattle.vercel.app
+
+# Sitemaps
+Sitemap:  https://iao-seattle.vercel.app/sitemap-0.xml
