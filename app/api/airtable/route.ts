@@ -56,7 +56,8 @@ export async function GET(req: NextRequest) {
 		const tableName = process.env.AIRTABLE_TABLE_NAME;
 
 		if (!airtableApiKey || !baseId || !tableName) {
-			throw new Error("Missing required environment variables");
+			console.warn("Missing Airtable environment variables, returning empty data");
+			return NextResponse.json([]);
 		}
 
 		const allRecords = await fetchAllRecordsForCurrentMonth(airtableApiKey, baseId, tableName);
