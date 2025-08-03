@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export const UnderConstructionOverlay: React.FC = () => {
 	return (
-		<div className="fixed inset-0 bg-gradient-to-br from-slate-600/50 via-slate-800/50 to-slate-900/50 backdrop-blur-3xl z-[9999999] flex flex-col items-center justify-center text-white">
-			<div className="max-w-2xl mx-auto px-8 text-center space-y-8">
+		<div className="fixed inset-0 bg-gradient-to-br from-slate-600/75 via-slate-800/75 to-slate-900/50 backdrop-blur-3xl z-[9999999] flex flex-col items-center justify-center text-white">
+			<div className="max-w-2xl mx-auto px-8 text-center sm:space-y-8">
 				{/* Construction Icon */}
 				<div className="flex justify-center mb-6">
 					<div className="w-28 h-28 bg-orange-500/50 rounded-full flex items-center justify-center border-2 border-orange-500 p-5">
@@ -24,12 +24,12 @@ export const UnderConstructionOverlay: React.FC = () => {
 
 				{/* Main Heading */}
 				<div className="space-y-4">
-					<h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-l from-slate-500 via-40% via-slate-300 to-slate-100 bg-clip-text text-transparent">Under Construction</h1>
+					<h1 className="sm:text-6xl text-4xl md:text-7xl font-bold bg-gradient-to-l from-slate-500 via-40% via-slate-300 to-slate-100 bg-clip-text text-transparent">Under Construction</h1>
 					<div className="w-32 h-1 bg-gradient-to-r from-slate-400 to-slate-600 mx-auto rounded-full"></div>
 				</div>
 
 				{/* Message */}
-				<div className="space-y-4">
+				<div className="space-y-4 ">
 					<p className="text-xl md:text-2xl text-slate-300 font-light leading-relaxed">We&apos;re working hard to bring you something amazing.</p>
 					<p className="text-lg text-slate-400">Please check back soon for updates.</p>
 				</div>
@@ -43,7 +43,7 @@ export const UnderConstructionOverlay: React.FC = () => {
 			</div>
 
 			{/* Company Branding */}
-			<div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+			<div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-nowrap">
 				<div className="text-center">
 					<p className="text-sm text-slate-300 mb-1.5">Created by</p>
 					<Link

@@ -57,7 +57,7 @@ export default function RootLayout({
 			<body className="relative">
 				{/* under construction overlay */}
 				<UnderConstructionOverlay />
-				<nav className="sticky top-0 z-50 w-full">
+				<nav className="sticky top-0 z-50 w-full h-[100dvh]">
 					<Navbar />
 				</nav>
 				{children}
