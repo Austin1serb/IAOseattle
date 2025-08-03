@@ -7,7 +7,7 @@ export const UnderConstructionOverlay: React.FC = () => {
 			<div className="max-w-2xl mx-auto px-8 text-center space-y-8">
 				{/* Construction Icon */}
 				<div className="flex justify-center mb-6">
-					<div className="w-28 h-28 bg-orange-500/45 rounded-full flex items-center justify-center border border-orange-500/30 p-5">
+					<div className="w-28 h-28 bg-orange-500/50 rounded-full flex items-center justify-center border-2 border-orange-500 p-5">
 						<svg
 							stroke="currentColor"
 							fill="currentColor"
@@ -24,7 +24,7 @@ export const UnderConstructionOverlay: React.FC = () => {
 
 				{/* Main Heading */}
 				<div className="space-y-4">
-					<h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-l from-slate-500 via-40% via-slate-700 to-slate-900 bg-clip-text text-transparent">Under Construction</h1>
+					<h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-l from-slate-500 via-40% via-slate-300 to-slate-100 bg-clip-text text-transparent">Under Construction</h1>
 					<div className="w-32 h-1 bg-gradient-to-r from-slate-400 to-slate-600 mx-auto rounded-full"></div>
 				</div>
 
