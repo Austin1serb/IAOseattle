@@ -22,7 +22,6 @@ const Step2: React.FC = () => {
 	};
 
 	const handleBack = () => {
-		console.log("handleBack called, navigating to the previous step");
 		router.back(); // Go back to the previous page or step
 	};
 

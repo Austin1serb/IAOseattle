@@ -20,7 +20,8 @@ const getClassName = (stage: string, direction: string): string => {
 	}
 };
 
-const MediaPage: React.FC = () => {
+// Component that uses searchParams wrapped in Suspense
+const MediaPageContent: React.FC = () => {
 	const router = useRouter();
 	const pathname = usePathname();
 	const searchParams = useSearchParams();
@@ -132,6 +133,48 @@ const MediaPage: React.FC = () => {
 				</Link>
 			</div>
 		</main>
+	);
+};
+
+// Main MediaPage component with Suspense boundary
+const MediaPage: React.FC = () => {
+	return (
+		<Suspense
+			fallback={
+				<main className="bg-slate-200">
+					<div className="text-center p-16">
+						<p className="text-3xl">
+							Explore the latest news and media coverage about Iron & Oak. <br />
+						</p>
+						<p className="mt-16 text-gray-600 font-thin">Stay updated with our industry presence and community impact through articles.</p>
+						<Link
+							className="text-blue-600 underline hover:text-blue-800 transition duration-300 inline-block cursor-pointer"
+							href={"/articles"}
+						>
+							View Articles
+						</Link>
+					</div>
+					<section
+						id="media-section"
+						aria-label="Media and Articles Section"
+						className="container mx-auto px-4"
+					>
+						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-8 place-items-center">
+							{Array.from({ length: 6 }).map((_, index) => (
+								<article
+									key={`skeleton-${index}`}
+									className="h-full"
+								>
+									<MediaItemSkeleton />
+								</article>
+							))}
+						</div>
+					</section>
+				</main>
+			}
+		>
+			<MediaPageContent />
+		</Suspense>
 	);
 };
 
