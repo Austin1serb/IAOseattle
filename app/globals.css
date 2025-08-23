@@ -2,11 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* globals.css */
-html[data-from-mpire="1"] [data-default-link] {
+/* toggle links – honor flag on html OR body */
+html[data-from-mpire="1"] [data-default-link],
+body[data-from-mpire="1"] [data-default-link] {
 	display: none !important;
 }
-html:not([data-from-mpire="1"]) [data-mpire-link] {
+
+html:not([data-from-mpire="1"]) [data-mpire-link],
+body:not([data-from-mpire="1"]) [data-mpire-link] {
+	display: none !important;
+}
+
+/* hide the overlay when flagged */
+html[data-from-mpire="1"] #under-construction,
+body[data-from-mpire="1"] #under-construction {
 	display: none !important;
 }
 
