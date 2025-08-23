@@ -3,13 +3,16 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function middleware(req: NextRequest) {
+	const url = req.nextUrl;
 	const res = NextResponse.next();
+
+	// DEBUG: prove the middleware executed
+	res.headers.set("x-mw", "1");
+
 	const referer = req.headers.get("referer") ?? "";
-	const url = new URL(req.url);
 	const fromParam = url.searchParams.get("src") === "mpire";
 
 	if (referer.includes("mpiregrowth.com") || fromParam) {
-		// non-HttpOnly so the client can read pre-paint
 		res.cookies.set({
 			name: "from_mpire",
 			value: "1",
@@ -23,10 +26,5 @@ export function middleware(req: NextRequest) {
 	return res;
 }
 
-// IMPORTANT: exclude static assets and images (matcher runs *before* routing)
-export const config = {
-	matcher: [
-		// run on everything *except* these:
-		"/((?!_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|manifest.json|assets/|images/|api/health).*)",
-	],
-};
+// TEMP while debugging: run on everything (no matcher quirks)
+export const config = { matcher: ["/:path*"] };
