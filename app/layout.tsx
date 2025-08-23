@@ -71,10 +71,9 @@ export default function RootLayout({
     `}
 				</Script>
 				{/* under construction overlay */}
+				<Navbar />
 				<UnderConstructionOverlay />
-				<nav className="sticky top-0 z-50 w-full h-[100dvh]">
-					<Navbar />
-				</nav>
+
 				{children}
 				{/*<Analytics/>
         <SpeedInsights/>*/}

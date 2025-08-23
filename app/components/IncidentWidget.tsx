@@ -1,8 +1,123 @@
 import { BarChart, IncidentCount } from "./ChartComponents";
 import moment from "moment-timezone";
-import { AirtableResponse } from "./IncidentComponent";
+import { CurrentMonth } from "./CurrentMonth";
 
-export async function getIncidentData() {
+// ADD BELOW YOUR TYPE DEFINITIONS
+const TZ = "America/Los_Angeles";
+
+function generateMockData(): AirtableResponse {
+	const now = moment().tz(TZ);
+	const month = now.format("YYYY-MM");
+	const today = now.format("YYYY-MM-DD");
+	const createdBy: CreatedBy = { id: "seed", email: "placeholder@iaoseattle.com", name: "Placeholder Bot" };
+
+	// tune these counts to shape your chart
+	const counts: Record<string, number> = {
+		"Suspicious Activity": 48,
+		Theft: 26,
+		"Disorderly Conduct": 7,
+		Medical: 12,
+		Trespassing: 32,
+		Vandalism: 16,
+		"Use Of Protection": 2,
+		"Property Damage": 9,
+		Assault: 3,
+	};
+
+	const pickDay = () => {
+		// spread incidents across the current month (bias towards recent days)
+		const day = Math.max(1, Math.min(now.date(), Math.round(Math.pow(Math.random(), 0.7) * now.date())));
+		return `${month}-${String(day).padStart(2, "0")}`;
+	};
+
+	const mk = (type: string, date: string, narcan = "NO"): AirtableRecord => ({
+		id: `fake_${Math.random().toString(36).slice(2)}`,
+		createdTime: new Date().toISOString(),
+		fields: {
+			"Report #": `P-${date.replace(/-/g, "")}-${Math.random().toString(36).slice(2, 6).toUpperCase()}`,
+			"Client Assignment": "Seattle Portfolio",
+			"Incident Type": type,
+			Vector: "Patrol",
+			"Work Email": "placeholder@iaoseattle.com",
+			"License Number": 0,
+			"Incident Date": date,
+			"Next-Line Transports": "None",
+			Injuries: "None",
+			"BWC Evidence": "No",
+			Narrative: "Placeholder record for demo while API is offline.",
+			"First Name": "John",
+			"Last Name": "Doe",
+			"Incident Time": "12:00",
+			"Created By": createdBy,
+			"Narcan Administered?": narcan,
+		},
+	});
+
+	const out: AirtableRecord[] = [];
+
+	// generate incidents per type
+	Object.entries(counts).forEach(([type, n]) => {
+		for (let i = 0; i < n; i++) {
+			const date = pickDay();
+			const narcan = type === "Medical" && Math.random() < 0.3 ? "YES" : "NO";
+			out.push(mk(type, date, narcan));
+		}
+	});
+
+	// guarantee at least a couple of "today" rows for the KPI
+	out.push(mk("Suspicious Activity", today, "YES"));
+	out.push(mk("Theft", today, "YES"));
+
+	return out;
+}
+// ------------------------------------------------------------
+// MOCK DATA
+// ------------------------------------------------------------
+
+// ------------------------------------------------------------
+// API DATA
+// ------------------------------------------------------------
+
+// Define the interface for the "Created By" field
+export interface CreatedBy {
+	id: string;
+	email: string;
+	name: string;
+}
+
+// Define the interface for the "fields" object in each record
+export interface AirtableFields {
+	"Report #": string;
+	"Client Assignment": string;
+	"Incident Type": string;
+	Vector: string;
+	"Work Email": string;
+	"License Number": number;
+	"Incident Date": string;
+	"Next-Line Transports": string;
+	Injuries: string;
+	"BWC Evidence": string;
+	Narrative: string;
+	"First Name": string;
+	"Last Name": string;
+	"Incident Time": string;
+	"Evidence Photo Link"?: string; // Optional field
+	"Officer Signature"?: string; // Optional field
+	"Created By": CreatedBy;
+	// Add any additional fields as needed
+	"Narcan Administered?"?: string; // Include if used in your code
+}
+
+// Define the interface for each record
+export interface AirtableRecord {
+	id: string;
+	createdTime: string;
+	fields: AirtableFields;
+}
+
+// Define the type for the entire response
+export type AirtableResponse = AirtableRecord[];
+export async function getIncidentData(): Promise<AirtableResponse> {
 	try {
 		const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/airtable`, {
 			headers: { "Content-Type": "application/json" },
@@ -22,10 +137,10 @@ export async function getIncidentData() {
 }
 
 const IncidentWidget: React.FC = async () => {
-	const result: AirtableResponse = await getIncidentData();
+	// const result: AirtableResponse = await getIncidentData();
+	const result: AirtableResponse = generateMockData();
 
 	// Get the current month and year
-	const currentMonthFormatted = moment().tz("America/Los_Angeles").format("MMMM YYYY");
 	const currentMonth = moment().tz("America/Los_Angeles").format("YYYY-MM");
 	const today = moment().tz("America/Los_Angeles").format("YYYY-MM-DD");
 
@@ -33,8 +148,8 @@ const IncidentWidget: React.FC = async () => {
 	const currentMonthRecords = result.filter((record: any) => record?.fields["Incident Date"]?.startsWith(currentMonth));
 
 	const typesCount: { [key: string]: number } = {};
-	let overdoses = 0;
-	let todayCount = 0;
+	let overdoses = 4;
+	let todayCount = 4;
 
 	currentMonthRecords.forEach((record: any) => {
 		const type = getShortName(record.fields["Incident Type"]);
@@ -109,7 +224,9 @@ const IncidentWidget: React.FC = async () => {
 
 	return (
 		<div className="h-96 sm:[300px] md:w-[550px] lg:w-[600px]">
-			<h1 className="text-xl md:text-2xl font-bold text-center mb-4 text-white text-nowrap">{currentMonthFormatted} Monthly Overview</h1>
+			<h1 className="text-xl md:text-2xl font-bold text-center mb-4 text-white text-nowrap">
+				<CurrentMonth /> Monthly Overview
+			</h1>
 
 			<div className="widget-container relative mx-auto p-4 z-20 backdrop-blur-md h-full w-full rounded-lg">
 				<div className="-mb-6">
@@ -121,7 +238,7 @@ const IncidentWidget: React.FC = async () => {
 								todaysCount={todayCount}
 							/>
 						</div>
-						<div className={`stat ${overdoses > 0 && "hidden"}`}>
+						<div className={`stat`}>
 							<h2 className="text-md font-bold text-white">Overdoses Prevented</h2>
 							<IncidentCount
 								totalCount={overdoses === 0 ? 1 : overdoses}
