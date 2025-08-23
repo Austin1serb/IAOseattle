@@ -22,11 +22,16 @@
         "name": "next"
       }
     ],
-    "types": ["@testing-library/jest-dom"],
-   "baseUrl": "./",
+    "types": [
+      "@testing-library/jest-dom"
+    ],
+    "baseUrl": "./",
     "paths": {
-      "@/*": ["app/*"]
-    }
+      "@/*": [
+        "app/*"
+      ]
+    },
+    "target": "ES2017"
   },
   "include": [
     "next-env.d.ts",

@@ -3,7 +3,10 @@ import Link from "next/link";
 
 export const UnderConstructionOverlay: React.FC = () => {
 	return (
-		<div className="fixed inset-0 bg-gradient-to-br from-slate-600/75 via-slate-800/75 to-slate-900/50 backdrop-blur-3xl z-[9999999] flex flex-col items-center justify-center text-white">
+		<div
+			id="under-construction"
+			className="fixed inset-0 bg-gradient-to-br from-slate-600/75 via-slate-800/75 to-slate-900/50 backdrop-blur-3xl z-[9999999] flex flex-col items-center justify-center text-white"
+		>
 			<div className="max-w-2xl mx-auto px-8 text-center sm:space-y-8">
 				{/* Construction Icon */}
 				<div className="flex justify-center mb-6">

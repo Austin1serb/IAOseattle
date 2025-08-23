@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { PoweredByLink } from "./attribution/PoweredByLink";
+
 const Footer = () => {
 	return (
 		<>
@@ -97,45 +99,7 @@ const Footer = () => {
 				className="bg-blue-800"
 				style={{ width: "100%", padding: "10px", color: "#f2f2f2", fontWeight: "100", fontSize: "14px" }}
 			>
-				<Link
-					href="https://serbyte.net"
-					target="_blank"
-					rel="noopener"
-					style={{ color: "#f2f2f2", fontWeight: "100", textDecoration: "none", transition: "color 0.2s", textAlign: "center", display: "block" }}
-					aria-label="Visit Serbyte Development"
-				>
-					Serbyte Development
-				</Link>
-				<div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "10px", padding: "0 20px" }}>
-					<Link
-						href="https://serbyte.net/services"
-						style={{ color: "#f2f2f2", fontWeight: "100", textDecoration: "none", transition: "color 0.2s" }}
-						aria-label="View Serbyte Services"
-					>
-						Web Design
-					</Link>
-					<Link
-						href="https://serbyte.net/projects"
-						style={{ color: "#f2f2f2", fontWeight: "100", textDecoration: "none", transition: "color 0.2s" }}
-						aria-label="View Serbyte Projects"
-					>
-						SEO
-					</Link>
-					<Link
-						href="https://serbyte.net/insights"
-						style={{ color: "#f2f2f2", fontWeight: "100", textDecoration: "none", transition: "color 0.2s" }}
-						aria-label="Read Serbyte Blog"
-					>
-						Content Generation
-					</Link>
-					<Link
-						href="https://serbyte.net/contact"
-						style={{ color: "#f2f2f2", fontWeight: "100", textDecoration: "none", transition: "color 0.2s" }}
-						aria-label="Contact Serbyte"
-					>
-						Contact Serbyte
-					</Link>
-				</div>
+				<PoweredByLink />
 			</div>
 		</>
 	);

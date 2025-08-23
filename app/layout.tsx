@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
 import { Lexend_Deca } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/NavBar";
 import Footer from "./components/Footer";
 import { UnderConstructionOverlay } from "./components/UnderConstructionOverlay";
+import Script from "next/script";
 
 //import { Analytics } from '@vercel/analytics/react';
 //import { SpeedInsights } from "@vercel/speed-insights/next"
 
-export const metadata: Metadata = {
+export const metadata = {
 	metadataBase: new URL(process.env.NEXT_PUBLIC_URL || "https://www.iaoseattle.com"),
 	title: "Iron & Oak | Redefining Private Security in Seattle",
 	description:
@@ -55,6 +55,21 @@ export default function RootLayout({
 			className={montserrat.variable}
 		>
 			<body className="relative">
+				<Script
+					id="mpire-flag"
+					strategy="beforeInteractive"
+				>
+					{`
+      try {
+        if (document.cookie.indexOf("from_mpire=1") !== -1) {
+          document.documentElement.setAttribute("data-from-mpire","1");
+          if (document.body) document.body.setAttribute("data-from-mpire","1");
+        }
+      } catch(_) {
+				console.error("Error setting mpire flag", _);
+			 }
+    `}
+				</Script>
 				{/* under construction overlay */}
 				<UnderConstructionOverlay />
 				<nav className="sticky top-0 z-50 w-full h-[100dvh]">
