@@ -56,20 +56,30 @@ export default function RootLayout({
 		>
 			<body className="relative">
 				<Script
-					id="mpire-flag"
+					id="partner-flag"
 					strategy="beforeInteractive"
 				>
-					{`
-      try {
-        if (document.cookie.indexOf("from_mpire=1") !== -1) {
-          document.documentElement.setAttribute("data-from-mpire","1");
-          if (document.body) document.body.setAttribute("data-from-mpire","1");
-        }
-      } catch(_) {
-				console.error("Error setting mpire flag", _);
-			 }
-    `}
+					{`(function(){
+  try {
+    var q = new URLSearchParams(location.search);
+    var src = (q.get('src') || '').toLowerCase();
+    var isCookie = document.cookie.indexOf('from_mpire=1') !== -1;
+    var isIframe = window.top !== window.self;
+    var ref = (document.referrer || '').toLowerCase();
+
+    // accept mpire, serbyte, or explicit embed mode via query param
+    var fromParam = src === 'mpire' || src === 'serbyte' || src === 'embed';
+    // accept origin via referrer (works for iframe with referrerPolicy=origin)
+    var fromRef = /\b(mpiregrowth\.com|serbyte\.net)\b/.test(ref);
+
+    if (isCookie || fromParam || (isIframe && fromRef)) {
+      document.documentElement.setAttribute('data-from-mpire', '1');
+      if (document.body) document.body.setAttribute('data-from-mpire', '1');
+    }
+  } catch (_e) { /* noop */ }
+})();`}
 				</Script>
+
 				{/* under construction overlay */}
 				<Navbar />
 				<UnderConstructionOverlay />

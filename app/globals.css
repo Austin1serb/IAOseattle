@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* toggle links – honor flag on html OR body */
+/* toggle links - honor flag on html OR body */
 html[data-from-mpire="1"] [data-default-link],
 body[data-from-mpire="1"] [data-default-link] {
 	display: none !important;

@@ -1,12 +1,12 @@
 export const mediaArticles = [
-    {
-        slug: 'private-downtown-seattle-security-stopgap',
-        title: 'Seattle private downtown security a ‘stopgap’ until ‘hotspot’ policing materializes',
-        url: 'https://mynorthwest.com/3343034/private-downtown-seattle-security-stopgap/',
-        imageUrl: 'https://mynorthwest.com/wp-content/uploads/2022/02/private-security-rantz-900-900x506.jpg',
+	{
+		slug: "private-downtown-seattle-security-stopgap",
+		title: "Seattle private downtown security a ‘stopgap’ until ‘hotspot’ policing materializes",
+		url: "https://mynorthwest.com/3343034/private-downtown-seattle-security-stopgap/",
+		imageUrl: "https://mynorthwest.com/wp-content/uploads/2022/02/private-security-rantz-900-900x506.jpg",
 
-        date: 'February 10, 2022',
-        content: `
+		date: "February 10, 2022",
+		content: `
     <h2 class="text-2xl font-bold mb-2 text-blue-600">BY DALTON DAY</h2>
     <p class="text-sm text-slate-500 mb-4">Former MyNorthwest Editor</p>
 
@@ -49,17 +49,17 @@ export const mediaArticles = [
     <blockquote class="border-l-4 border-blue-500 pl-4 italic my-4">
         “[These] should be our best streets,” he added. “… It’s going to be a litmus test on our ability as a city, as a community to more effectively deal with these issues.”
     </blockquote>
-`
-
-    },
-    {
-        slug: 'downtown-seattle-association-hires-private-security-guards-amid-police-staffing-issues',
-        title: 'Downtown Seattle Association Hires Private Security Guards Amid Police Staffing Issues',
-        url: 'https://komonews.com/news/local/downtown-seattle-association-hires-private-security-guards-amid-police-staffing-issues',
-        imageUrl: 'https://komonews.com/resources/media/eb09d7de-4c5b-4f2d-9b1d-4f12db7a7798-large16x9_Security.jpg',
-        videoEmbed: '<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/b206af068557454bb976a818278226d1.m3u8&autostart=false"  frameborder="0" scrolling="auto" loading="lay"></iframe>',
-        date: 'July 28, 2023',
-        content: `
+`,
+	},
+	{
+		slug: "downtown-seattle-association-hires-private-security-guards-amid-police-staffing-issues",
+		title: "Downtown Seattle Association Hires Private Security Guards Amid Police Staffing Issues",
+		url: "https://komonews.com/news/local/downtown-seattle-association-hires-private-security-guards-amid-police-staffing-issues",
+		imageUrl: "https://komonews.com/resources/media/eb09d7de-4c5b-4f2d-9b1d-4f12db7a7798-large16x9_Security.jpg",
+		videoEmbed:
+			'<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/b206af068557454bb976a818278226d1.m3u8&autostart=false"  frameborder="0" scrolling="auto" loading="lay"></iframe>',
+		date: "July 28, 2023",
+		content: `
     <h2 class="text-2xl font-bold mb-2 text-blue-600">BY JACKIE KENT</h2>
     <p class="text-sm text-slate-500 mb-4">KOMO News Reporter</p>
 
@@ -94,15 +94,15 @@ export const mediaArticles = [
     <p class="mb-4">As KOMO has reported, Seattle police lost a few hundred officers since 2020. It has since filled some of those spots, and the city's budget allows for SPD to hire 125 officers this year.</p>
 
 
-`
-    },
-    {
-        slug: 'downtown-seattle-spends-private-security-3rd-ave',
-        title: 'Downtown Seattle Spends $564,000 on Private Security for 3rd Avenue',
-        url: 'https://mynorthwest.com/3330849/downtown-seattle-spends-private-security-3rd-ave/',
-        imageUrl: 'https://mynorthwest.com/wp-content/uploads/2022/01/3rd_900-900x506.jpg',
-        date: 'February 1, 2022',
-        content: `
+`,
+	},
+	{
+		slug: "downtown-seattle-spends-private-security-3rd-ave",
+		title: "Downtown Seattle Spends $564,000 on Private Security for 3rd Avenue",
+		url: "https://mynorthwest.com/3330849/downtown-seattle-spends-private-security-3rd-ave/",
+		imageUrl: "https://mynorthwest.com/wp-content/uploads/2022/01/3rd_900-900x506.jpg",
+		date: "February 1, 2022",
+		content: `
         <h2 class="text-2xl font-bold mb-2 text-blue-600">BY DALTON DAY</h2>
         <p class="text-sm text-slate-500 mb-4">Former MyNorthwest Editor</p>
     
@@ -136,17 +136,17 @@ export const mediaArticles = [
     
         <h3 class="text-2xl font-semibold mt-6 mb-4 text-blue-600">What went wrong for Compassion Seattle’s homeless initiative, and what’s next?</h3>
     
-        <p class="mb-4">Established in 1999, the MID is funded through assessments on property owners in the six neighborhoods which it comprises – Belltown, Denny Triangle, Pioneer Square, Retail Core, Waterfront, and West Edge neighborhoods – a 285-square-block area in total.</p>
-    `
-    },
+        <p class="mb-4">Established in 1999, the MID is funded through assessments on property owners in the six neighborhoods which it comprises - Belltown, Denny Triangle, Pioneer Square, Retail Core, Waterfront, and West Edge neighborhoods - a 285-square-block area in total.</p>
+    `,
+	},
 
-    {
-        slug: 'downtown-bus-stop-closes-seattle-police-mayoral-crime-initiative',
-        title: 'Downtown Bus Stop Closes Amid Seattle Police and Mayoral Crime Initiative',
-        url: 'https://mynorthwest.com/3406360/downtown-bus-stop-closes-seattle-police-mayoral-crime-initiative/',
-        imageUrl: 'https://mynorthwest.com/wp-content/uploads/2022/03/pike_900-900x506.jpg',
-        date: 'June 3, 2024',
-        content: `
+	{
+		slug: "downtown-bus-stop-closes-seattle-police-mayoral-crime-initiative",
+		title: "Downtown Bus Stop Closes Amid Seattle Police and Mayoral Crime Initiative",
+		url: "https://mynorthwest.com/3406360/downtown-bus-stop-closes-seattle-police-mayoral-crime-initiative/",
+		imageUrl: "https://mynorthwest.com/wp-content/uploads/2022/03/pike_900-900x506.jpg",
+		date: "June 3, 2024",
+		content: `
         <h2 class="text-2xl font-bold mb-2 text-blue-600">BY DALTON DAY</h2>
         <p class="text-sm text-slate-500 mb-4">Former MyNorthwest Editor</p>
     
@@ -179,15 +179,15 @@ export const mediaArticles = [
         <p class="mb-4">Shifting the location of the bus stop is intended to calm foot traffic and congestion in the area.</p>
     
         <p class="text-sm text-slate-500 mb-4">KIRO Newsradio’s Nicole Jennings contributed to this report.</p>
-    `
-    },
-    {
-        slug: 'backs-against-wall-ballard-business-owners-throw-town-hall-combat-crime',
-        title: 'Backs Against the Wall: Ballard Business Owners Throw Town Hall to Combat Crime',
-        url: 'https://mynorthwest.com/3785043/backs-against-wall-ballard-business-owners-throw-town-hall-combat-crime/',
-        imageUrl: 'https://mynorthwest.com/wp-content/uploads/2021/11/damageballard-900x506-1-900x506.jpg',
-        date: 'July 28, 2023',
-        content: `
+    `,
+	},
+	{
+		slug: "backs-against-wall-ballard-business-owners-throw-town-hall-combat-crime",
+		title: "Backs Against the Wall: Ballard Business Owners Throw Town Hall to Combat Crime",
+		url: "https://mynorthwest.com/3785043/backs-against-wall-ballard-business-owners-throw-town-hall-combat-crime/",
+		imageUrl: "https://mynorthwest.com/wp-content/uploads/2021/11/damageballard-900x506-1-900x506.jpg",
+		date: "July 28, 2023",
+		content: `
         <h2 class="text-2xl font-bold mb-2 text-blue-600">BY JASON RANTZ SHOW</h2>
         <p class="text-sm text-slate-500 mb-4">AM 770 KTTH Host</p>
     
@@ -242,16 +242,17 @@ export const mediaArticles = [
         <blockquote class="border-l-4 border-blue-500 pl-4 italic my-4">
             “Whether it’s private security, which I don’t think is necessarily the answer because they don’t always have the training. There are some great outfits out there, though, but something has to change fast,” Humphrey said. “They’ve got to get it in place now, because I spent Thanksgiving in my shop with a $6,000 broken window after an attempted break-in. My landlord was right there along my side, helping me board it up. I mean, this is just not the way civil society is supposed to work.”
         </blockquote>
-    `
-    },
-    {
-        slug: 'private-security-companies-see-massive-demand-for-service-struggle-to-hire-more-officers',
-        title: 'Private Security Companies See Massive Demand for Service, Struggle to Hire More Officers',
-        url: 'https://komonews.com/news/local/private-security-companies-see-massive-demand-for-service-struggle-to-hire-more-officers',
-        imageUrl: '', // Image URL is not provided in the original content
-        date: 'April 14, 2023',
-        videoEmbed: '<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/464b0c8253b0492d83e19c90f9be5e2a.m3u8&autostart=false" frameborder="0" scrolling="auto" loading="lazy"></iframe>',
-        content: `
+    `,
+	},
+	{
+		slug: "private-security-companies-see-massive-demand-for-service-struggle-to-hire-more-officers",
+		title: "Private Security Companies See Massive Demand for Service, Struggle to Hire More Officers",
+		url: "https://komonews.com/news/local/private-security-companies-see-massive-demand-for-service-struggle-to-hire-more-officers",
+		imageUrl: "", // Image URL is not provided in the original content
+		date: "April 14, 2023",
+		videoEmbed:
+			'<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/464b0c8253b0492d83e19c90f9be5e2a.m3u8&autostart=false" frameborder="0" scrolling="auto" loading="lazy"></iframe>',
+		content: `
         <h2 class="text-2xl font-bold mb-2 text-blue-600">BY SUZANNE PHAN</h2>
         <p class="text-sm text-slate-500 mb-4">KOMO News Reporter</p>
     
@@ -300,13 +301,13 @@ export const mediaArticles = [
         </blockquote>
     
         <p class="mb-4">Private security companies often have armed and unarmed officers. Many times, the armed officers are former law enforcement or military.</p>
-    `
-    },
-    {
-        title: 'Seattle Business Owners Turn to Private Security',
-        slug: 'seattle-business-owners-turn-private-security',
-        description: 'With rising crime and police staffing issues, businesses are increasingly relying on private security to ensure safety.',
-        content: `
+    `,
+	},
+	{
+		title: "Seattle Business Owners Turn to Private Security",
+		slug: "seattle-business-owners-turn-private-security",
+		description: "With rising crime and police staffing issues, businesses are increasingly relying on private security to ensure safety.",
+		content: `
     <h2 class="text-2xl font-bold mb-2 text-blue-600">BY DALTON DAY</h2>
     <p class="text-sm text-slate-500 mb-4">Former MyNorthwest Editor</p>
 
@@ -350,18 +351,18 @@ export const mediaArticles = [
         “[These] should be our best streets,” he added. “… It’s going to be a litmus test on our ability as a city, as a community to more effectively deal with these issues.”
     </blockquote>
 `,
-        url: 'https://mynorthwest.com/3343034/private-downtown-seattle-security-stopgap/',
-        imageUrl: '',
-        date: 'June 3, 2024',
-    },
-    {
-        slug: 'from-odd-fellows-to-cal-anderson-park-the-rise-of-private-security-on-capitol-hill',
-        title: 'From Odd Fellows to Cal Anderson Park, the Rise of Private Security on Capitol Hill',
-        url: 'https://www.capitolhillseattle.com/2020/09/from-odd-fellows-to-cal-anderson-park-the-rise-of-private-security-on-capitol-hill/',
-        imageUrl: 'https://i0.wp.com/www.capitolhillseattle.com/wp-content/uploads/2020/09/CalSweep2020-9.jpg?w=1168&ssl=1',
-        date: 'September 4, 2020',
-        videoEmbed: '', // No video embed provided
-        content: `
+		url: "https://mynorthwest.com/3343034/private-downtown-seattle-security-stopgap/",
+		imageUrl: "",
+		date: "June 3, 2024",
+	},
+	{
+		slug: "from-odd-fellows-to-cal-anderson-park-the-rise-of-private-security-on-capitol-hill",
+		title: "From Odd Fellows to Cal Anderson Park, the Rise of Private Security on Capitol Hill",
+		url: "https://www.capitolhillseattle.com/2020/09/from-odd-fellows-to-cal-anderson-park-the-rise-of-private-security-on-capitol-hill/",
+		imageUrl: "https://i0.wp.com/www.capitolhillseattle.com/wp-content/uploads/2020/09/CalSweep2020-9.jpg?w=1168&ssl=1",
+		date: "September 4, 2020",
+		videoEmbed: "", // No video embed provided
+		content: `
     
             <h2 class="text-2xl font-bold mb-2 text-blue-600"> by jseattle</h2>
               <p class="text-sm text-slate-500 mb-4"> Posted on Friday, September 4, 2020 - 9:17 am</p>
@@ -471,16 +472,17 @@ export const mediaArticles = [
             <blockquote class="border-l-4 border-blue-500 pl-4 italic my-4">
                 “We can service this in a respectful and nonviolent manner, from an office directly within the community being served,” he writes.
             </blockquote>
-        `
-    },
-    {
-        slug: 'my-heart-really-broke-security-guard-describes-moments-helping-eina-kwon-after-belltown-shooting',
-        title: '‘My heart really broke’: Security guard describes moments helping Eina Kwon after Belltown shooting',
-        url: 'https://www.king5.com/article/news/local/seattle/security-guard-belltown-shooting-victim-eina-kwon/281-dc81a3cc-d791-44cc-9591-3ed5eff6d9e6',
-        imageUrl: '',
-        date: 'June 21, 2023',
-        videoEmbed: '<iframe style="border:1px solid #e6e6e6" src="https://www.king5.com/embeds/video/responsive/281-997fdec1-6ee7-4349-81e0-a11d7f0bfa52/iframe" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>',
-        content: `
+        `,
+	},
+	{
+		slug: "my-heart-really-broke-security-guard-describes-moments-helping-eina-kwon-after-belltown-shooting",
+		title: "‘My heart really broke’: Security guard describes moments helping Eina Kwon after Belltown shooting",
+		url: "https://www.king5.com/article/news/local/seattle/security-guard-belltown-shooting-victim-eina-kwon/281-dc81a3cc-d791-44cc-9591-3ed5eff6d9e6",
+		imageUrl: "",
+		date: "June 21, 2023",
+		videoEmbed:
+			'<iframe style="border:1px solid #e6e6e6" src="https://www.king5.com/embeds/video/responsive/281-997fdec1-6ee7-4349-81e0-a11d7f0bfa52/iframe" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>',
+		content: `
         <h2 class="text-2xl font-bold mb-2 text-blue-600">‘My heart really broke’: Security guard describes moments helping Eina Kwon after Belltown shooting</h2>
         <p class="text-sm text-slate-500 mb-4">By Julie Calhoun</p>
     
@@ -527,16 +529,17 @@ export const mediaArticles = [
         </blockquote>
     
         <p class="mb-4">Eina Kwon's funeral service will be held Friday at 2 p.m. at Acacia Memorial Park and Funeral Home. Her family is inviting the public to come pay their respects and say goodbye to Eina and her baby.</p>
-        `
-    },
-    {
-        slug: 'downtown-seattle-association-hires-private-security-guards-amid-police-staffing-issues',
-        title: 'Downtown Seattle Association hires private security guards amid police staffing issues',
-        url: 'https://komonews.com/news/local/downtown-seattle-association-hires-private-security-guards-amid-police-staffing-issues',
-        imageUrl: '',
-        date: 'February 1, 2022',
-        videoEmbed: '<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/b206af068557454bb976a818278226d1.m3u8&autostart=false" frameborder="0" scrolling="auto" loading="lazy"></iframe>',
-        content: `
+        `,
+	},
+	{
+		slug: "downtown-seattle-association-hires-private-security-guards-amid-police-staffing-issues",
+		title: "Downtown Seattle Association hires private security guards amid police staffing issues",
+		url: "https://komonews.com/news/local/downtown-seattle-association-hires-private-security-guards-amid-police-staffing-issues",
+		imageUrl: "",
+		date: "February 1, 2022",
+		videoEmbed:
+			'<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/b206af068557454bb976a818278226d1.m3u8&autostart=false" frameborder="0" scrolling="auto" loading="lazy"></iframe>',
+		content: `
         <h2 class="text-2xl font-bold mb-2 text-blue-600">Downtown Seattle Association hires private security guards amid police staffing issues</h2>
         <p class="text-sm text-slate-500 mb-4">by Jackie Kent, KOMO News Reporter</p>
     
@@ -569,16 +572,16 @@ export const mediaArticles = [
         <p class="mb-4">“I don’t think security is going to deter gun violence or drug use,” Baehr said.</p>
     
         <p class="mb-4">As KOMO has reported, Seattle police lost a few hundred officers since 2020. It has since filled some of those spots, and the city's budget allows for SPD to hire 125 officers this year.</p>
-        `
-    },
+        `,
+	},
 
-    {
-        title: 'What Downtown Seattle Says about Downtown Seattle',
-        slug: 'what-downtown-seattle-says-about-the-state-of-downtown-seattle',
-        url: 'https://www.seattlemet.com/news-and-city-life/2022/03/what-downtown-seattle-says-about-the-state-of-downtown-seattle',
-        imageUrl: 'https://res.cloudinary.com/sagacity/image/upload/c_crop,h_2333,w_3500,x_0,y_0/c_limit,dpr_2,f_auto,fl_lossy,q_80,w_1479/emoji-seattle-01_yac8ly.png',
-        date: 'March 30, 2022',
-        content: `
+	{
+		title: "What Downtown Seattle Says about Downtown Seattle",
+		slug: "what-downtown-seattle-says-about-the-state-of-downtown-seattle",
+		url: "https://www.seattlemet.com/news-and-city-life/2022/03/what-downtown-seattle-says-about-the-state-of-downtown-seattle",
+		imageUrl: "https://res.cloudinary.com/sagacity/image/upload/c_crop,h_2333,w_3500,x_0,y_0/c_limit,dpr_2,f_auto,fl_lossy,q_80,w_1479/emoji-seattle-01_yac8ly.png",
+		date: "March 30, 2022",
+		content: `
      <h2 class="text-2xl font-bold mb-2 text-blue-600">by Benjamin Cassidy</h2>
     
         <p class="mb-4">IN EARLY FEBRUARY, a comment about Pike Place Market by Seattle City Council president Debora Juarez set off a fresh round of discourse about downtown Seattle. “I don’t go to the Market anymore unless it’s Saturday, broad daylight,” Juarez said at an economic development committee meeting, adding that it’s “a real safety issue.”</p>
@@ -628,15 +631,15 @@ export const mediaArticles = [
 
     <h3 class="text-xl font-bold mt-4 mb-2 text-blue-600">Billie Joanne Isbell, staying at Catholic Community Services’ Bridge Shelter on Third Avenue</h3>
     <p class="mb-4">“I don’t think it’s as bad as it used to be—five, 10 years ago,” Billie Joanne Isbell said of downtown while waiting for groceries on Sunday. “But it could still use some work.” Isbell has bounced around shelters for two decades, she says, and has seen how people experiencing homelessness can be victims of crime in the area. “If you have a ball and they want it, then they’re going to get it.” Still, she thinks addiction is an intractable problem, one that an increased police presence on Third Avenue isn’t going to fix.</p>
-`
-    },
-    {
-        title: 'SPD officer injured, two arrested as police step into clash between private security & protesters',
-        slug: 'spd-says-officer-injured-two-arrested-as-police-step-into-clash-between-private-security-team-and-capitol-hill-protesters-update',
-        url: 'https://www.capitolhillseattle.com/2020/08/spd-says-officer-injured-two-arrested-as-police-step-into-clash-between-private-security-team-and-capitol-hill-protesters/',
-        imageUrl: 'https://i0.wp.com/www.capitolhillseattle.com/wp-content/uploads/2020/08/Mitgang_200812_0132-scaled.jpg?w=1168&ssl=1',
-        date: 'August 13, 2020',
-        content: `
+`,
+	},
+	{
+		title: "SPD officer injured, two arrested as police step into clash between private security & protesters",
+		slug: "spd-says-officer-injured-two-arrested-as-police-step-into-clash-between-private-security-team-and-capitol-hill-protesters-update",
+		url: "https://www.capitolhillseattle.com/2020/08/spd-says-officer-injured-two-arrested-as-police-step-into-clash-between-private-security-team-and-capitol-hill-protesters/",
+		imageUrl: "https://i0.wp.com/www.capitolhillseattle.com/wp-content/uploads/2020/08/Mitgang_200812_0132-scaled.jpg?w=1168&ssl=1",
+		date: "August 13, 2020",
+		content: `
 
      <h2 class="text-2xl font-bold mb-2 text-blue-600">by Capitol Hill Seattle Staff</h2>
     
@@ -693,15 +696,15 @@ export const mediaArticles = [
         <p class="mb-4">“The property owners are the ones who hire the security companies,” the business owner said. “They are not hiring this with any kind of equity lens. They are just interested in property.”</p>
     
         <p class="mb-4">At least two more security firms have been seen patrolling and providing guard services elsewhere in the neighborhood bringing a heavily armed mix of security professionals into the streets of Pike/Pine every night.</p>
-`
-    },
-    {
-        title: 'Private Security & SPD Patrols',
-        slug: 'private-security-spd-patrols',
-        url: 'https://downtownseattle.org/programs-services/metropolitan-improvement-district/downtown-ambassadors/private-security-spd-patrols/',
-        imageUrl: 'https://downtownseattle.org/app/uploads/2022/06/programs-services-mid-renewal-202206-services-iron-oak-4x3-v1.jpg',
-        date: 'July 30, 2024',
-        content: `
+`,
+	},
+	{
+		title: "Private Security & SPD Patrols",
+		slug: "private-security-spd-patrols",
+		url: "https://downtownseattle.org/programs-services/metropolitan-improvement-district/downtown-ambassadors/private-security-spd-patrols/",
+		imageUrl: "https://downtownseattle.org/app/uploads/2022/06/programs-services-mid-renewal-202206-services-iron-oak-4x3-v1.jpg",
+		date: "July 30, 2024",
+		content: `
         <h2 class="text-2xl font-bold mb-2 text-blue-600">Private Security & SPD Patrols</h2>
         <p class="text-sm text-slate-500 mb-4">Through a contract with Iron & Oak, property owners within the MID invest in over 800 hours per week of private security downtown in addition to funding dedicated overtime bike patrols with the Seattle Police Department. These safety services help ensure a greater security presence downtown for residents, workers, and visitors. Iron & Oak officers walk alongside MID ambassadors so they can safely perform their duties. They also patrol streets and parks within the MID and provide support during DSA/MID events.</p>
         
@@ -751,16 +754,17 @@ export const mediaArticles = [
 
         <div class="mt-4">
         </div>
-    `
-    },
-    {
-        slug: 'i-wish-i-couldve-saved-her-security-officer-recalls-fatal-shooting-of-pregnant-woman-in-seattle-randy-norberg-eina-kwon-suspect-cordell-goosby-shots-fired-gunshot-wounds',
-        title: 'I wish I could’ve saved her: Security officer recalls fatal shooting of pregnant woman in Seattle',
-        url: 'https://cbsaustin.com/news/nation-world/i-wish-i-couldve-saved-her-security-officer-recalls-fatal-shooting-of-pregnant-woman-in-seattle-randy-norberg-eina-kwon-suspect-cordell-goosby-shots-fired-gunshot-wounds',
-        imageUrl: '',
-        date: 'June 21, 2023',
-        videoEmbed: '<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/88f699c6d79c41e4af3e6cdf186b3709.m3u8&autostart=false" frameborder="0" scrolling="auto" loading="lazy"></iframe>',
-        content: `
+    `,
+	},
+	{
+		slug: "i-wish-i-couldve-saved-her-security-officer-recalls-fatal-shooting-of-pregnant-woman-in-seattle-randy-norberg-eina-kwon-suspect-cordell-goosby-shots-fired-gunshot-wounds",
+		title: "I wish I could’ve saved her: Security officer recalls fatal shooting of pregnant woman in Seattle",
+		url: "https://cbsaustin.com/news/nation-world/i-wish-i-couldve-saved-her-security-officer-recalls-fatal-shooting-of-pregnant-woman-in-seattle-randy-norberg-eina-kwon-suspect-cordell-goosby-shots-fired-gunshot-wounds",
+		imageUrl: "",
+		date: "June 21, 2023",
+		videoEmbed:
+			'<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/88f699c6d79c41e4af3e6cdf186b3709.m3u8&autostart=false" frameborder="0" scrolling="auto" loading="lazy"></iframe>',
+		content: `
        <h2 class="text-2xl font-bold mb-6 text-blue-600">by LYNNANNE NGUYEN | KOMO StaffFri, June 23rd 2023 at 4:17 PM</h2>
 
     <p class="mb-4">SEATTLE (KOMO) — The pregnant mother and business owner shot and killed in Seattle's Belltown neighborhood last week is being laid to rest on Friday.</p>
@@ -772,7 +776,7 @@ export const mediaArticles = [
     <p class="mb-4">KOMO spoke with a security officer, Randy Norberg, who was one of the first on the scene and tried to save Kwon’s life. He patrols downtown Seattle for Iron & Oak Protective Services.</p>
 
     <blockquote class="border-l-4 border-blue-500 pl-4 italic my-4">
-        “A lot of the times we’re dealing with overdoses, just two days ago I had to perform CPR with a partner of mine and brought back somebody," Norberg said. "Almost on a daily basis we’re saving lives in that aspect, sometimes people multiple times a day – it takes its toll, but we’re out here to help.”
+        “A lot of the times we’re dealing with overdoses, just two days ago I had to perform CPR with a partner of mine and brought back somebody," Norberg said. "Almost on a daily basis we’re saving lives in that aspect, sometimes people multiple times a day - it takes its toll, but we’re out here to help.”
     </blockquote>
 
     <p class="mb-4">But Norberg was faced with a very different situation on June 13.</p>
@@ -794,16 +798,17 @@ export const mediaArticles = [
     <blockquote class="border-l-4 border-blue-500 pl-4 italic my-4">
         “It’s not easy, I still think about it constantly," he said. "My heart goes out to her family. I wish I could’ve saved her, I  wish I could’ve been there, I’ll never forget her.”
     </blockquote>
-`
-    },
-    {
-        title: 'Person sought in connection to shooting that killed 2, injured 1 in Capitol Hill',
-        slug: 'person-sought-in-connection-to-shooting-that-killed-2-injured-1-in-capitol-hill',
-        url: 'https://komonews.com/news/local/seattle-gun-violence-fatal-shooting-capitol-hill-seattle-police-department-adrian-diaz-king-county-iron-oak-security-guards#',
-        imageUrl: '',
-        date: 'May 1, 2023',
-        videoEmbed: '<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/a669121946f448a5b4a3e9fd07487482.m3u8&autostart=false" frameborder="0" scrolling="auto" loading="lazy"></iframe>',
-        content: `
+`,
+	},
+	{
+		title: "Person sought in connection to shooting that killed 2, injured 1 in Capitol Hill",
+		slug: "person-sought-in-connection-to-shooting-that-killed-2-injured-1-in-capitol-hill",
+		url: "https://komonews.com/news/local/seattle-gun-violence-fatal-shooting-capitol-hill-seattle-police-department-adrian-diaz-king-county-iron-oak-security-guards#",
+		imageUrl: "",
+		date: "May 1, 2023",
+		videoEmbed:
+			'<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/a669121946f448a5b4a3e9fd07487482.m3u8&autostart=false" frameborder="0" scrolling="auto" loading="lazy"></iframe>',
+		content: `
     <h2 class="text-2xl font-bold mb-2 text-blue-600">Person sought in connection to shooting that killed 2, injured 1 in Capitol Hill</h2>
     <p class="text-sm text-slate-500 mb-4">by Jackie Kent, KOMO News Reporter</p>
     <p class="text-sm text-slate-500 mb-4">Updated Thu, May 4th 2023 at 2:21 PM</p>
@@ -840,17 +845,18 @@ export const mediaArticles = [
         “People across the country, I feel like when they hear Capitol Hill [and] Seattle, they think bad stuff already,” Kai added.
     </blockquote>
 
-    <p class="mb-4">KOMO News asked the Seattle Police Department if more patrols were planned in the area in light of the recent shootings, and a spokesperson said in a statement, "While we can’t discuss allocation of resources, preventing and responding to violent crime is a priority. The Seattle Police Department places priority on public and community safety – and we take it very seriously."</p>
-    `
-    },
-    {
-        title: 'Efforts to clean up crime in Downtown Seattle continue; business owners still see threats',
-        slug: 'efforts-to-clean-up-crime-in-downtown-seattle-continue-business-owners-still-see-threats',
-        url: 'https://komonews.com/news/local/efforts-to-clean-up-crime-in-downtown-seattle-continue-business-owners-still-see-threats#',
-        imageUrl: 'https://komonews.com/resources/media2/c77dcc4c03d4a4543bdc798d44eef6057.jpg',
-        date: 'April 23, 2022',
-        videoEmbed: '<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/77dcc4c03d4a4543bdc798d44eef6057.m3u8&autostart=false" width="640" height="360" frameborder="0" scrolling="auto" loading="lazy"></iframe>',
-        content: `
+    <p class="mb-4">KOMO News asked the Seattle Police Department if more patrols were planned in the area in light of the recent shootings, and a spokesperson said in a statement, "While we can’t discuss allocation of resources, preventing and responding to violent crime is a priority. The Seattle Police Department places priority on public and community safety - and we take it very seriously."</p>
+    `,
+	},
+	{
+		title: "Efforts to clean up crime in Downtown Seattle continue; business owners still see threats",
+		slug: "efforts-to-clean-up-crime-in-downtown-seattle-continue-business-owners-still-see-threats",
+		url: "https://komonews.com/news/local/efforts-to-clean-up-crime-in-downtown-seattle-continue-business-owners-still-see-threats#",
+		imageUrl: "https://komonews.com/resources/media2/c77dcc4c03d4a4543bdc798d44eef6057.jpg",
+		date: "April 23, 2022",
+		videoEmbed:
+			'<iframe src="https://sinclairstoryline.com/resources/embeds/jw8-embed.html?client=googima&file=https://content.uplynk.com/77dcc4c03d4a4543bdc798d44eef6057.m3u8&autostart=false" width="640" height="360" frameborder="0" scrolling="auto" loading="lazy"></iframe>',
+		content: `
     <h2 class="text-2xl font-bold mb-2 text-blue-600">by Suzanne Phan, KOMO News Reporter</h2>
 
     <p class="text-sm text-slate-500 mb-4">Updated Sun, April 24th 2022 at 10:32 AM</p>
@@ -898,15 +904,15 @@ export const mediaArticles = [
     </blockquote>
 
     <p class="mb-4">A spokesman for the Mayor’s office told KOMO News that Mayor Harrell is working to make Downtown Seattle safe through a number of means. He has implemented some critical first steps including a mobile precinct, more officers on site, and temporarily closing the bus stop near 3rd and Pine Street.</p>
-    `
-    },
-    {
-        title: 'Union Security Officers Rally for Respect',
-        slug: 'union-security-officers-rally-for-respect',
-        url: 'https://southseattleemerald.com/2022/03/21/union-security-officers-rally-for-respect/',
-        imageUrl: 'https://southseattleemerald.com/wp-content/uploads/2022/03/SecuritySign_WestlakePark_SecurityOfficerRally_312022_AlexGarland-1024x683.jpg',
-        date: 'March 21, 2022',
-        content: `
+    `,
+	},
+	{
+		title: "Union Security Officers Rally for Respect",
+		slug: "union-security-officers-rally-for-respect",
+		url: "https://southseattleemerald.com/2022/03/21/union-security-officers-rally-for-respect/",
+		imageUrl: "https://southseattleemerald.com/wp-content/uploads/2022/03/SecuritySign_WestlakePark_SecurityOfficerRally_312022_AlexGarland-1024x683.jpg",
+		date: "March 21, 2022",
+		content: `
         <h2 class="text-2xl font-bold mb-2 text-blue-600">by Alex Garland</h2>
     
     
@@ -985,16 +991,16 @@ export const mediaArticles = [
             “Whether they’re demanding an end to racism on the job, an end to sexual harassment, or an end to verbal abuse from supervisors, over 87% of officers are calling for respect. The pandemic and all it’s challenges have only highlighted that every ounce of respect these officers are calling for is earned. They have earned it in their professionalism and their commitment to keeping the peace in an era of high volatility, worsening inequality, and civil unrest.”
         </blockquote>
     
-       `
-    },
+       `,
+	},
 
-    {
-        title: 'A Call for Security: Safety Concerns Around Downtown Seattle',
-        url: 'https://www.bizjournals.com/seattle/news/2024/03/11/seattle-businesses-spend-millions-private-security.html ',
-        slug: 'a-call-for-security-downtown-seattle',
-        imageUrl: 'https://media.bizj.us/view/img/12703991/aleksandr-butowicz-iron-oak-06*900x506x4200-2368-0-416.jpg',
-        date: 'March 11, 2024',
-        content: `
+	{
+		title: "A Call for Security: Safety Concerns Around Downtown Seattle",
+		url: "https://www.bizjournals.com/seattle/news/2024/03/11/seattle-businesses-spend-millions-private-security.html ",
+		slug: "a-call-for-security-downtown-seattle",
+		imageUrl: "https://media.bizj.us/view/img/12703991/aleksandr-butowicz-iron-oak-06*900x506x4200-2368-0-416.jpg",
+		date: "March 11, 2024",
+		content: `
         <h2 class="text-2xl font-bold mb-2 text-blue-600">by Marc Stiles </h2>
         <p class="text-sm text-slate-500 mb-4"> Senior Reporter, Puget Sound Business Journal</p>
 
@@ -1002,9 +1008,6 @@ export const mediaArticles = [
         <p class="mb-4">Aleksandr Butowicz founded Iron and Oak Protective Services, LLC in 2019.</p>
 
 
-    `
-    },
-
-
-
+    `,
+	},
 ];
